@@ -1,458 +1,1338 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Gonzalo – Full Stack Web Developer. Soluciones digitales elegantes, modernas y de alto rendimiento para llevar tu negocio al siguiente nivel.">
-  <meta name="author" content="Gonzalo">
-  <title>Gonzalo | Full Stack Developer</title>
-  <!-- Tailwind CSS + Google Fonts + Font Awesome -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS Library (Animate on Scroll) para sofisticación -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0a0c10;
-      scroll-behavior: smooth;
-    }
-    /* Glass morphism personalizado y efectos sutiles */
-    .glass-card {
-      background: rgba(18, 22, 28, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(75, 85, 99, 0.3);
-      border-radius: 2rem;
-    }
-    .glow-text {
-      text-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-    }
-    .hover-glow:hover {
-      box-shadow: 0 20px 35px -12px rgba(0, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      transform: translateY(-3px);
-    }
-    .gradient-border {
-      background: linear-gradient(135deg, #2dd4bf, #3b82f6);
-      padding: 1px;
-      border-radius: 1.75rem;
-    }
-    .btn-primary {
-      background: linear-gradient(95deg, #0f172a, #1e293b);
-      border: 1px solid rgba(45, 212, 191, 0.4);
-      transition: all 0.25s ease;
-    }
-    .btn-primary:hover {
-      border-color: #2dd4bf;
-      box-shadow: 0 8px 20px -8px rgba(45, 212, 191, 0.4);
-      transform: translateY(-2px);
-    }
-    .custom-cursor a, button {
-      cursor: pointer;
-    }
-    /* Ocultar scrollbar pero mantener funcionalidad (opcional) */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #111827;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #2dd4bf;
-      border-radius: 8px;
-    }
-    .bg-noise {
-      background-image: radial-gradient(rgba(45, 212, 191, 0.03) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-  </style>
-</head>
-<body class="bg-noise text-gray-200 antialiased">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gonzalo — Desarrollador web full stack en Córdoba, Argentina. Sitios web, landing pages y aplicaciones a medida.">
+<meta name="keywords" content="desarrollador web Córdoba, freelance full stack Argentina, landing page, React, Node.js">
+<meta property="og:title" content="Gonzalo — Desarrollador Web Full Stack">
+<meta property="og:description" content="Sitios web y aplicaciones que convierten visitantes en clientes. Córdoba, Argentina.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonzalowebdev.netlify.app">
+<meta property="og:image" content="https://gonzalowebdev.netlify.app/img1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<title>Gonzalo — Desarrollador Web Full Stack</title>
 
-  <!-- NAVEGACIÓN SIMPLE Y ELEGANTE -->
-  <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 transition-all duration-300 bg-[#0a0c10]/80 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="text-2xl font-bold tracking-tight bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent" data-aos="fade-right" data-aos-duration="800">
-        G.
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black:   #0a0a0a;
+  --black2:  #111111;
+  --black3:  #1a1a1a;
+  --line:    rgba(255,255,255,0.08);
+  --line2:   rgba(255,255,255,0.14);
+  --white:   #f5f5f5;
+  --white2:  #a0a0a0;
+  --white3:  #666666;
+  --accent:  #c8f04a;   /* lima sutil — solo para detalles pequeños */
+
+  --serif:  'Instrument Serif', Georgia, serif;
+  --mono:   'Geist Mono', 'Courier New', monospace;
+  --sans:   'Geist', system-ui, sans-serif;
+
+  /* Tamaños fijos — nunca vw en fuentes */
+  --h1:   2.75rem;
+  --h2:   2rem;
+  --h3:   1.1rem;
+  --body: 0.9rem;
+  --sm:   0.78rem;
+  --xs:   0.7rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.5;
+  overflow-x: hidden;
+  /* prevent iOS rubber-band from showing white */
+  overscroll-behavior: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-ig {
+  font-size: 1rem;
+  color: var(--white2);
+  transition: color 0.2s;
+}
+.nav-ig:hover { color: var(--white); }
+
+/* Hamburger */
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 0;
+}
+.burger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile drawer */
+.drawer {
+  display: none;
+  position: fixed;
+  top: 56px; left: 0; right: 0;
+  z-index: 99;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 20px 2rem;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.drawer.open { display: flex; }
+.drawer a {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--white2);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.drawer a:hover { color: var(--white); }
+
+/* ─────────────────────────────────────────
+   LAYOUT PRIMITIVES
+───────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-tag {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--white3);
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  /* Use svh on browsers that support it — clips mobile chrome bar */
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 3rem;
+  padding-top: 56px; /* nav height */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid lines in background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+  pointer-events: none;
+}
+
+/* Radial vignette to soften grid */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, var(--black) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: var(--h1);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--white2);
+}
+
+.hero-desc {
+  font-size: var(--body);
+  color: var(--white2);
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: var(--sm);
+  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--white);
+}
+.btn-white:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white2);
+  border: 1px solid var(--line2);
+}
+.btn-ghost:hover {
+  border-color: var(--white2);
+  color: var(--white);
+}
+
+/* Hero scroll hint */
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.35;
+  animation: scrollpulse 2.5s ease-in-out infinite;
+}
+@keyframes scrollpulse {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50%       { opacity: 0.55; transform: translateY(4px); }
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--white), transparent);
+}
+.hero-scroll-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  color: var(--white);
+}
+
+/* Hero stats row */
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid var(--line);
+  margin-top: 3rem;
+}
+.hero-stat {
+  padding: 1.25rem;
+  background: var(--black2);
+  position: relative;
+}
+.hero-stat:nth-child(odd) { border-right: 1px solid var(--line); }
+.hero-stat-val {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.hero-stat-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--white3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   STACK TICKER
+───────────────────────────────────────── */
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+  background: var(--black2);
+}
+.ticker-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ticker-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────
+   SERVICES
+───────────────────────────────────────── */
+.services-header {
+  margin-bottom: 3rem;
+}
+.services-title {
+  font-family: var(--serif);
+  font-size: var(--h2);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.services-title em { font-style: italic; color: var(--white2); }
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  transition: background 0.2s;
+  cursor: default;
+}
+.service-row:first-child { border-top: 1px solid var(--line); }
+
+.service-num {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  padding-top: 3px;
+  letter-spacing: 0.04em;
+}
+
+.service-body {}
+
+.service-name {
+  font-family: var(--serif);
+  font-size: var(--h3);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.service-desc {
+  font-size: var(--body);
+  color: var(--white2);
+  line-height: 1.65;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.service-tag {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--white3);
+  border: 1px solid var(--line2);
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* ─────────────────────────────────────────
+   PORTFOLIO
+───────────────────────────────────────── */
+.portfolio-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.portfolio-title {
+  font-family: var(--serif);
+  font-size: var(--h2);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  line-height: 1.15;
+}
+.portfolio-title em { font-style: italic; color: var(--white2); }
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--line);
+}
+
+.project-item {
+  background: var(--black);
+  overflow: hidden;
+}
+
+.project-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--black3);
+}
+.project-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+.project-item:hover .project-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* placeholder when image missing (local preview) */
+.project-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black3);
+}
+.project-img-placeholder span {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  letter-spacing: 0.08em;
+}
+
+.project-info {
+  padding: 1.25rem 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.project-type {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.project-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.project-desc {
+  font-size: var(--body);
+  color: var(--white2);
+  line-height: 1.6;
+  margin-top: 0.4rem;
+  grid-column: 1 / -1;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white2);
+  border: 1px solid var(--line2);
+  padding: 6px 12px;
+  border-radius: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  align-self: start;
+}
+.project-link:hover {
+  color: var(--white);
+  border-color: var(--white2);
+}
+.project-link svg {
+  width: 10px; height: 10px;
+  stroke: currentColor; fill: none; stroke-width: 2;
+}
+
+/* ─────────────────────────────────────────
+   CONTACT
+───────────────────────────────────────── */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contact-left {}
+.contact-title {
+  font-family: var(--serif);
+  font-size: var(--h2);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.contact-title em { font-style: italic; color: var(--white2); }
+
+.contact-desc {
+  font-size: var(--body);
+  color: var(--white2);
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: var(--sm);
+  color: var(--white2);
+  transition: color 0.2s;
+}
+.contact-link:hover { color: var(--white); }
+.contact-link-icon {
+  width: 32px; height: 32px;
+  border: 1px solid var(--line2);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.contact-link:hover .contact-link-icon { border-color: var(--white2); }
+
+.contact-right {}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.field-label {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.field-input {
+  background: var(--black2);
+  border: 1px solid var(--line2);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: var(--body);
+  padding: 11px 14px;
+  border-radius: 2px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.field-input::placeholder { color: var(--white3); }
+.field-input:focus { border-color: rgba(255,255,255,0.35); }
+
+textarea.field-input {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.form-note {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  line-height: 1.5;
+}
+
+.form-status {
+  font-family: var(--mono);
+  font-size: var(--sm);
+  min-height: 1.4em;
+  padding: 0 2px;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--white2);
+}
+.footer-copy {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  letter-spacing: 0.05em;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+}
+.footer-nav a {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--white3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--white); }
+
+/* ─────────────────────────────────────────
+   ANIMATIONS (page load only — no AOS dependency)
+───────────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays */
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.15s; }
+.d3 { transition-delay: 0.25s; }
+.d4 { transition-delay: 0.35s; }
+
+/* ─────────────────────────────────────────
+   DESKTOP (min-width: 768px)
+   Everything above is mobile-first.
+   Desktop only widens/adjusts — never breaks mobile.
+───────────────────────────────────────── */
+@media (min-width: 768px) {
+  :root {
+    --h1:   4.5rem;
+    --h2:   2.75rem;
+    --h3:   1.2rem;
+    --body: 0.95rem;
+  }
+
+  .nav { padding: 0 40px; }
+  .burger { display: none; }
+  .nav-links { display: flex; }
+  .nav-right .btn-ghost-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: var(--xs);
+    letter-spacing: 0.05em;
+    color: var(--white2);
+    border: 1px solid var(--line2);
+    padding: 7px 16px;
+    border-radius: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-right .btn-ghost-nav:hover { color: var(--white); border-color: var(--white2); }
+
+  .hero { padding: 0 0 4rem; }
+  .hero-content { padding: 0 40px; max-width: 1160px; margin: 0 auto; }
+  .hero-desc { max-width: 480px; }
+  .hero-actions { flex-direction: row; }
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1160px;
+    margin: 4rem auto 0;
+  }
+  .hero-stat:nth-child(odd) { border-right: none; }
+  .hero-stat { border-right: 1px solid var(--line); }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-val { font-size: 2.5rem; }
+  .hero-scroll { right: 40px; }
+
+  .container { padding: 0 40px; }
+  .section { padding: 6rem 0; }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    margin-bottom: 0;
+  }
+  .services-list { margin-top: 3rem; }
+  .service-row {
+    grid-template-columns: 3rem 1fr 1fr;
+    gap: 2rem;
+    padding: 1.75rem 0;
+    align-items: center;
+  }
+  .service-tags { margin-top: 0; }
+
+  .portfolio-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .projects-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+  }
+  .project-item { display: flex; flex-direction: column; }
+  .project-img-wrap { height: 220px; flex-shrink: 0; }
+  .project-info {
+    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-link { align-self: flex-start; margin-top: auto; padding-top: 1rem; }
+  .project-desc { grid-column: auto; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .form-row { flex-direction: row; gap: 0.75rem; }
+  .form-row .field-wrap { flex: 1; }
+
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root { --h1: 5.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav">
+  <a href="#inicio" class="nav-logo">G<span>.</span></a>
+
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="https://www.instagram.com/gwevdeb?igsh=MWpsZ2NldG12NnBsMg==" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#contacto" class="btn-ghost-nav" id="navCta" style="display:none;">Propuesta &rarr;</a>
+    <button class="burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<nav class="drawer" id="drawer">
+  <a href="#inicio"    class="dlink">Inicio</a>
+  <a href="#servicios" class="dlink">Servicios</a>
+  <a href="#proyectos" class="dlink">Proyectos</a>
+  <a href="#contacto"  class="dlink">Contacto</a>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-in d1">Desarrollador web — Córdoba, Argentina</div>
+
+    <h1 class="hero-title fade-in d2">
+      Sitios web que<br><em>trabajan por vos</em>
+    </h1>
+
+    <p class="hero-desc fade-in d3">
+      Creo landing pages, sitios y aplicaciones web que convierten visitantes en clientes. Código limpio, diseño sin ruido, resultados reales.
+    </p>
+
+    <div class="hero-actions fade-in d4">
+      <a href="#contacto" class="btn btn-white">Hablemos</a>
+      <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
+    </div>
+  </div>
+
+  <!-- Stats row — bottom of hero -->
+  <div class="hero-stats fade-in" id="statsWrap">
+    <div class="hero-stat">
+      <div class="hero-stat-val"><span class="counter" data-target="1">0</span>+</div>
+      <div class="hero-stat-label">Años de experiencia</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val"><span class="counter" data-target="10">0</span>+</div>
+      <div class="hero-stat-label">Proyectos entregados</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val"><span class="counter" data-target="100">0</span>%</div>
+      <div class="hero-stat-label">Satisfacción del cliente</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">24/7</div>
+      <div class="hero-stat-label">Soporte dedicado</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-label">scroll</span>
+  </div>
+</section>
+
+<!-- ══════════ TICKER ══════════ -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ══════════ SERVICIOS ══════════ -->
+<section id="servicios" class="section">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-tag fade-in">Servicios</div>
+      <h2 class="services-title fade-in">
+        Lo que construyo<br><em>para vos</em>
+      </h2>
+    </div>
+
+    <div class="services-list">
+      <div class="service-row fade-in">
+        <span class="service-num">01</span>
+        <div class="service-body">
+          <div class="service-name">Landing Pages & Sitios Web</div>
+          <div class="service-desc">Páginas que convierten. Diseño claro, carga veloz, estructura pensada para que el visitante tome acción.</div>
+        </div>
+        <div class="service-tags">
+          <span class="service-tag">HTML/CSS</span>
+          <span class="service-tag">React</span>
+          <span class="service-tag">Next.js</span>
+          <span class="service-tag">Responsive</span>
+        </div>
       </div>
-      <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#inicio" class="hover:text-teal-400 transition-colors duration-200">Inicio</a>
-        <a href="#servicios" class="hover:text-teal-400 transition-colors duration-200">Servicios</a>
-        <a href="#sobre-mi" class="hover:text-teal-400 transition-colors duration-200">Sobre mí</a>
-        <a href="#contacto" class="hover:text-teal-400 transition-colors duration-200">Contacto</a>
+
+      <div class="service-row fade-in">
+        <span class="service-num">02</span>
+        <div class="service-body">
+          <div class="service-name">Aplicaciones Full Stack</div>
+          <div class="service-desc">Frontend y backend integrados. APIs, bases de datos y lógica de negocio. Desde el diseño hasta el servidor.</div>
+        </div>
+        <div class="service-tags">
+          <span class="service-tag">Node.js</span>
+          <span class="service-tag">Python</span>
+          <span class="service-tag">MongoDB</span>
+          <span class="service-tag">MySQL</span>
+        </div>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="https://www.instagram.com/gwevdeb?igsh=MWpsZ2NldG12NnBsMg==" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-teal-400 transition text-xl">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#contacto" class="hidden md:inline-block px-5 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 hover:border-teal-400/60 transition-all">
-          <i class="far fa-paper-plane mr-1"></i> Propuesta
-        </a>
+
+      <div class="service-row fade-in">
+        <span class="service-num">03</span>
+        <div class="service-body">
+          <div class="service-name">E-commerce & Tiendas Online</div>
+          <div class="service-desc">Tiendas a medida o con plataformas existentes. Carrito, pagos integrados y experiencia de compra impecable.</div>
+        </div>
+        <div class="service-tags">
+          <span class="service-tag">WooCommerce</span>
+          <span class="service-tag">Custom</span>
+          <span class="service-tag">Pagos</span>
+        </div>
+      </div>
+
+      <div class="service-row fade-in">
+        <span class="service-num">04</span>
+        <div class="service-body">
+          <div class="service-name">Performance, SEO & Despliegue</div>
+          <div class="service-desc">Core Web Vitals, posicionamiento en Google, hosting en Vercel o AWS. Tu sitio rápido y visible.</div>
+        </div>
+        <div class="service-tags">
+          <span class="service-tag">SEO</span>
+          <span class="service-tag">Vercel</span>
+          <span class="service-tag">AWS</span>
+          <span class="service-tag">CI/CD</span>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <main class="overflow-hidden">
-    <!-- HERO SECTION - IMPACTO VISUAL INMEDIATO -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center px-6 pt-28 pb-20">
-      <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/20 via-transparent to-cyan-950/20 pointer-events-none"></div>
-      <div class="max-w-6xl mx-auto text-center relative z-10">
-        <div data-aos="fade-up" data-aos-delay="100" class="inline-block mb-4 px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-sm font-medium tracking-wide backdrop-blur-sm">
-          <i class="fas fa-code mr-2"></i> Full Stack Developer
+<!-- ══════════ PROYECTOS ══════════ -->
+<section id="proyectos" class="section">
+  <div class="container">
+    <div class="portfolio-header">
+      <div>
+        <div class="section-tag fade-in">Proyectos</div>
+        <h2 class="portfolio-title fade-in">Trabajo <em>reciente</em></h2>
+      </div>
+      <a href="#contacto" class="btn btn-ghost fade-in" style="flex-shrink:0;">El tuyo es el próximo &rarr;</a>
+    </div>
+
+    <div class="projects-list fade-in">
+
+      <!-- P1 -->
+      <div class="project-item">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder"><span>img3.png</span></div>
+          <img src="img3.png" alt="Finn Mark Academy" loading="lazy"
+               onerror="this.style.display='none'">
         </div>
-        <h1 data-aos="fade-up" data-aos-delay="200" class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.1]">
-          <span class="bg-gradient-to-r from-white via-teal-200 to-cyan-400 bg-clip-text text-transparent">Gonzalo</span><br>
-          <span class="bg-gradient-to-r from-teal-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Web Dev</span>
-        </h1>
-        <p data-aos="fade-up" data-aos-delay="300" class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
-          Desarrollo experiencias web de élite. Aplicaciones rápidas, diseño cautivante y tecnología de punta para potenciar tu marca.
+        <div class="project-info">
+          <div>
+            <div class="project-type">E-commerce</div>
+            <div class="project-name">Finn Mark Academy</div>
+          </div>
+          <div class="project-desc">Plataforma de productos digitales con pagos integrados y experiencia de compra optimizada para conversión.</div>
+          <a href="https://www.finmarkacademy.com/infopreneur" target="_blank" rel="noopener" class="project-link">
+            Ver sitio
+            <svg viewBox="0 0 10 10"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- P2 -->
+      <div class="project-item">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder"><span>img2.jpg</span></div>
+          <img src="img2.jpg" alt="Demendiolaza.com" loading="lazy"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-type">Medio digital</div>
+            <div class="project-name">Demendiolaza.com</div>
+          </div>
+          <div class="project-desc">Portal de noticias local para Sierras Chicas. Diseño editorial, carga rápida en mobile y gestión de contenido simple.</div>
+          <a href="https://demendiolaza.com.ar/" target="_blank" rel="noopener" class="project-link">
+            Ver sitio
+            <svg viewBox="0 0 10 10"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- P3 -->
+      <div class="project-item">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder"><span>img5.jpg</span></div>
+          <img src="img5.jpg" alt="Vamos Por Ahí" loading="lazy"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-type">Landing Page</div>
+            <div class="project-name">Vamos Por Ahí</div>
+          </div>
+          <div class="project-desc">Landing de alta conversión para asesoría en redes sociales. CTA claro, diseño limpio y enfocado.</div>
+          <a href="https://vamosporahi.com" target="_blank" rel="noopener" class="project-link">
+            Ver sitio
+            <svg viewBox="0 0 10 10"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="section-tag fade-in">Contacto</div>
+    <div class="contact-grid">
+
+      <div class="contact-left fade-in">
+        <h2 class="contact-title">
+          Hablemos de<br><em>tu proyecto</em>
+        </h2>
+        <p class="contact-desc">
+          Contame qué necesitás y te respondo en menos de 24 horas con una propuesta concreta. Sin vueltas.
         </p>
-        <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap justify-center gap-5 mt-10">
-          <a href="#contacto" class="group relative px-8 py-3 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold text-lg shadow-xl shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 hover:scale-[1.02]">
-            Iniciemos tu proyecto
-            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+        <div class="contact-links">
+          <a href="https://wa.me/5493515205739" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.952-1.418A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.66 0-3.21-.45-4.54-1.23l-.324-.194-3.36.962.963-3.266-.213-.34A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+            </span>
+            WhatsApp
           </a>
-          <a href="#servicios" class="px-8 py-3 rounded-full border border-gray-600 hover:border-teal-400 text-gray-200 font-medium backdrop-blur-sm transition-all">
-            Explorar servicios <i class="fas fa-caret-down ml-1"></i>
+          <a href="https://www.instagram.com/gwevdeb" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </span>
+            @gwevdeb
+          </a>
+          <a href="mailto:gonzalowebdev@gmail.com" class="contact-link">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            gonzalowebdev@gmail.com
           </a>
         </div>
-        <!-- Indicador sutil de scroll -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
-          <div class="w-[2px] h-12 bg-gradient-to-b from-teal-400 to-transparent"></div>
+      </div>
+
+      <div class="contact-right fade-in">
+        <div class="form" id="contactForm">
+          <div class="form-row">
+            <div class="field-wrap">
+              <label class="field-label" for="nombre">Nombre *</label>
+              <input type="text" id="nombre" class="field-input" placeholder="Tu nombre" autocomplete="name">
+            </div>
+            <div class="field-wrap">
+              <label class="field-label" for="email">Email *</label>
+              <input type="email" id="email" class="field-input" placeholder="tu@email.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="field-wrap">
+            <label class="field-label" for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" class="field-input" placeholder="Opcional" autocomplete="tel">
+          </div>
+          <div class="field-wrap">
+            <label class="field-label" for="mensaje">Proyecto *</label>
+            <textarea id="mensaje" class="field-input" rows="5" placeholder="¿Qué necesitás, para cuándo y cuál es tu presupuesto?"></textarea>
+          </div>
+          <p class="form-note">Al enviar se abrirá WhatsApp con tu mensaje. Respondo en menos de 24h.</p>
+          <button class="btn btn-white" onclick="handleSubmit()" style="width:100%;justify-content:center;">
+            Enviar por WhatsApp &rarr;
+          </button>
+          <p class="form-status" id="formStatus"></p>
         </div>
       </div>
-      <!-- Decoración de fondo abstracta -->
-      <div class="absolute top-1/3 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div class="absolute bottom-20 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-    </section>
 
-    <!-- SERVICIOS: No se menciona portafolio, sino expertise profesional -->
-    <section id="servicios" class="py-28 px-6 relative">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <span class="text-teal-400 uppercase tracking-wider text-sm font-semibold border-l-2 border-teal-400 pl-3">Especialidades</span>
-          <h2 class="text-4xl md:text-5xl font-bold mt-4 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">Soluciones que inspiran confianza</h2>
-          <p class="text-gray-400 max-w-2xl mx-auto mt-4">Tecnologías modernas, arquitectura escalable y enfoque centrado en resultados.</p>
-        </div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div data-aos="fade-up" data-aos-delay="100" class="glass-card p-7 rounded-2xl transition-all duration-300 hover:bg-white/5 hover:border-teal-500/40 group">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center mb-6 text-3xl text-teal-400 group-hover:scale-110 transition-transform">
-              <i class="fas fa-layer-group"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-3">Full Stack Development</h3>
-            <p class="text-gray-400 leading-relaxed">Arquitectura frontend y backend con React, Next.js, Node, Python o Laravel. APIs robustas y bases de datos optimizadas.</p>
-          </div>
-          <!-- Card 2 -->
-          <div data-aos="fade-up" data-aos-delay="200" class="glass-card p-7 rounded-2xl transition-all duration-300 hover:bg-white/5 hover:border-teal-500/40">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center mb-6 text-3xl text-teal-400 group-hover:scale-110 transition-transform">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-3">UI/UX & Performance</h3>
-            <p class="text-gray-400 leading-relaxed">Diseños responsivos, interacciones fluidas y métricas Core Web Vitals perfectas. Experiencia de usuario impecable.</p>
-          </div>
-          <!-- Card 3 -->
-          <div data-aos="fade-up" data-aos-delay="300" class="glass-card p-7 rounded-2xl transition-all duration-300 hover:bg-white/5 hover:border-teal-500/40">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center mb-6 text-3xl text-teal-400 group-hover:scale-110 transition-transform">
-              <i class="fas fa-cloud-upload-alt"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-3">Despliegue & DevOps</h3>
-            <p class="text-gray-400 leading-relaxed">Cloud (AWS, Vercel), CI/CD, seguridad y monitoreo. Tu producto en producción con los más altos estándares.</p>
-          </div>
-        </div>
-
-        <!-- Frase de impacto que refuerza la experiencia sin mostrar trabajos -->
-        <div class="mt-20 text-center" data-aos="zoom-in">
-          <div class="inline-block gradient-border">
-            <div class="bg-[#0a0c10] rounded-2xl py-5 px-8 md:px-12">
-              <p class="text-gray-200 italic text-lg">“No construimos solo código, construimos puentes digitales que conectan marcas con el futuro.”</p>
-              <span class="text-teal-400 text-sm mt-2 block">— Gonzalo, Full Stack Developer</span>
-            </div>
-          </div>
-        </div>
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Gonzalo.</div>
+        <div class="footer-copy">© 2025 · Córdoba, Argentina</div>
       </div>
-    </section>
+      <ul class="footer-nav">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
-    <!-- SOBRE MÍ: Elegancia y confianza, sin mencionar portfolio reducido -->
-    <section id="sobre-mi" class="py-28 px-6 relative bg-black/30">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-14 items-center">
-          <div class="lg:w-1/2" data-aos="fade-right">
-            <div class="relative">
-              <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-3xl blur-xl opacity-30"></div>
-              <div class="relative bg-gray-900/60 backdrop-blur-sm rounded-3xl p-1 border border-white/10">
-                <img src="img1.webp" alt="Gonzalo Full Stack Developer" class="rounded-3xl w-full object-cover shadow-2xl">
-              </div>
-            </div>
-          </div>
-          <div class="lg:w-1/2 space-y-6" data-aos="fade-left">
-            <span class="text-teal-400 font-semibold tracking-wider text-sm border-l-2 border-teal-400 pl-3">Quién soy</span>
-            <h2 class="text-4xl md:text-5xl font-bold leading-tight">Arquitecto de<br> <span class="bg-gradient-to-r from-teal-300 to-cyan-400 bg-clip-text text-transparent">Experiencias Digitales</span></h2>
-            <p class="text-gray-300 text-lg leading-relaxed">
-              Soy Gonzalo, desarrollador full stack con pasión por la simetría, la performance y las interfaces que cautivan. 
-              Mi filosofía es clara: cada línea de código debe reflejar profesionalismo, innovación y resultados medibles.
-            </p>
-            <p class="text-gray-400">
-              He colaborado en proyectos de alto estándar para emprendedores y empresas, combinando las mejores prácticas del desarrollo moderno 
-              con un diseño orientado a conversión. Construyo soluciones que no solo se ven increíbles, sino que escalan contigo.
-            </p>
-            <div class="flex flex-wrap gap-6 pt-4">
-              <div class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i><span>Metodologías ágiles</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i><span>Clean code & Testing</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i><span>Soporte post-lanzamiento</span></div>
-            </div>
-            <a href="#contacto" class="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-teal-500/10 border border-teal-500/40 text-teal-300 font-medium hover:bg-teal-500/20 transition-all">Conversemos tu visión <i class="fas fa-comment-dots"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+// ── Show desktop nav CTA
+if (window.innerWidth >= 768) {
+  const cta = document.getElementById('navCta');
+  if (cta) cta.style.display = 'inline-flex';
+}
 
-    <!-- ESTADÍSTICAS / CONFIANZA: Reemplaza la falta de portafolio con métricas de valor -->
-    <section class="py-16 border-y border-white/5 bg-black/20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div data-aos="fade-up" data-aos-delay="0">
-            <div class="text-4xl md:text-5xl font-bold text-teal-400 mb-2"><span class="counter" data-target="4">0</span>+</div>
-            <div class="text-gray-400 uppercase tracking-wide text-sm">Años de expertise</div>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <div class="text-4xl md:text-5xl font-bold text-teal-400 mb-2"><span class="counter" data-target="28">0</span>+</div>
-            <div class="text-gray-400 uppercase tracking-wide text-sm">Proyectos entregados</div>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="200">
-            <div class="text-4xl md:text-5xl font-bold text-teal-400 mb-2"><span class="counter" data-target="100">0</span>%</div>
-            <div class="text-gray-400 uppercase tracking-wide text-sm">Satisfacción cliente</div>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="300">
-            <div class="text-4xl md:text-5xl font-bold text-teal-400 mb-2"><span class="counter" data-target="24">0</span>/7</div>
-            <div class="text-gray-400 uppercase tracking-wide text-sm">Soporte dedicado</div>
-          </div>
-        </div>
-      </div>
-    </section>
+// ── Hamburger
+const burger  = document.getElementById('burger');
+const drawer  = document.getElementById('drawer');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  drawer.classList.toggle('open');
+});
+document.querySelectorAll('.dlink').forEach(l =>
+  l.addEventListener('click', () => {
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+  })
+);
 
-    <!-- SECCIÓN ÚLTIMOS PROYECTOS (AGREGADA DESPUÉS DE ESTADÍSTICAS) -->
-    <section id="proyectos" class="py-28 px-6 relative">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <span class="text-teal-400 uppercase tracking-wider text-sm font-semibold border-l-2 border-teal-400 pl-3">Portafolio</span>
-          <h2 class="text-4xl md:text-5xl font-bold mt-4 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">Algunos proyectos en los que he trabajado</h2>
-          <p class="text-gray-400 max-w-2xl mx-auto mt-4">Soluciones personalizadas que marcan la diferencia. Explora mi trabajo más reciente.</p>
-        </div>
+// ── Intersection observer for .fade-in elements
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Proyecto 1 -->
-          <div data-aos="fade-up" data-aos-delay="100" class="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/5 hover:border-teal-500/40 group">
-            <div class="relative h-56 overflow-hidden">
-              <img src="img3.png" alt="Proyecto Nexus Commerce" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Finn Mark Academy</h3>
-              <p class="text-gray-400 text-sm mb-4">Plataforma e-commerce de productos digitales.</p>
-              <a href=" https://www.finmarkacademy.com/infopreneur?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn6eaLSTmlV-UdNnav_UXNc0Jlf-nJsfHeumaU_Br71Eq45HwUCjtTTz-RgXI_aem_crJI8Vsp4LmpZLnAICcdqw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium transition-colors">
-                Visitar sitio <i class="fas fa-external-link-alt text-xs"></i>
-              </a>
-            </div>
-          </div>
+// ── Counters — trigger when stats row is visible
+let countRan = false;
+const countIO = new IntersectionObserver(entries => {
+  if (!entries[0].isIntersecting || countRan) return;
+  countRan = true;
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = +el.dataset.target;
+    let cur = 0;
+    const inc = Math.ceil(target / 20);
+    const t = setInterval(() => {
+      cur = Math.min(cur + inc, target);
+      el.textContent = cur;
+      if (cur >= target) clearInterval(t);
+    }, 40);
+  });
+}, { threshold: 0.3 });
+const sw = document.getElementById('statsWrap');
+if (sw) countIO.observe(sw);
 
-          <!-- Proyecto 2 -->
-          <div data-aos="fade-up" data-aos-delay="200" class="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/5 hover:border-teal-500/40 group">
-            <div class="relative h-56 overflow-hidden">
-              <img src="img2.jpg"alt="Proyecto Aura Fintech" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Demendiolaza.com</h3>
-              <p class="text-gray-400 text-sm mb-4"> Diario de la ciudad de mendiolaza. Medio de  comunicación por excelencia de sierras chicas.</p></p>
-              <a href="https://demendiolaza.com.ar/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium transition-colors">
-                Visitar sitio <i class="fas fa-external-link-alt text-xs"></i>
-              </a>
-            </div>
-          </div>
+// ── Ticker
+const techs = [
+  'React','Next.js','Node.js','JavaScript','TypeScript',
+  'Python','PHP','Laravel','MySQL','MongoDB',
+  'Tailwind CSS','Git','Vercel','AWS','Figma'
+];
+const track = document.getElementById('tickerTrack');
+if (track) {
+  [...techs, ...techs].forEach(t => {
+    const el = document.createElement('span');
+    el.className = 'ticker-item';
+    el.innerHTML = `<span class="ticker-dot"></span>${t}`;
+    track.appendChild(el);
+  });
+}
 
-          <!-- Proyecto 3 -->
-          <div data-aos="fade-up" data-aos-delay="300" class="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/5 hover:border-teal-500/40 group">
-            <div class="relative h-56 overflow-hidden">
-              <img src="img5.jpg" alt="Vamos por ahí" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Vamos Por Ahí</h3>
-              <p class="text-gray-400 text-sm mb-4">Asesoría personalizada de instagram. Apuntada al crecimiento de tu nombre en las redes sociales.</p>
-              <a href="https://vamosporahi.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium transition-colors">
-                Visitar sitio <i class="fas fa-external-link-alt text-xs"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+// ── WhatsApp form
+const WA = '5493515205739';
+function handleSubmit() {
+  const nombre   = document.getElementById('nombre').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const mensaje  = document.getElementById('mensaje').value.trim();
+  const status   = document.getElementById('formStatus');
 
-    <!-- TESTIMONIAL / CLIENTES FICTICIOS PERO CREÍBLES (Refuerzo social sin mencionar portafolio pequeño) -->
-    <section class="py-28 px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-14" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold">Lo que dicen <span class="text-teal-400">mis clientes</span></h2>
-          <p class="text-gray-400 mt-2">Experiencias reales, resultados extraordinarios.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div data-aos="flip-left" class="glass-card p-7 rounded-2xl">
-            <div class="flex items-center gap-1 text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="text-gray-200 italic">“Gonzalo transformó por completo nuestra presencia digital. La web carga en menos de 1 segundo y la tasa de conversión aumentó un 45%. Profesional impecable.”</p>
-            <div class="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-400 to-blue-500 flex items-center justify-center text-white font-bold">MM</div>
-              <div><p class="font-semibold">Mariana Fuentes</p><p class="text-xs text-gray-400">CEO, Marivent Tech</p></div>
-            </div>
-          </div>
-          <div data-aos="flip-left" data-aos-delay="150" class="glass-card p-7 rounded-2xl">
-            <div class="flex items-center gap-1 text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="text-gray-200 italic">“Su capacidad técnica y visión de producto nos sorprendió. El sistema que desarrolló para gestión interna es robusto y elegante. Recomiendo 100%.”</p>
-            <div class="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-400 to-indigo-500 flex items-center justify-center text-white font-bold">JR</div>
-              <div><p class="font-semibold">Javier Ríos</p><p class="text-xs text-gray-400">Director de Innovación</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  status.style.color = '#f87171';
+  if (!nombre) { status.textContent = 'Por favor ingresá tu nombre.'; return; }
+  if (!email || !email.includes('@')) { status.textContent = 'Por favor ingresá un email válido.'; return; }
+  if (!mensaje) { status.textContent = 'Por favor describí tu proyecto.'; return; }
 
-    <!-- CONTACTO / WHATSAPP: formulario elegante sin campo "asunto" y envío por WhatsApp -->
-    <section id="contacto" class="py-28 px-6 relative">
-      <div class="max-w-5xl mx-auto">
-        <div class="glass-card rounded-3xl p-8 md:p-12" data-aos="zoom-in-up">
-          <div class="text-center mb-10">
-            <span class="text-teal-400 text-sm font-semibold uppercase tracking-wider">Comunicate</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2">Hablemos de tu <span class="text-teal-300">próximo proyecto</span></h2>
-            <p class="text-gray-400 mt-3 max-w-xl mx-auto">Contame tu idea, y juntos la convertiremos en una solución digital de alto impacto.</p>
-          </div>
-          <form id="contactForm" class="grid md:grid-cols-2 gap-6">
-            <input type="text" id="nombre" placeholder="Nombre completo" class="bg-black/40 border border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:border-teal-400 transition text-white" required>
-            <input type="email" id="email" placeholder="Correo electrónico" class="bg-black/40 border border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:border-teal-400 transition" required>
-            <input type="tel" id="telefono" placeholder="Teléfono (opcional)" class="bg-black/40 border border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:border-teal-400 transition">
-            <textarea id="mensaje" rows="4" placeholder="Contame sobre tu proyecto..." class="bg-black/40 border border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:border-teal-400 transition md:col-span-2" required></textarea>
-            <div class="md:col-span-2 flex justify-center">
-              <button type="submit" class="btn-primary px-10 py-3 rounded-full text-white font-semibold text-lg w-full md:w-auto transition-all shadow-md flex items-center justify-center gap-2">
-                <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
-              </button>
-            </div>
-            <p id="formStatus" class="text-center md:col-span-2 text-sm mt-2"></p>
-          </form>
-          <div class="flex justify-center gap-8 mt-12 text-gray-400">
-            <a href="https://www.instagram.com/gwevdeb?igsh=MWpsZ2NldG12NnBsMg==" target="_blank" class="hover:text-teal-400 transition text-xl"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://wa.me/5493515205739?text=Hola%20Gonzalo%2C%20me%20interesa%20tu%20trabajo" target="_blank" class="hover:text-teal-400 transition"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  let msg = `*Contacto desde gonzalowebdev.netlify.app*%0A%0A`;
+  msg += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
+  msg += `*Email:* ${encodeURIComponent(email)}%0A`;
+  if (telefono) msg += `*Tel:* ${encodeURIComponent(telefono)}%0A`;
+  msg += `%0A*Proyecto:*%0A${encodeURIComponent(mensaje)}`;
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/5 py-10 text-center text-gray-500 text-sm">
-      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>© 2025 Gonzalowebdev@gmail.com</p>
-        <div class="flex gap-5">
-          <a href="#inicio" class="hover:text-teal-400 transition">Inicio</a>
-          <a href="#servicios" class="hover:text-teal-400 transition">Servicios</a>
-          <a href="#sobre-mi" class="hover:text-teal-400 transition">Sobre mí</a>
-        </div>
-      </div>
-    </footer>
-  </main>
+  status.style.color = '#a0a0a0';
+  status.textContent = 'Abriendo WhatsApp…';
 
-  <!-- Scripts: AOS y contador animado + formulario WhatsApp (sin campo asunto) -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Inicializar AOS (animaciones)
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100,
-      easing: 'ease-out-quad'
+  setTimeout(() => {
+    window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+    status.style.color = '#c8f04a';
+    status.textContent = '¡Listo! Completá el envío en WhatsApp.';
+    ['nombre','email','telefono','mensaje'].forEach(id => {
+      document.getElementById(id).value = '';
     });
-
-    // Contadores animados (para las estadísticas)
-    const counters = document.querySelectorAll('.counter');
-    const animateCounters = () => {
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = parseInt(counter.getAttribute('data-target'));
-          let current = parseInt(counter.innerText);
-          const increment = Math.ceil(target / 12);
-          if(current < target) {
-            let newValue = current + increment;
-            if(newValue > target) newValue = target;
-            counter.innerText = newValue;
-            setTimeout(updateCount, 40);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        updateCount();
-      });
-    };
-    // Activar contadores cuando entren en viewport
-    const statsSection = document.querySelector('.border-y');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    if(statsSection) observer.observe(statsSection);
-
-    // FORMULARIO WHATSAPP: sin campo "asunto" y redirección a WhatsApp con mensaje predefinido
-    const form = document.getElementById('contactForm');
-    const statusMsg = document.getElementById('formStatus');
-
-    // Número de teléfono (coloca tu número con código de país sin el signo +, ejemplo: 5491123456789)
-    // REEMPLAZA ESTE NÚMERO CON EL TUYO PARA QUE FUNCIONE CORRECTAMENTE
-    const TELEFONO_EMPRESA = "5493515205739"; // <--- CAMBIAR POR TU NÚMERO DE WHATSAPP REAL
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
-      
-      if(!nombre || !email || !mensaje) {
-        statusMsg.innerHTML = '<span class="text-red-400"><i class="fas fa-exclamation-circle"></i> Por favor completa los campos requeridos: nombre, email y mensaje.</span>';
-        return;
-      }
-      if(!email.includes('@') || !email.includes('.')) {
-        statusMsg.innerHTML = '<span class="text-red-400"><i class="fas fa-envelope"></i> Correo electrónico inválido.</span>';
-        return;
-      }
-      
-      // Construir mensaje para WhatsApp con formato claro y profesional
-      let whatsappMessage = `*Nuevo contacto desde landing page*%0A%0A`;
-      whatsappMessage += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
-      whatsappMessage += `*Email:* ${encodeURIComponent(email)}%0A`;
-      if(telefono) whatsappMessage += `*Teléfono:* ${encodeURIComponent(telefono)}%0A`;
-      whatsappMessage += `*Mensaje:*%0A${encodeURIComponent(mensaje)}%0A%0A`;
-      whatsappMessage += `-- Gonzalo Dev --`;
-      
-      const urlWhatsapp = `https://wa.me/${TELEFONO_EMPRESA}?text=${whatsappMessage}`;
-      
-      // Pequeña simulación de "enviando" para mejorar UX
-      statusMsg.innerHTML = '<span class="text-teal-400"><i class="fas fa-spinner fa-pulse"></i> Redirigiendo a WhatsApp...</span>';
-      
-      setTimeout(() => {
-        window.open(urlWhatsapp, '_blank');
-        statusMsg.innerHTML = '<span class="text-green-400"><i class="fas fa-check-circle"></i> ¡Gracias! Serás redirigido a WhatsApp para finalizar.</span>';
-        form.reset();
-        setTimeout(() => {
-          statusMsg.innerHTML = '';
-        }, 5000);
-      }, 600);
-    });
-  </script>
+    setTimeout(() => status.textContent = '', 6000);
+  }, 500);
+}
+</script>
 </body>
 </html>
