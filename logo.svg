@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="GWD">
+  <title>GWD</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f7099"/>
+      <stop offset="0.5" stop-color="#2b63a0"/>
+      <stop offset="1" stop-color="#143c6e"/>
+    </linearGradient>
+    <radialGradient id="bgGlow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#2f7cc4" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2f7cc4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8fe0ff" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#5bbcf5" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5bbcf5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#0a2447" flood-opacity="0.35"/>
+    </filter>
+    <pattern id="grid" x="215" y="215" width="59.5" height="59.5" patternUnits="userSpaceOnUse">
+      <path d="M0 0H59.5M0 0V59.5" fill="none" stroke="#d3dce6" stroke-width="1.6"/>
+    </pattern>
+    <clipPath id="cardClip"><rect x="187" y="185" width="651" height="650" rx="72"/></clipPath>
+  </defs>
+
+  <style>
+    .led-halo { opacity: 0; transform-box: fill-box; transform-origin: center; animation: ledPulse 3s ease-in-out infinite; }
+    .led-core { opacity: 0; animation: ledCore 3s ease-in-out infinite; }
+    .l1 { animation-delay: 0s; }
+    .l2 { animation-delay: 1s; }
+    .l3 { animation-delay: 2s; }
+    @keyframes ledPulse {
+      0%   { opacity: 0;   transform: scale(0.55); }
+      15%  { opacity: 1;   transform: scale(1.15); }
+      40%  { opacity: 0.35; transform: scale(1.35); }
+      55%, 100% { opacity: 0; transform: scale(1.5); }
+    }
+    @keyframes ledCore {
+      0%   { opacity: 0; }
+      15%  { opacity: 1; }
+      45%  { opacity: 0.25; }
+      60%, 100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .led-halo, .led-core { animation: none; }
+      .l2.led-halo { opacity: 1; }
+      .l2.led-core { opacity: 1; }
+    }
+  </style>
+
+  <!-- Fondo -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#bgGlow)"/>
+
+  <!-- Esquinas naranjas -->
+  <g fill="none" stroke="#f5a623" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M142 212V142H212"/>
+    <path d="M882 212V142H812"/>
+    <path d="M126 838V902H196"/>
+    <path d="M898 838V902H830"/>
+  </g>
+
+  <!-- Tarjeta -->
+  <rect x="187" y="185" width="651" height="650" rx="72" fill="#f6f8fb" filter="url(#cardShadow)"/>
+  <rect x="187" y="185" width="651" height="650" rx="72" fill="none" stroke="#dfe6ee" stroke-width="3"/>
+  <rect x="187" y="185" width="651" height="650" fill="url(#grid)" clip-path="url(#cardClip)"/>
+
+  <!-- Letras GWD -->
+  <g fill="none" stroke="#14284d" stroke-width="30" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10">
+    <!-- G -->
+    <path d="M377 443H291L263 471V553L291 581H349L377 553V510H322"/>
+    <!-- W -->
+    <path d="M425 443V553L453 581H484L512 553L540 581H571L599 553V443"/>
+    <path d="M512 492V553"/>
+    <!-- D -->
+    <path d="M640 443H733L761 471V553L733 581H640Z"/>
+  </g>
+
+  <!-- Luces superiores (fijas) -->
+  <g stroke="#14284d" stroke-width="12">
+    <circle cx="289" cy="289" r="34" fill="#d94b3d"/>
+    <circle cx="511" cy="289" r="34" fill="#2fb5a8"/>
+    <circle cx="733" cy="289" r="34" fill="#d94b3d"/>
+  </g>
+
+  <!-- Luces inferiores (animadas) -->
+  <g>
+    <circle class="led-halo l1" cx="289" cy="725" r="78" fill="url(#halo)"/>
+    <circle class="led-halo l2" cx="511" cy="725" r="78" fill="url(#halo)"/>
+    <circle class="led-halo l3" cx="733" cy="725" r="78" fill="url(#halo)"/>
+
+    <g stroke="#14284d" stroke-width="12">
+      <circle cx="289" cy="725" r="34" fill="#3b8fd4"/>
+      <circle cx="511" cy="725" r="34" fill="#7fd3f7"/>
+      <circle cx="733" cy="725" r="34" fill="#2fb5a8"/>
+    </g>
+
+    <circle class="led-core l1" cx="289" cy="725" r="28" fill="#bfe6ff"/>
+    <circle class="led-core l2" cx="511" cy="725" r="28" fill="#e6fbff"/>
+    <circle class="led-core l3" cx="733" cy="725" r="28" fill="#a9f3ea"/>
+  </g>
+</svg>
