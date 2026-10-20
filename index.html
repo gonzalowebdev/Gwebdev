@@ -986,13 +986,18 @@ textarea.field-input {
   .bt-word { opacity: 1; filter: none; transform: none; transition: none; }
   .hero-title em .bt-word { animation: none; }
 }
+
+/* Logo SVG (nav y footer) */
+.nav-logo { display: flex; align-items: center; line-height: 0; }
+.nav-logo img { width: 36px; height: 36px; border-radius: 8px; }
+.footer-logo img { width: 44px; height: 44px; border-radius: 10px; }
 </style>
 </head>
 <body>
 
 <!-- ══════════ NAV ══════════ -->
 <nav class="nav">
-  <a href="#inicio" class="nav-logo">G<span>.</span></a>
+  <a href="#inicio" class="nav-logo" aria-label="Gonzalo — GWD"><img src="logo.svg" alt="GWD" width="36" height="36"></a>
 
   <ul class="nav-links">
     <li><a href="#inicio">Inicio</a></li>
@@ -1348,7 +1353,7 @@ textarea.field-input {
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="footer-logo">Gonzalo.</div>
+        <div class="footer-logo"><img src="logo.svg" alt="GWD" width="44" height="44"></div>
         <div class="footer-copy">© 2025 · Córdoba, Argentina</div>
       </div>
       <ul class="footer-nav">
