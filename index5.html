@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070d1f">
+<meta name="description" content="Gonzalo — Desarrollador web full stack en Córdoba, Argentina. Sitios web, landing pages y aplicaciones a medida.">
+<meta name="keywords" content="desarrollador web Córdoba, freelance full stack Argentina, landing page, React, Node.js">
+<meta property="og:title" content="Gonzalo — Desarrollador Web Full Stack">
+<meta property="og:description" content="Sitios web y aplicaciones que convierten visitantes en clientes. Córdoba, Argentina.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonzalowebdev.netlify.app">
+<meta property="og:image" content="https://gonzalowebdev.netlify.app/Img1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<title>Gonzalo — Desarrollador Web Full Stack</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* ═══════════════════════════════════════
+   BENTO GRID + GLASSMORPHISM — Gonzalo · GWD
+═══════════════════════════════════════ */
+:root {
+  --bg: #070d1f;
+  --txt: #ffffff;
+  --mut: rgba(255,255,255,0.72);
+  --mut2: rgba(255,255,255,0.5);
+  --or: #f5a623;
+  --or2: #ff7a59;
+  --blue: #4ea4ff;
+  --teal: #2fd6c4;
+  --line: rgba(255,255,255,0.18);
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r: 28px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; background: var(--bg); overflow-x: clip; }
+body { font-family: var(--font); font-size: 17px; line-height: 1.55; color: var(--txt); background: transparent; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font-family: inherit; }
+::selection { background: var(--or); color: #1a1100; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 14px; }
+
+/* ── Aurora de fondo ── */
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: radial-gradient(1100px 700px at 85% -10%, #123a86 0%, transparent 62%), radial-gradient(900px 700px at -10% 110%, #0d2a63 0%, transparent 60%), var(--bg); }
+.blob { position: absolute; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle at center, var(--c) 0%, transparent 68%); opacity: .55; translate: calc(var(--px, 0) * var(--k, 30) * 1px) calc(var(--py, 0) * var(--k, 30) * 1px); animation: drift var(--t, 24s) ease-in-out infinite alternate; }
+.blob.b1 { --c: #f5a623; left: -180px; top: -120px; --k: 40; opacity: .42; }
+.blob.b2 { --c: #2fd6c4; right: -220px; top: 18%; --t: 30s; --k: -30; opacity: .4; }
+.blob.b3 { --c: #4ea4ff; left: 12%; bottom: -260px; --t: 27s; --k: 50; opacity: .6; }
+.blob.b4 { --c: #ff6b8b; right: 6%; bottom: -200px; --t: 33s; --k: -45; opacity: .32; }
+@keyframes drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(80px, 60px) scale(1.18); } }
+
+/* ── Vidrio ── */
+.glass {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.4), inset 0 1px 0 rgba(255,255,255,0.28);
+  overflow: hidden;
+}
+.glass::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 3; opacity: 0; transition: opacity .4s;
+  background: radial-gradient(420px circle at var(--mx, 30%) var(--my, 0%), rgba(255,255,255,0.18), transparent 55%);
+}
+.glass:hover::before { opacity: 1; }
+
+/* ── Botones / chips ── */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 16px/1 var(--font); padding: 15px 24px; border-radius: 999px; border: 1px solid var(--line); color: #fff; background: rgba(255,255,255,0.1); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); cursor: pointer; transition: transform .25s cubic-bezier(.2,.9,.2,1), box-shadow .25s, background .25s; }
+.btn:hover { transform: translateY(-3px); background: rgba(255,255,255,0.18); }
+.btn.pri { background: linear-gradient(135deg, #ffd27a, var(--or) 55%, var(--or2)); color: #1a1100; border-color: rgba(255,255,255,0.5); box-shadow: 0 8px 30px rgba(245,166,35,0.45), inset 0 1px 0 rgba(255,255,255,0.6); }
+.btn.pri:hover { box-shadow: 0 14px 40px rgba(245,166,35,0.6), inset 0 1px 0 rgba(255,255,255,0.6); background: linear-gradient(135deg, #ffe0a0, #ffb43a 55%, var(--or2)); }
+.btn-sm { padding: 10px 18px; font-size: 14px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid var(--line); color: #fff; width: fit-content; }
+.grad { background: linear-gradient(90deg, #ffd27a, var(--or) 45%, var(--or2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ── Nav flotante ── */
+.nav { position: fixed; z-index: 100; top: 12px; left: 50%; transform: translateX(-50%); width: min(calc(100% - 24px), 1000px); display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 8px 10px 8px 12px; border-radius: 999px; }
+.nav-logo { display: block; line-height: 0; transition: transform .4s cubic-bezier(.2,.9,.2,1); }
+.nav-logo:hover { transform: rotate(-6deg) scale(1.08); }
+.nav-logo img { width: 44px; height: 44px; }
+.nav-links { display: none; gap: 4px; }
+.nav-links a { padding: 9px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; color: var(--mut); transition: background .25s, color .25s; }
+.nav-links a:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.nav-right { display: flex; align-items: center; gap: 8px; }
+.nav-cta { display: none; }
+.burger { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255,255,255,0.1); display: grid; place-content: center; gap: 5px; cursor: pointer; }
+.burger span { display: block; width: 18px; height: 2px; border-radius: 2px; background: #fff; transition: transform .3s, opacity .2s; }
+.burger.open span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
+.drawer { position: fixed; z-index: 99; top: 76px; left: 12px; right: 12px; padding: 12px; display: grid; gap: 4px; opacity: 0; visibility: hidden; transform: translateY(-12px) scale(.98); transition: opacity .3s, transform .3s, visibility .3s; }
+.drawer.open { opacity: 1; visibility: visible; transform: none; }
+.dlink { padding: 16px 18px; border-radius: 18px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.dlink:active, .dlink:hover { background: rgba(255,255,255,0.14); }
+@media (min-width: 900px) { .nav-links { display: flex; } .nav-cta { display: inline-flex; } .burger, .drawer { display: none !important; } }
+
+/* ── Tiles / Bento ── */
+.tile { padding: 24px; }
+.bento { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.hero { padding-top: 100px; }
+.t-hero { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 22px; padding: 28px 24px; }
+.t-hero h1 { font-size: clamp(40px, 9.5vw, 84px); line-height: 1.02; font-weight: 800; letter-spacing: -.045em; }
+.t-hero h1 .w1 { background: linear-gradient(180deg, #fff, #bcd8ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.t-hero p { font-size: 19px; color: var(--mut); max-width: 520px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #34f5c5; box-shadow: 0 0 0 0 rgba(52,245,197,.6); animation: ping 2s infinite; }
+@keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(52,245,197,0); } 100% { box-shadow: 0 0 0 0 rgba(52,245,197,0); } }
+
+.t-logo { display: grid; place-items: center; padding: 20px; min-height: 190px; }
+.t-logo::after { content: ''; position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(78,164,255,0.55), transparent 65%); z-index: 0; animation: glowp 5s ease-in-out infinite; }
+@keyframes glowp { 0%,100% { transform: scale(.85); opacity: .7; } 50% { transform: scale(1.15); opacity: 1; } }
+.t-logo img { position: relative; z-index: 1; width: min(100%, 250px); animation: bob 6s ease-in-out infinite; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.4)); }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-12px) rotate(1.5deg); } }
+
+.t-status { display: flex; flex-direction: column; justify-content: space-between; gap: 10px; min-height: 190px; }
+.t-status .lbl { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+.clock { font-size: clamp(34px, 8vw, 46px); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.small { color: var(--mut2); font-size: 14px; }
+.t-cta { grid-column: 1 / -1; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; background: linear-gradient(135deg, rgba(245,166,35,0.42), rgba(255,122,89,0.2)); border-color: rgba(255,210,122,0.4); transition: transform .3s cubic-bezier(.2,.9,.2,1); }
+.t-cta:hover { transform: translateY(-4px); }
+.t-cta .big { font-size: 64px; font-weight: 800; letter-spacing: -.05em; line-height: .9; }
+.t-cta .row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.arrow { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 24px; background: rgba(255,255,255,0.9); color: #1a1100; transition: transform .35s cubic-bezier(.2,.9,.2,1); flex-shrink: 0; }
+.t-cta:hover .arrow { transform: translateY(6px); }
+.t-stat { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 22px 20px; }
+.stat-v { font-size: clamp(40px, 9vw, 58px); font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+.stat-l { color: var(--mut); font-size: 14px; font-weight: 500; line-height: 1.3; }
+.t-marq { grid-column: 1 / -1; padding: 18px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marq-track { display: flex; gap: 10px; width: max-content; animation: marq 40s linear infinite; padding-left: 10px; }
+.marq-track .chip { font-size: 15px; padding: 9px 20px; }
+@keyframes marq { to { transform: translateX(-50%); } }
+
+@media (min-width: 900px) {
+  .hero { padding-top: 112px; }
+  .bento { grid-template-columns: repeat(4, 1fr); gap: 18px; grid-auto-rows: minmax(150px, auto); }
+  .t-hero { grid-column: 1 / 3; grid-row: 1 / 3; justify-content: space-between; padding: 36px; }
+  .t-logo { grid-column: 3 / 4; grid-row: 1 / 3; }
+  .t-status { grid-column: 4 / 5; grid-row: 1 / 2; }
+  .t-cta { grid-column: 4 / 5; grid-row: 2 / 3; }
+  .t-marq { grid-column: 1 / -1; }
+}
+
+/* ── Secciones ── */
+.section { padding: 96px 0 0; }
+.sec-head { display: grid; gap: 14px; margin-bottom: 30px; padding: 0 6px; }
+.sec-title { font-size: clamp(40px, 8.5vw, 84px); line-height: 1.02; font-weight: 800; letter-spacing: -.045em; }
+.sec-sub { color: var(--mut); font-size: 19px; max-width: 520px; }
+@media (min-width: 900px) { .sec-head { grid-template-columns: 1fr auto; align-items: end; } .sec-head .sec-sub { grid-column: 2; grid-row: 1 / 3; text-align: left; } }
+
+/* ── Portafolio ── */
+.pgrid { display: grid; grid-template-columns: 1fr; grid-auto-rows: 360px; gap: 14px; }
+.pt { display: block; color: #fff; isolation: isolate; -webkit-backdrop-filter: none; backdrop-filter: none; transition: transform .25s ease-out, box-shadow .4s; padding: 0; }
+.pt:hover { box-shadow: 0 24px 60px rgba(2,6,23,0.55), inset 0 1px 0 rgba(255,255,255,0.35); }
+.pt img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; z-index: -2; transition: transform 1.1s cubic-bezier(.2,.9,.2,1); }
+.pt:hover img { transform: scale(1.07); }
+.scrim { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(4,9,25,0.82) 0%, rgba(4,9,25,0.25) 48%, transparent 72%); }
+.pnum { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 13px; font-weight: 700; padding: 5px 13px; border-radius: 999px; background: rgba(255,255,255,0.18); border: 1px solid var(--line); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.cap { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 2; padding: 16px 16px 16px 18px; border-radius: 22px; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.24); -webkit-backdrop-filter: blur(18px) saturate(170%); backdrop-filter: blur(18px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: end; }
+.cap .chip { font-size: 12px; padding: 3px 11px; margin-bottom: 8px; background: rgba(255,255,255,0.16); }
+.ptitle { font-size: 23px; line-height: 1.1; font-weight: 800; letter-spacing: -.03em; }
+.pdesc { color: var(--mut); font-size: 14.5px; line-height: 1.4; margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.go { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; font-weight: 700; background: linear-gradient(135deg, #ffd27a, var(--or)); color: #1a1100; box-shadow: 0 6px 20px rgba(245,166,35,0.45); transition: transform .4s cubic-bezier(.2,.9,.2,1); }
+.pt:hover .go { transform: rotate(45deg) scale(1.1); }
+@media (min-width: 640px) {
+  .pgrid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 330px; }
+  .pt:nth-child(1), .pt:nth-child(4) { grid-column: span 2; }
+}
+@media (min-width: 1000px) {
+  .pgrid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 320px; gap: 18px; }
+  .pt:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .pt:nth-child(4), .pt:nth-child(5), .pt:nth-child(6) { grid-column: span 2; }
+  .pt:nth-child(1) .ptitle { font-size: 38px; }
+  .pt:nth-child(1) .pdesc { font-size: 17px; -webkit-line-clamp: 3; }
+  .pt:nth-child(1) .cap { padding: 22px 22px 22px 26px; }
+  .pt:nth-child(1) .go { width: 58px; height: 58px; font-size: 24px; }
+}
+
+/* ── Servicios ── */
+.sgrid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.svc { padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; transition: transform .35s cubic-bezier(.2,.9,.2,1); }
+.svc:hover { transform: translateY(-5px); }
+.ico { width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.06)); border: 1px solid var(--line); box-shadow: inset 0 1px 0 rgba(255,255,255,0.4); transition: transform .45s cubic-bezier(.2,.9,.2,1); }
+.svc:hover .ico { transform: rotate(-8deg) scale(1.1); }
+.ico svg { width: 30px; height: 30px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.svc h3 { font-size: 24px; line-height: 1.1; font-weight: 800; letter-spacing: -.03em; }
+.svc p { color: var(--mut); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
+.tags .chip { font-size: 12.5px; padding: 4px 12px; }
+.svc.tint1 { background: linear-gradient(135deg, rgba(78,164,255,0.28), rgba(255,255,255,0.05)); }
+.svc.tint2 { background: linear-gradient(135deg, rgba(47,214,196,0.26), rgba(255,255,255,0.05)); }
+.svc.tint3 { background: linear-gradient(135deg, rgba(255,107,139,0.24), rgba(255,255,255,0.05)); }
+.svc.tint4 { background: linear-gradient(135deg, rgba(245,166,35,0.26), rgba(255,255,255,0.05)); }
+.svc-cta { justify-content: space-between; background: linear-gradient(135deg, rgba(245,166,35,0.45), rgba(255,122,89,0.22)); border-color: rgba(255,210,122,0.4); }
+.svc-cta h3 { font-size: clamp(30px, 5vw, 44px); }
+@media (min-width: 640px) { .sgrid { grid-template-columns: repeat(2, 1fr); } .svc-cta { grid-column: 1 / -1; } }
+@media (min-width: 1000px) {
+  .sgrid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .svc:nth-child(1), .svc:nth-child(4), .svc-cta { grid-column: span 2; }
+  .svc-cta { grid-column: span 2; }
+}
+
+/* ── Contacto ── */
+.cgrid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.c-title { padding: 30px 26px; display: flex; flex-direction: column; gap: 14px; }
+.c-title h2 { font-size: clamp(38px, 7vw, 66px); line-height: 1.02; font-weight: 800; letter-spacing: -.045em; }
+.c-title p { color: var(--mut); font-size: 19px; max-width: 440px; }
+.clink { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 22px 24px; font-weight: 700; font-size: 18px; transition: transform .3s cubic-bezier(.2,.9,.2,1); word-break: break-all; }
+.clink:hover { transform: translateY(-4px); }
+.clink .ci { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.clink .ci i { flex-shrink: 0; width: 46px; height: 46px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.06)); border: 1px solid var(--line); font-style: normal; }
+.clink .ci svg { width: 22px; height: 22px; }
+.clink .ar { opacity: .6; transition: transform .3s, opacity .3s; }
+.clink:hover .ar { transform: translate(3px,-3px); opacity: 1; }
+.c-form { padding: 28px 24px; display: grid; gap: 16px; align-content: start; }
+.form-row { display: grid; gap: 16px; }
+.field-label { display: block; font-size: 14px; font-weight: 600; color: var(--mut); margin-bottom: 6px; }
+.field-input { width: 100%; font: 500 17px var(--font); color: #fff; background: rgba(255,255,255,0.08); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; outline: none; resize: vertical; transition: border-color .25s, box-shadow .25s, background .25s; }
+.field-input::placeholder { color: rgba(255,255,255,0.4); }
+.field-input:focus { background: rgba(255,255,255,0.12); border-color: rgba(255,210,122,0.8); box-shadow: 0 0 0 4px rgba(245,166,35,0.22); }
+.form-note { font-size: 14px; color: var(--mut2); }
+.form-status { min-height: 1.4em; font-size: 15px; font-weight: 600; }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) {
+  .cgrid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .c-title { grid-column: 1 / 3; grid-row: 1 / 2; }
+  .c-form { grid-column: 3 / 5; grid-row: 1 / 4; padding: 34px; }
+  .c-wa { grid-column: 1 / 2; } .c-ig { grid-column: 2 / 3; } .c-mail { grid-column: 1 / 3; }
+  .clink { padding: 26px; }
+}
+
+/* ── Footer ── */
+.footer { margin: 70px auto 24px; padding: 0 14px; max-width: 1240px; }
+.footer-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 22px; border-radius: 999px; }
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-brand img { width: 52px; height: 52px; }
+.footer-copy { color: var(--mut); font-size: 14px; font-weight: 500; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.footer-nav a { font-size: 15px; font-weight: 600; color: var(--mut); transition: color .25s; }
+.footer-nav a:hover { color: #fff; }
+@media (max-width: 640px) { .footer-bar { border-radius: 32px; } }
+
+/* ── Reveal ── */
+.js .rv { opacity: 0; }
+.js .rv.in { opacity: 1; animation: rvIn .85s var(--d, 0s) cubic-bezier(.2,.9,.2,1) backwards; }
+@keyframes rvIn { from { opacity: 0; transform: translateY(34px) scale(.96); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .rv { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<div class="aurora" id="aurora" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i></div>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav glass">
+  <a href="#inicio" class="nav-logo" aria-label="Gonzalo — GWD"><img src="logo-glass.svg" alt="GWD" width="44" height="44"></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#inicio">Inicio</a>
+    <a href="#proyectos">Portafolio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="nav-right">
+    <a href="#contacto" class="btn pri btn-sm nav-cta">Hablemos →</a>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="drawer glass" id="drawer" aria-label="Menú móvil">
+  <a href="#inicio" class="dlink">Inicio</a>
+  <a href="#proyectos" class="dlink">Portafolio</a>
+  <a href="#servicios" class="dlink">Servicios</a>
+  <a href="#contacto" class="dlink">Contacto</a>
+</nav>
+
+<main>
+
+<!-- ══════════ HERO (bento) ══════════ -->
+<section id="inicio" class="hero">
+  <div class="wrap">
+    <div class="bento">
+
+      <div class="tile glass t-hero rv">
+        <span class="chip"><span class="dot"></span> Desarrollador web · Córdoba, Argentina</span>
+        <h1><span class="w1">Sitios web que</span><br><span class="grad">trabajan por vos</span></h1>
+        <div>
+          <p>Creo landing pages, sitios y aplicaciones web que convierten visitantes en clientes. Código limpio, diseño sin ruido, resultados reales.</p>
+          <div class="hero-actions" style="margin-top:22px;">
+            <a href="#proyectos" class="btn pri">Ver portafolio ↓</a>
+            <a href="#contacto" class="btn">Hablemos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile glass t-logo rv" style="--d:.08s"><img src="logo-glass.svg" alt="GWD" width="250" height="250"></div>
+
+      <div class="tile glass t-status rv" style="--d:.14s">
+        <div class="lbl"><span class="dot"></span> Disponible para proyectos</div>
+        <div>
+          <div class="clock" id="clock">--:--</div>
+          <div class="small">Córdoba, AR · respondo en menos de 24 h</div>
+        </div>
+      </div>
+
+      <a href="#proyectos" class="tile glass t-cta rv" style="--d:.2s">
+        <span class="chip">Portafolio</span>
+        <div class="row">
+          <div><div class="big">06</div><div style="font-weight:600;">proyectos reales</div></div>
+          <span class="arrow">↓</span>
+        </div>
+      </a>
+
+      <div class="tile glass t-stat rv" style="--d:.05s" id="statsWrap"><div class="stat-v grad"><span class="counter" data-target="1">0</span>+</div><div class="stat-l">Años de experiencia</div></div>
+      <div class="tile glass t-stat rv" style="--d:.1s"><div class="stat-v grad"><span class="counter" data-target="10">0</span>+</div><div class="stat-l">Proyectos entregados</div></div>
+      <div class="tile glass t-stat rv" style="--d:.15s"><div class="stat-v grad"><span class="counter" data-target="100">0</span>%</div><div class="stat-l">Satisfacción del cliente</div></div>
+      <div class="tile glass t-stat rv" style="--d:.2s"><div class="stat-v grad">24/7</div><div class="stat-l">Soporte dedicado</div></div>
+
+      <div class="glass t-marq rv" aria-hidden="true"><div class="marq-track" id="marqTrack"></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PORTAFOLIO ══════════ -->
+<section id="proyectos" class="section">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="chip">Portafolio</span>
+      <h2 class="sec-title">Trabajo <span class="grad">reciente</span></h2>
+      <p class="sec-sub">Seis sitios reales hechos para clientes reales. Tocá cualquiera para visitarlo.</p>
+    </div>
+
+    <div class="pgrid">
+
+      <!-- P1 -->
+      <a class="pt glass rv" href="https://vamosporahi.com" target="_blank" rel="noopener" aria-label="Visitar Vamos Por Ahí">
+        <img src="img5.jpg" alt="Vamos Por Ahí" decoding="async"
+             onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}">
+        <span class="scrim"></span><span class="pnum">01</span>
+        <div class="cap">
+          <div><span class="chip">Landing Page</span><h3 class="ptitle">Vamos Por Ahí</h3><p class="pdesc">Landing de alta conversión para asesoría en redes sociales. CTA claro, diseño limpio y enfocado.</p></div>
+          <span class="go">↗</span>
+        </div>
+      </a>
+
+      <!-- P2 -->
+      <a class="pt glass rv" style="--d:.08s" href="https://eduarda1950.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Eduarda Bar 1950">
+        <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Feduarda1950.netlify.app%2F?w=900&amp;h=700" data-fb="https://image.thum.io/get/width/900/crop/700/https://eduarda1950.netlify.app/" alt="Eduarda Bar 1950" decoding="async"
+             onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}">
+        <span class="scrim"></span><span class="pnum">02</span>
+        <div class="cap">
+          <div><span class="chip">Carta digital</span><h3 class="ptitle">Eduarda Bar 1950</h3><p class="pdesc">Carta web para un bar de Unquillo: menú por categorías, ubicación con mapa y reservas o pedidos directo por WhatsApp.</p></div>
+          <span class="go">↗</span>
+        </div>
+      </a>
+
+      <!-- P3 -->
+      <a class="pt glass rv" style="--d:.16s" href="https://democlinica3.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Clinic — Gestión clínica">
+        <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdemoclinica3.netlify.app%2F?w=900&amp;h=700" data-fb="https://image.thum.io/get/width/900/crop/700/https://democlinica3.netlify.app/" alt="Clinic — Gestión clínica" decoding="async"
+             onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}">
+        <span class="scrim"></span><span class="pnum">03</span>
+        <div class="cap">
+          <div><span class="chip">Aplicación web</span><h3 class="ptitle">Clinic — Gestión clínica</h3><p class="pdesc">Sistema de gestión clínica: pacientes, historias clínicas, estudios y profesionales, con acceso seguro por roles.</p></div>
+          <span class="go">↗</span>
+        </div>
+      </a>
+
+      <!-- P4 -->
+      <a class="pt glass rv" href="https://giseladesiree.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Od. Gisela Desiree">
+        <img src="https://giseladesiree.netlify.app/img2.jpg" data-fb="https://s0.wp.com/mshots/v1/https%3A%2F%2Fgiseladesiree.netlify.app%2F?w=900&amp;h=700" alt="Od. Gisela Desiree Ramella" decoding="async"
+             onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}">
+        <span class="scrim"></span><span class="pnum">04</span>
+        <div class="cap">
+          <div><span class="chip">Sitio profesional</span><h3 class="ptitle">Od. Gisela Desiree</h3><p class="pdesc">Sitio para consultorio odontológico con servicios, formación, preguntas frecuentes y reserva de turnos online.</p></div>
+          <span class="go">↗</span>
+        </div>
+      </a>
+
+      <!-- P5 -->
+      <a class="pt glass rv" style="--d:.08s" href="https://metgarzon.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Garzón — Estructuras Metálicas">
+        <img src="https://metgarzon.netlify.app/images/galpon-interior.jpg" data-fb="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmetgarzon.netlify.app%2F?w=900&amp;h=700" alt="Garzón — Estructuras Metálicas" decoding="async"
+             onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}">
+        <span class="scrim"></span><span class="pnum">05</span>
+        <div class="cap">
+          <div><span class="chip">Landing Page</span><h3 class="ptitle">Garzón — Estructuras Metálicas</h3><p class="pdesc">Landing para metalúrgica de galpones y tinglados: servicios, proceso de obra, obras entregadas y pedido de cotización.</p></div>
+          <span class="go">↗</span>
+        </div>
+      </a>
+
+      <!-- P6 -->
+      <a class="pt glass rv" style="--d:.16s" href="https://abrildavila.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Abril Dávila">
+        <img src="https://abrildavila.netlify.app/perfil.jpg" data-fb="https://s0.wp.com/mshots/v1/https%3A%2F%2Fabrildavila.netlify.app%2F?w=900&amp;h=700" alt="Abril Dávila — Psicóloga Clínica" decoding="async"
+             onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}">
+        <span class="scrim"></span><span class="pnum">06</span>
+        <div class="cap">
+          <div><span class="chip">Sitio profesional</span><h3 class="ptitle">Abril Dávila</h3><p class="pdesc">Sitio para psicóloga clínica con enfoque, servicios y contacto directo por WhatsApp. Diseño cálido y sereno.</p></div>
+          <span class="go">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICIOS ══════════ -->
+<section id="servicios" class="section">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="chip">Servicios</span>
+      <h2 class="sec-title">Lo que construyo <span class="grad">para vos</span></h2>
+    </div>
+
+    <div class="sgrid">
+      <div class="glass svc tint1 rv">
+        <div class="ico"><svg viewBox="0 0 64 64"><rect x="6" y="10" width="52" height="42" rx="6"/><path d="M6 22H58M14 32h20M14 40h14"/><rect x="38" y="30" width="14" height="14" rx="3"/></svg></div>
+        <h3>Landing Pages &amp; Sitios Web</h3>
+        <p>Páginas que convierten. Diseño claro, carga veloz, estructura pensada para que el visitante tome acción.</p>
+        <div class="tags"><span class="chip">HTML/CSS</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Responsive</span></div>
+      </div>
+
+      <div class="glass svc tint2 rv" style="--d:.08s">
+        <div class="ico"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="16" rx="18" ry="7"/><path d="M14 16v14c0 4 8 7 18 7s18-3 18-7V16M14 30v14c0 4 8 7 18 7s18-3 18-7V30"/></svg></div>
+        <h3>Aplicaciones Full Stack</h3>
+        <p>Frontend y backend integrados. APIs, bases de datos y lógica de negocio. Desde el diseño hasta el servidor.</p>
+        <div class="tags"><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">MongoDB</span><span class="chip">MySQL</span></div>
+      </div>
+
+      <div class="glass svc tint3 rv" style="--d:.16s">
+        <div class="ico"><svg viewBox="0 0 64 64"><path d="M6 10h8l6 30h30l5-22H16"/><circle cx="24" cy="50" r="4"/><circle cx="46" cy="50" r="4"/></svg></div>
+        <h3>E-commerce &amp; Tiendas Online</h3>
+        <p>Tiendas a medida o con plataformas existentes. Carrito, pagos integrados y experiencia de compra impecable.</p>
+        <div class="tags"><span class="chip">WooCommerce</span><span class="chip">Custom</span><span class="chip">Pagos</span></div>
+      </div>
+
+      <div class="glass svc tint4 rv">
+        <div class="ico"><svg viewBox="0 0 64 64"><path d="M32 6c10 6 14 18 12 32H20C18 24 22 12 32 6z"/><circle cx="32" cy="24" r="5"/><path d="M20 38l-8 10 10-2M44 38l8 10-10-2M28 44l4 10 4-10"/></svg></div>
+        <h3>Performance, SEO &amp; Despliegue</h3>
+        <p>Core Web Vitals, posicionamiento en Google, hosting en Vercel o AWS. Tu sitio rápido y visible.</p>
+        <div class="tags"><span class="chip">SEO</span><span class="chip">Vercel</span><span class="chip">AWS</span><span class="chip">CI/CD</span></div>
+      </div>
+
+      <a href="#contacto" class="glass svc svc-cta rv" style="--d:.08s">
+        <span class="chip">Siguiente proyecto</span>
+        <h3>¿Tenés una idea?<br>Hagámosla real.</h3>
+        <span class="btn pri" style="width:fit-content;">Hablemos →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<section id="contacto" class="section">
+  <div class="wrap">
+    <div class="cgrid">
+
+      <div class="glass c-title rv">
+        <span class="chip">Contacto</span>
+        <h2>Hablemos de <span class="grad">tu proyecto</span></h2>
+        <p>Contame qué necesitás y te respondo en menos de 24 horas con una propuesta concreta. Sin vueltas.</p>
+      </div>
+
+      <a href="https://wa.me/5493515205739" target="_blank" rel="noopener" class="glass clink c-wa rv" style="--d:.08s">
+        <span class="ci"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.952-1.418A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.66 0-3.21-.45-4.54-1.23l-.324-.194-3.36.962.963-3.266-.213-.34A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg></i>WhatsApp</span>
+        <span class="ar">↗</span>
+      </a>
+
+      <a href="https://www.instagram.com/gwevdeb" target="_blank" rel="noopener" class="glass clink c-ig rv" style="--d:.14s">
+        <span class="ci"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></i>@gwevdeb</span>
+        <span class="ar">↗</span>
+      </a>
+
+      <a href="mailto:gonzalowebdev@gmail.com" class="glass clink c-mail rv" style="--d:.2s">
+        <span class="ci"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></i>gonzalowebdev@gmail.com</span>
+        <span class="ar">↗</span>
+      </a>
+
+      <div class="glass c-form rv" style="--d:.1s" id="contactForm">
+        <div class="form-row">
+          <div>
+            <label class="field-label" for="nombre">Nombre *</label>
+            <input type="text" id="nombre" class="field-input" placeholder="Tu nombre" autocomplete="name">
+          </div>
+          <div>
+            <label class="field-label" for="email">Email *</label>
+            <input type="email" id="email" class="field-input" placeholder="tu@email.com" autocomplete="email">
+          </div>
+        </div>
+        <div>
+          <label class="field-label" for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" class="field-input" placeholder="Opcional" autocomplete="tel">
+        </div>
+        <div>
+          <label class="field-label" for="mensaje">Proyecto *</label>
+          <textarea id="mensaje" class="field-input" rows="5" placeholder="¿Qué necesitás, para cuándo y cuál es tu presupuesto?"></textarea>
+        </div>
+        <p class="form-note">Al enviar se abrirá WhatsApp con tu mensaje. Respondo en menos de 24h.</p>
+        <button class="btn pri" onclick="handleSubmit()" style="width:100%;">Enviar por WhatsApp →</button>
+        <p class="form-status" id="formStatus"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="glass footer-bar">
+    <div class="footer-brand">
+      <img src="logo-glass.svg" alt="GWD" width="52" height="52">
+      <div class="footer-copy">© 2026 · Córdoba, Argentina</div>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#proyectos">Portafolio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine   = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+// ── Menú móvil
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  drawer.classList.toggle('open');
+});
+document.querySelectorAll('.dlink').forEach(l =>
+  l.addEventListener('click', () => {
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+  })
+);
+
+// ── Reloj de Córdoba
+const clock = document.getElementById('clock');
+function tickClock() {
+  try {
+    clock.textContent = new Intl.DateTimeFormat('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Argentina/Cordoba' }).format(new Date());
+  } catch (e) { clock.textContent = ''; }
+}
+tickClock(); setInterval(tickClock, 20000);
+
+// ── Marquesina de tecnologías
+const techs = ['React','Next.js','Node.js','JavaScript','TypeScript','Python','PHP','Laravel','MySQL','MongoDB','Tailwind CSS','Git','Vercel','AWS','Figma'];
+const mt = document.getElementById('marqTrack');
+[...techs, ...techs].forEach(t => {
+  const c = document.createElement('span');
+  c.className = 'chip';
+  c.textContent = t;
+  mt.appendChild(c);
+});
+
+// ── Reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// ── Contadores
+let countRan = false;
+const countIO = new IntersectionObserver(entries => {
+  if (!entries[0].isIntersecting || countRan) return;
+  countRan = true;
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = +el.dataset.target;
+    let cur = 0;
+    const inc = Math.ceil(target / 20);
+    const t = setInterval(() => {
+      cur = Math.min(cur + inc, target);
+      el.textContent = cur;
+      if (cur >= target) clearInterval(t);
+    }, 40);
+  });
+}, { threshold: 0.3 });
+countIO.observe(document.getElementById('statsWrap'));
+
+// ── Brillo de vidrio que sigue al cursor + inclinación en proyectos
+if (fine && !reduce) {
+  document.querySelectorAll('.glass').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+  document.querySelectorAll('.pt').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = `perspective(900px) rotateX(${(-py * 5).toFixed(2)}deg) rotateY(${(px * 5).toFixed(2)}deg) translateY(-4px)`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+
+  // Parallax suave de las luces de fondo
+  const aurora = document.getElementById('aurora');
+  let raf = 0, ax = 0, ay = 0;
+  window.addEventListener('pointermove', e => {
+    ax = e.clientX / window.innerWidth - 0.5;
+    ay = e.clientY / window.innerHeight - 0.5;
+    if (!raf) raf = requestAnimationFrame(() => {
+      raf = 0;
+      aurora.style.setProperty('--px', ax.toFixed(3));
+      aurora.style.setProperty('--py', ay.toFixed(3));
+    });
+  });
+}
+
+// ── Formulario → WhatsApp
+const WA = '5493515205739';
+function handleSubmit() {
+  const nombre   = document.getElementById('nombre').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const mensaje  = document.getElementById('mensaje').value.trim();
+  const status   = document.getElementById('formStatus');
+
+  status.style.color = '#ff9d8f';
+  if (!nombre) { status.textContent = 'Por favor ingresá tu nombre.'; return; }
+  if (!email || !email.includes('@')) { status.textContent = 'Por favor ingresá un email válido.'; return; }
+  if (!mensaje) { status.textContent = 'Por favor describí tu proyecto.'; return; }
+
+  let msg = `*Contacto desde gonzalowebdev.netlify.app*%0A%0A`;
+  msg += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
+  msg += `*Email:* ${encodeURIComponent(email)}%0A`;
+  if (telefono) msg += `*Tel:* ${encodeURIComponent(telefono)}%0A`;
+  msg += `%0A*Proyecto:*%0A${encodeURIComponent(mensaje)}`;
+
+  status.style.color = 'rgba(255,255,255,0.7)';
+  status.textContent = 'Abriendo WhatsApp…';
+
+  setTimeout(() => {
+    window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+    status.style.color = '#5eead4';
+    status.textContent = '¡Listo! Completá el envío en WhatsApp.';
+    ['nombre','email','telefono','mensaje'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    setTimeout(() => status.textContent = '', 6000);
+  }, 500);
+}
+</script>
+</body>
+</html>
