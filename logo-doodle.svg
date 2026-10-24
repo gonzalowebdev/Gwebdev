@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="GWD">
+  <title>GWD</title>
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M0 0H64M0 0V64" fill="none" stroke="#14284d" stroke-opacity="0.09" stroke-width="3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .hop, .spk, .ring { transform-box: fill-box; }
+    .hop { transform-origin: center bottom; animation: hop 2.4s ease-in-out infinite; }
+    .spk { transform-origin: center; opacity: 0; animation: spk 2.4s ease-out infinite; }
+    .ring { transform-origin: center; animation: ringSpin 6s linear infinite; }
+    .d2 { animation-delay: .35s; }
+    .d3 { animation-delay: .7s; }
+    @keyframes hop {
+      0%, 60%, 100% { transform: translateY(0) scale(1, 1); }
+      8%  { transform: translateY(0) scale(1.14, .86); }
+      28% { transform: translateY(-36px) scale(.94, 1.08); }
+      48% { transform: translateY(0) scale(1.12, .88); }
+    }
+    @keyframes spk {
+      0%, 12% { opacity: 0; transform: scale(.2) rotate(0deg); }
+      30%     { opacity: 1; transform: scale(1) rotate(40deg); }
+      55%, 100% { opacity: 0; transform: scale(.4) rotate(90deg); }
+    }
+    @keyframes ringSpin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .hop, .spk, .ring { animation: none; }
+      .spk { opacity: 0; }
+    }
+  </style>
+
+  <!-- Papel -->
+  <rect width="1024" height="1024" fill="#fbf8ef"/>
+  <rect width="1024" height="1024" fill="url(#grid)"/>
+
+  <g filter="url(#rough)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Esquinas naranjas -->
+    <g stroke="#f5a623" stroke-width="22">
+      <path d="M142 214C140 190 143 165 147 143C170 141 194 146 214 141"/>
+      <path d="M882 214C884 190 881 165 877 143C854 141 830 146 810 141"/>
+      <path d="M126 838C124 862 127 884 131 903C154 901 176 905 197 901"/>
+      <path d="M898 838C900 862 897 884 893 903C870 901 848 905 827 901"/>
+    </g>
+
+    <!-- Sombra dura + tarjeta -->
+    <path d="M246 208C416 198 656 204 806 208C842 212 854 232 854 268C858 438 852 658 854 788C852 830 834 850 796 852C636 858 416 848 261 854C222 852 204 834 206 794C200 618 206 418 204 268C206 228 220 210 246 208Z" fill="#14284d" stroke="#14284d" stroke-width="12"/>
+    <path d="M230 190C400 180 640 186 790 190C826 194 838 214 838 250C842 420 836 640 838 770C836 812 818 832 780 834C620 840 400 830 245 836C206 834 188 816 190 776C184 600 190 400 188 250C190 210 204 192 230 190Z" fill="#ffffff" stroke="#14284d" stroke-width="12"/>
+
+    <!-- Marcador amarillo detrás de las letras -->
+    <path d="M246 452C400 438 640 446 782 440C790 478 786 540 782 590C640 600 400 592 250 598C242 548 244 492 246 452Z" fill="#ffe66d" stroke="none"/>
+
+    <!-- Letras GWD (trazo de marcador) -->
+    <g stroke="#14284d" stroke-width="34">
+      <path d="M376 478C352 446 300 444 276 480C254 514 262 566 298 584C334 598 372 576 376 536L324 534"/>
+      <path d="M414 450C418 506 428 560 442 584C458 562 472 524 486 496C500 526 514 562 530 584C546 562 556 506 562 450"/>
+      <path d="M626 452L624 584C706 590 766 560 764 516C762 468 704 446 626 452Z"/>
+    </g>
+
+    <!-- Subrayado -->
+    <path d="M262 630C320 618 360 646 420 632S520 616 580 632 700 646 770 628" stroke="#d94b3d" stroke-width="9"/>
+
+    <!-- Luces superiores -->
+    <g stroke="#14284d" stroke-width="10">
+      <g transform="translate(289 289)"><circle r="38" fill="#d94b3d"/><path d="M-18 -12Q-10 -24 4 -26" stroke="#fff" stroke-width="7"/></g>
+      <g transform="translate(511 289)"><circle r="38" fill="#2fb5a8"/><path d="M-18 -12Q-10 -24 4 -26" stroke="#fff" stroke-width="7"/></g>
+      <g transform="translate(733 289)"><circle r="38" fill="#d94b3d"/><path d="M-18 -12Q-10 -24 4 -26" stroke="#fff" stroke-width="7"/></g>
+    </g>
+  </g>
+
+  <!-- Chispas (aparecen cuando salta cada luz) -->
+  <g stroke="#f5a623" stroke-width="7" stroke-linecap="round" fill="none">
+    <g transform="translate(289 640)"><g class="spk"><path d="M0 -24V24M-24 0H24M-16 -16L16 16M16 -16L-16 16"/></g></g>
+    <g transform="translate(511 640)"><g class="spk d2"><path d="M0 -24V24M-24 0H24M-16 -16L16 16M16 -16L-16 16"/></g></g>
+    <g transform="translate(733 640)"><g class="spk d3"><path d="M0 -24V24M-24 0H24M-16 -16L16 16M16 -16L-16 16"/></g></g>
+  </g>
+
+  <!-- Anillo punteado alrededor de la luz central -->
+  <g transform="translate(511 725)">
+    <circle class="ring" r="62" fill="none" stroke="#3b8fd4" stroke-width="6" stroke-linecap="round" stroke-dasharray="4 18"/>
+  </g>
+
+  <!-- Luces inferiores (saltan en secuencia) -->
+  <g filter="url(#rough)" fill="none" stroke="#14284d" stroke-width="10" stroke-linecap="round">
+    <g transform="translate(289 725)"><g class="hop"><circle r="38" fill="#3b8fd4"/><path d="M-18 -12Q-10 -24 4 -26" stroke="#fff" stroke-width="7"/></g></g>
+    <g transform="translate(511 725)"><g class="hop d2"><circle r="38" fill="#7fd3f7"/><path d="M-18 -12Q-10 -24 4 -26" stroke="#fff" stroke-width="7"/></g></g>
+    <g transform="translate(733 725)"><g class="hop d3"><circle r="38" fill="#2fb5a8"/><path d="M-18 -12Q-10 -24 4 -26" stroke="#fff" stroke-width="7"/></g></g>
+  </g>
+</svg>

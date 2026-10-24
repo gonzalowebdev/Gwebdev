@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="GWD" shape-rendering="crispEdges">
+  <title>GWD</title>
+  <style>
+    .on { animation: onoff 3s steps(1) infinite; }
+    .b2 { animation-delay: 1s; }
+    .b3 { animation-delay: 2s; }
+    @keyframes onoff { 0% { opacity: 1; } 33% { opacity: 1; } 33.01% { opacity: 0; } 100% { opacity: 0; } }
+    .ghost { animation: glitch 3.6s steps(1) infinite; }
+    @keyframes glitch {
+      0%, 86%, 100% { transform: translate(14px, 14px); }
+      88% { transform: translate(-16px, 6px); }
+      91% { transform: translate(22px, -10px); }
+      94% { transform: translate(6px, 20px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .on, .ghost { animation: none; }
+      .b2 { opacity: 1; }
+      .b1, .b3 { opacity: 0; }
+    }
+  </style>
+
+  <rect width="1024" height="1024" fill="#fff"/>
+
+  <!-- Sombra dura -->
+  <rect x="104" y="104" width="864" height="864" fill="#000"/>
+  <!-- Marco -->
+  <rect x="56" y="56" width="864" height="864" fill="#fff" stroke="#000" stroke-width="28"/>
+
+  <!-- Barra superior -->
+  <rect x="70" y="70" width="836" height="112" fill="#ffeb00"/>
+  <rect x="70" y="182" width="836" height="20" fill="#000"/>
+  <g stroke="#000" stroke-width="12">
+    <rect x="160" y="96" width="60" height="60" fill="#ff2a00"/>
+    <rect x="458" y="96" width="60" height="60" fill="#2a2aff"/>
+    <rect x="756" y="96" width="60" height="60" fill="#ff2a00"/>
+  </g>
+
+  <!-- Letras fantasma (rojo) -->
+  <g class="ghost" fill="#ff2a00">
+    <rect x="100" y="250" width="230" height="70"/><rect x="100" y="250" width="70" height="400"/><rect x="100" y="580" width="230" height="70"/><rect x="260" y="450" width="70" height="200"/><rect x="190" y="450" width="140" height="70"/>
+    <rect x="345" y="250" width="70" height="400"/><rect x="505" y="250" width="70" height="400"/><rect x="425" y="420" width="70" height="230"/><rect x="345" y="580" width="230" height="70"/>
+    <rect x="590" y="250" width="70" height="400"/><rect x="590" y="250" width="160" height="70"/><rect x="590" y="580" width="160" height="70"/><rect x="750" y="320" width="70" height="260"/>
+    <polygon points="750,250 820,320 750,320"/><polygon points="750,650 820,580 750,580"/>
+  </g>
+
+  <!-- Letras GWD (bloques) -->
+  <g fill="#000">
+    <!-- G -->
+    <rect x="100" y="250" width="230" height="70"/><rect x="100" y="250" width="70" height="400"/><rect x="100" y="580" width="230" height="70"/><rect x="260" y="450" width="70" height="200"/><rect x="190" y="450" width="140" height="70"/>
+    <!-- W -->
+    <rect x="345" y="250" width="70" height="400"/><rect x="505" y="250" width="70" height="400"/><rect x="425" y="420" width="70" height="230"/><rect x="345" y="580" width="230" height="70"/>
+    <!-- D -->
+    <rect x="590" y="250" width="70" height="400"/><rect x="590" y="250" width="160" height="70"/><rect x="590" y="580" width="160" height="70"/><rect x="750" y="320" width="70" height="260"/>
+    <polygon points="750,250 820,320 750,320"/><polygon points="750,650 820,580 750,580"/>
+  </g>
+
+  <!-- Barra inferior -->
+  <rect x="70" y="700" width="836" height="20" fill="#000"/>
+  <rect x="70" y="720" width="836" height="162" fill="#fff"/>
+  <g stroke="#000" stroke-width="12" fill="#fff">
+    <rect x="152" y="754" width="84" height="84"/>
+    <rect x="446" y="754" width="84" height="84"/>
+    <rect x="740" y="754" width="84" height="84"/>
+  </g>
+  <rect class="on b1" x="158" y="760" width="72" height="72" fill="#2a2aff"/>
+  <rect class="on b2" x="452" y="760" width="72" height="72" fill="#ffeb00"/>
+  <rect class="on b3" x="746" y="760" width="72" height="72" fill="#ff2a00"/>
+</svg>
