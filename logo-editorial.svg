@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="GWD">
+  <title>GWD</title>
+  <style>
+    .fill { transform-box: fill-box; transform-origin: center; transform: scale(0); animation: pg 3.6s cubic-bezier(.5,0,.2,1) infinite; }
+    .p2 { animation-delay: 1.2s; }
+    .p3 { animation-delay: 2.4s; }
+    .bar { transform-box: fill-box; transform-origin: left center; animation: bar 3.6s cubic-bezier(.6,0,.2,1) infinite; }
+    @keyframes pg {
+      0%   { transform: scale(0); }
+      10%  { transform: scale(1.12); }
+      16%  { transform: scale(1); }
+      30%  { transform: scale(1); }
+      38%  { transform: scale(0); }
+      100% { transform: scale(0); }
+    }
+    @keyframes bar {
+      0%   { transform: scaleX(0); }
+      85%  { transform: scaleX(1); }
+      100% { transform: scaleX(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fill, .bar { animation: none; }
+      .p2 { transform: scale(1); }
+      .bar { transform: scaleX(1); }
+    }
+  </style>
+
+  <rect width="1024" height="1024" fill="#f4f1ea"/>
+
+  <!-- Marcas de corte (naranja) -->
+  <g stroke="#f5a623" stroke-width="5" stroke-linecap="square">
+    <path d="M26 70H58M70 26V58"/>
+    <path d="M998 70H966M954 26V58"/>
+    <path d="M26 954H58M70 998V966"/>
+    <path d="M998 954H966M954 998V966"/>
+  </g>
+
+  <!-- Doble filete -->
+  <rect x="70" y="70" width="884" height="884" fill="none" stroke="#0f1b33" stroke-width="4"/>
+  <rect x="86" y="86" width="852" height="852" fill="none" stroke="#0f1b33" stroke-width="1.5"/>
+
+  <!-- Fila superior: puntos + filetes -->
+  <g stroke="#0f1b33" stroke-width="2">
+    <path d="M140 200H272M328 200H484M540 200H696M752 200H884"/>
+  </g>
+  <circle cx="300" cy="200" r="20" fill="#d94b3d"/>
+  <circle cx="512" cy="200" r="20" fill="#2fb5a8"/>
+  <circle cx="724" cy="200" r="20" fill="#d94b3d"/>
+
+  <!-- Cabecera editorial -->
+  <path d="M130 344H894" stroke="#0f1b33" stroke-width="8"/>
+  <path d="M130 360H894" stroke="#0f1b33" stroke-width="2"/>
+  <g transform="translate(112.0 600) scale(0.15267 -0.15267)" fill="#0f1b33"><path transform="translate(0)" d="M1406 70Q1282 29 1118.0 4.5Q954 -20 823 -20Q604 -20 440.5 60.0Q277 140 188.5 293.0Q100 446 100 655Q100 992 292.5 1174.0Q485 1356 842 1356Q929 1356 1000.5 1349.0Q1072 1342 1134.0 1330.0Q1196 1318 1362 1271V963H1272L1248 1137Q1169 1191 1074.0 1221.0Q979 1251 878 1251Q645 1251 538.5 1106.0Q432 961 432 657Q432 374 544.5 228.5Q657 83 870 83Q986 83 1091 118V506L919 532V606H1537V532L1406 506Z"/><path transform="translate(1653)" d="M1501 -31H1378L1044 796L713 -31H590L146 1242L29 1268V1341H631V1268L474 1242L760 443L1074 1227H1199L1514 445L1751 1242L1582 1268V1341H2016V1268L1899 1242Z"/><path transform="translate(3761)" d="M1047 670Q1047 960 941.0 1095.5Q835 1231 596 1231H522V114Q618 106 696 106Q826 106 901.5 162.0Q977 218 1012.0 337.5Q1047 457 1047 670ZM673 1341Q1034 1341 1206.5 1177.5Q1379 1014 1379 678Q1379 333 1214.0 164.5Q1049 -4 715 -4L266 0H36V73L208 100V1242L36 1268V1341Z"/></g>
+  <path d="M130 650H894" stroke="#0f1b33" stroke-width="2"/>
+  <path d="M130 666H894" stroke="#0f1b33" stroke-width="8"/>
+  <rect class="bar" x="130" y="700" width="764" height="6" fill="#f5a623"/>
+
+  <!-- Fila inferior: paginación (se encienden en secuencia) -->
+  <g stroke="#0f1b33" stroke-width="2">
+    <path d="M140 820H236M388 820H450M574 820H636M788 820H884"/>
+  </g>
+  <g fill="none" stroke="#0f1b33" stroke-width="5">
+    <circle cx="300" cy="820" r="40"/>
+    <circle cx="512" cy="820" r="40"/>
+    <circle cx="724" cy="820" r="40"/>
+  </g>
+  <circle class="fill p1" cx="300" cy="820" r="28" fill="#3b8fd4"/>
+  <circle class="fill p2" cx="512" cy="820" r="28" fill="#7fd3f7"/>
+  <circle class="fill p3" cx="724" cy="820" r="28" fill="#2fb5a8"/>
+</svg>
