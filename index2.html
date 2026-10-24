@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gonzalo — Desarrollador web full stack en Córdoba, Argentina. Sitios web, landing pages y aplicaciones a medida.">
+<meta name="keywords" content="desarrollador web Córdoba, freelance full stack Argentina, landing page, React, Node.js">
+<meta property="og:title" content="Gonzalo — Desarrollador Web Full Stack">
+<meta property="og:description" content="Sitios web y aplicaciones que convierten visitantes en clientes. Córdoba, Argentina.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonzalowebdev.netlify.app">
+<meta property="og:image" content="https://gonzalowebdev.netlify.app/Img1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<title>Gonzalo — Desarrollador Web Full Stack</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* ═══════════════════════════════════════
+   DOODLE / SKETCH — Gonzalo · GWD
+═══════════════════════════════════════ */
+:root {
+  --paper: #fbf8ef;
+  --paper2: #f1ecda;
+  --ink: #14284d;
+  --ink2: #3a4d70;
+  --orange: #f5a623;
+  --red: #d94b3d;
+  --teal: #2fb5a8;
+  --blue: #3b8fd4;
+  --yellow: #ffe66d;
+  --pink: #ffc9d0;
+  --mint: #c4f0e6;
+  --sky: #cfe6fb;
+  --hand: 'Caveat Brush', 'Caveat', cursive;
+  --note: 'Caveat', cursive;
+  --body: 'Patrick Hand', 'Segoe Print', 'Comic Sans MS', sans-serif;
+  --w1: 14px 24px 16px 26px / 24px 14px 26px 16px;
+  --w2: 22px 12px 26px 14px / 14px 26px 12px 22px;
+  --w3: 18px 28px 12px 22px / 26px 12px 24px 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; overflow-x: clip; }
+body {
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(20,40,77,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,40,77,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font-family: inherit; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 84px 0; position: relative; }
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--hand); font-size: 22px; line-height: 1.1;
+  padding: 11px 24px;
+  color: var(--ink); background: var(--orange);
+  border: 3px solid var(--ink); border-radius: var(--w2);
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+  transition: transform .18s cubic-bezier(.3,1.6,.5,1), box-shadow .18s;
+}
+.btn:hover { transform: translate(-2px,-3px) rotate(-1.5deg); box-shadow: 7px 8px 0 var(--ink); }
+.btn:active { transform: translate(3px,3px); box-shadow: 1px 1px 0 var(--ink); }
+.btn-white { background: #fff; }
+.btn-sm { font-size: 20px; padding: 7px 18px; box-shadow: 3px 3px 0 var(--ink); }
+
+/* ── Nav ── */
+.top { position: sticky; top: 0; z-index: 60; background: rgba(251,248,239,0.94); backdrop-filter: blur(6px); border-bottom: 3px solid var(--ink); }
+.top::after { content: ''; position: absolute; left: 0; right: 0; bottom: -9px; height: 0; border-bottom: 3px dashed rgba(20,40,77,0.35); pointer-events: none; }
+.nav { max-width: 1160px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.nav-logo { display: block; line-height: 0; transition: transform .25s cubic-bezier(.3,1.6,.5,1); }
+.nav-logo:hover { transform: rotate(-8deg) scale(1.08); }
+.nav-logo img { width: 48px; height: 48px; border-radius: 10px; border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.nav-links { display: none; gap: 6px; }
+.nav-links a {
+  font-family: var(--hand); font-size: 22px; padding: 4px 14px; border-radius: var(--w2); display: block;
+  transition: background .2s, transform .2s;
+}
+.nav-links a:hover { background: var(--yellow); transform: rotate(-3deg); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-ig { display: none; width: 40px; height: 40px; place-items: center; border: 3px solid var(--ink); border-radius: 50%; background: #fff; transition: transform .2s, background .2s; }
+.nav-ig:hover { background: var(--pink); transform: rotate(12deg) scale(1.08); }
+.nav-cta { display: none; }
+.burger { width: 46px; height: 42px; border: 3px solid var(--ink); border-radius: var(--w2); background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); }
+.burger span { display: block; width: 22px; height: 3px; background: var(--ink); border-radius: 3px; transition: transform .25s, opacity .25s; }
+.burger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.drawer { display: none; flex-direction: column; gap: 4px; padding: 10px 20px 18px; border-top: 3px dashed rgba(20,40,77,0.35); }
+.drawer.open { display: flex; }
+.dlink { font-family: var(--hand); font-size: 28px; padding: 6px 12px; border-radius: var(--w2); }
+.dlink:active { background: var(--yellow); }
+@media (min-width: 880px) {
+  .nav-links { display: flex; }
+  .nav-ig { display: grid; }
+  .nav-cta { display: inline-flex; }
+  .burger, .drawer { display: none !important; }
+}
+
+/* ── Hero ── */
+.hero { padding: 56px 0 40px; position: relative; }
+.hero-grid { display: grid; gap: 40px; align-items: center; }
+.hero-eyebrow {
+  display: inline-block; font-family: var(--note); font-weight: 700; font-size: 22px;
+  padding: 2px 16px; background: #fff; border: 3px solid var(--ink); border-radius: var(--w2);
+  rotate: -2deg; box-shadow: 3px 3px 0 var(--ink); margin-bottom: 22px;
+}
+.hero-title { font-family: var(--hand); font-weight: 400; font-size: clamp(46px, 11vw, 98px); line-height: 1.02; letter-spacing: -0.5px; margin-bottom: 22px; }
+.mark {
+  background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%) no-repeat;
+  background-size: 0% 100%;
+  padding: 0 .1em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  animation: swipe .9s 1.2s cubic-bezier(.6,.1,.2,1) forwards;
+}
+@keyframes swipe { to { background-size: 100% 100%; } }
+.js .w { display: inline-block; opacity: 0; animation: popIn .65s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: calc(var(--i) * 100ms + 150ms); }
+@keyframes popIn { from { opacity: 0; transform: translateY(28px) rotate(-7deg) scale(.8); } to { opacity: 1; transform: none; } }
+.hero-desc { font-size: 22px; color: var(--ink2); max-width: 520px; margin-bottom: 30px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.hero-note { font-family: var(--note); font-weight: 700; font-size: 24px; color: var(--red); display: none; align-items: center; gap: 4px; rotate: -4deg; }
+.hero-note svg { width: 54px; height: 46px; }
+
+.hero-art { position: relative; min-height: 340px; display: grid; place-items: center; }
+.sketch-window {
+  position: relative; width: min(100%, 420px); background: #fff; border: 3px solid var(--ink); border-radius: var(--w1);
+  box-shadow: 8px 8px 0 var(--ink); rotate: 2.5deg; overflow: visible;
+  animation: bob 5s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+.sketch-window .browser-bar { border-radius: 12px 22px 0 0; }
+.sw-body { padding: 22px 22px 26px; display: grid; gap: 16px; justify-items: center; }
+.sw-logo { width: 62%; border-radius: 16px; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.sw-lines { width: 100%; display: grid; gap: 9px; }
+.sw-lines b { display: block; height: 10px; border-radius: 10px; border: 2.5px solid var(--ink); background: var(--paper2); transform-origin: left; animation: lineGrow 1.1s cubic-bezier(.6,.1,.2,1) both; }
+.sw-lines b:nth-child(1) { width: 92%; animation-delay: .9s; }
+.sw-lines b:nth-child(2) { width: 70%; animation-delay: 1.1s; background: var(--yellow); }
+.sw-lines b:nth-child(3) { width: 82%; animation-delay: 1.3s; }
+@keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.cursor { position: absolute; width: 38px; height: 38px; right: 34px; bottom: 22px; filter: drop-shadow(2px 2px 0 rgba(20,40,77,0.35)); animation: cursorMove 6s ease-in-out infinite; }
+@keyframes cursorMove {
+  0%,100% { translate: 0 0; } 30% { translate: -150px -70px; } 55% { translate: -90px -150px; } 75% { translate: -120px -40px; }
+}
+.doodle { position: absolute; pointer-events: none; fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; filter: url(#rough); }
+.doodle.star { fill: var(--orange); }
+.doodle.d1 { width: 64px; height: 64px; top: 0; left: 4%; animation: spin 14s linear infinite; }
+.doodle.d2 { width: 46px; height: 46px; bottom: 8%; left: 0; fill: var(--teal); animation: spin 18s linear infinite reverse; }
+.doodle.d3 { width: 96px; height: 40px; top: 6%; right: 0; stroke: var(--red); stroke-width: 3.2; animation: floaty 4s ease-in-out infinite; }
+.doodle.d4 { width: 40px; height: 40px; bottom: 2%; right: 8%; stroke: var(--blue); stroke-width: 3.2; animation: spin 9s ease-in-out infinite alternate; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-12px) rotate(4deg); } }
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.3s .8s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (min-width: 900px) {
+  .hero { padding: 72px 0 56px; }
+  .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 56px; }
+  .hero-note { display: inline-flex; }
+}
+
+/* ── Stats (post-its) ── */
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 56px; }
+.stat {
+  position: relative; padding: 22px 12px 16px; text-align: center; background: var(--c, var(--yellow));
+  border: 3px solid var(--ink); border-radius: var(--w1); box-shadow: 4px 4px 0 var(--ink);
+  rotate: var(--r, 0deg); transition: rotate .3s cubic-bezier(.3,1.6,.5,1), translate .3s;
+}
+.stat:hover { rotate: 0deg; translate: 0 -6px; }
+.stat::before { content: ''; position: absolute; top: -12px; left: 50%; width: 64px; height: 22px; margin-left: -32px; background: rgba(245,166,35,0.6); rotate: 3deg; border-left: 2px dashed rgba(20,40,77,0.3); border-right: 2px dashed rgba(20,40,77,0.3); }
+.stat-val { font-family: var(--hand); font-size: 46px; line-height: 1; }
+.stat-label { font-family: var(--note); font-weight: 700; font-size: 21px; line-height: 1.15; margin-top: 4px; }
+@media (min-width: 760px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+
+/* ── Encabezados de sección ── */
+.tag {
+  display: inline-block; font-family: var(--note); font-weight: 700; font-size: 22px;
+  padding: 0 16px; background: var(--yellow); border: 3px solid var(--ink); border-radius: var(--w2);
+  rotate: -2deg; margin-bottom: 14px; box-shadow: 3px 3px 0 var(--ink);
+}
+.sec-title { font-family: var(--hand); font-weight: 400; font-size: clamp(42px, 8vw, 78px); line-height: 1.04; }
+.scribble {
+  padding-bottom: .12em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' viewBox='0 0 24 8'%3E%3Cpath d='M0 4 Q6 0 12 4 T24 4' fill='none' stroke='%23d94b3d' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 100% / 24px 8px;
+}
+.sec-sub { font-size: 22px; color: var(--ink2); max-width: 560px; margin-top: 14px; }
+
+/* ── Portafolio ── */
+.portfolio { padding-top: 56px; }
+.portfolio-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: 52px; }
+.projects { display: grid; gap: 48px 34px; grid-template-columns: 1fr; }
+.card {
+  position: relative; background: #fff; border: 3px solid var(--ink); border-radius: var(--w1);
+  box-shadow: 6px 6px 0 var(--ink); padding: 14px 14px 20px; rotate: var(--r, 0deg);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: rotate .3s cubic-bezier(.3,1.6,.5,1), translate .3s, box-shadow .3s;
+}
+.card:hover { rotate: 0deg; translate: 0 -8px; box-shadow: 10px 12px 0 var(--ink); }
+.tape { position: absolute; top: -16px; left: 50%; width: 92px; height: 28px; margin-left: -46px; background: rgba(245,166,35,0.6); rotate: -3deg; border-left: 2px dashed rgba(20,40,77,0.3); border-right: 2px dashed rgba(20,40,77,0.3); z-index: 3; }
+.card:nth-child(even) .tape { background: rgba(47,181,168,0.55); rotate: 3deg; }
+.num {
+  position: absolute; top: -18px; right: -14px; width: 48px; height: 48px; display: grid; place-items: center;
+  font-family: var(--hand); font-size: 24px; background: var(--c, var(--orange)); border: 3px solid var(--ink); border-radius: 50%; rotate: 8deg; z-index: 3;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.browser { display: block; border: 3px solid var(--ink); border-radius: var(--w3); overflow: hidden; background: #fff; }
+.browser-bar { display: flex; align-items: center; gap: 6px; padding: 7px 10px; border-bottom: 3px solid var(--ink); background: var(--yellow); }
+.browser-bar i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--ink); background: var(--red); flex-shrink: 0; }
+.browser-bar i:nth-child(2) { background: var(--orange); }
+.browser-bar i:nth-child(3) { background: var(--teal); }
+.url { flex: 1; min-width: 0; margin-left: 8px; padding: 0 12px; font-family: var(--note); font-weight: 700; font-size: 17px; line-height: 1.5; background: #fff; border: 2px solid var(--ink); border-radius: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.shot { aspect-ratio: 16 / 10; background: var(--paper2); overflow: hidden; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.card:hover .shot img { transform: scale(1.06); }
+.card-body { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 0 6px; flex: 1; }
+.chip {
+  display: inline-block; font-family: var(--note); font-weight: 700; font-size: 18px; line-height: 1.4; padding: 0 12px;
+  background: var(--c, var(--yellow)); border: 2px solid var(--ink); border-radius: var(--w2); rotate: -2deg;
+}
+.card-title { font-family: var(--hand); font-weight: 400; font-size: 31px; line-height: 1.1; }
+.card-desc { font-size: 18px; color: var(--ink2); line-height: 1.4; flex: 1; }
+.go { display: inline-flex; align-items: center; gap: 8px; font-family: var(--hand); font-size: 23px; text-decoration: underline wavy var(--red) 2px; text-underline-offset: 6px; margin-top: 6px; }
+.go svg { width: 22px; height: 22px; fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s cubic-bezier(.3,1.6,.5,1); }
+.go:hover svg { transform: translate(4px,-4px) rotate(8deg); }
+.cards-cta { margin-top: 64px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px; text-align: center; }
+.cards-cta p { font-family: var(--note); font-weight: 700; font-size: 30px; }
+.projects .card:nth-child(6n+1) { --r: -1.4deg; --c: var(--sky); }
+.projects .card:nth-child(6n+2) { --r: 1.1deg;  --c: var(--pink); }
+.projects .card:nth-child(6n+3) { --r: -.8deg;  --c: var(--mint); }
+.projects .card:nth-child(6n+4) { --r: 1.4deg;  --c: var(--yellow); }
+.projects .card:nth-child(6n+5) { --r: -1.1deg; --c: var(--pink); }
+.projects .card:nth-child(6n+6) { --r: .9deg;   --c: var(--sky); }
+@media (min-width: 700px)  { .projects { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1060px) { .projects { grid-template-columns: repeat(3, 1fr); } }
+
+/* ── Ticker ── */
+.ticker { overflow: hidden; background: var(--orange); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); rotate: -1.4deg; margin: 22px -20px 14px; padding: 12px 0; }
+.ticker-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
+.ticker-item { display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-family: var(--hand); font-size: 28px; white-space: nowrap; }
+.ticker-item::after { content: '✦'; font-size: 22px; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ── Servicios ── */
+.services-head { margin-bottom: 48px; }
+.services { display: grid; gap: 34px; grid-template-columns: 1fr; }
+.svc {
+  position: relative; padding: 26px 24px 24px; background: var(--c, #fff); border: 3px solid var(--ink); border-radius: var(--w3);
+  box-shadow: 6px 6px 0 var(--ink); rotate: var(--r, 0deg);
+  transition: rotate .3s cubic-bezier(.3,1.6,.5,1), translate .3s, box-shadow .3s;
+}
+.svc:hover { rotate: 0deg; translate: 0 -6px; box-shadow: 9px 11px 0 var(--ink); }
+.svc:nth-child(1) { --c: var(--sky);  --r: -.8deg; }
+.svc:nth-child(2) { --c: var(--mint); --r: .9deg; }
+.svc:nth-child(3) { --c: var(--pink); --r: .7deg; }
+.svc:nth-child(4) { --c: var(--yellow); --r: -.9deg; }
+.svc-icon { width: 64px; height: 64px; fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 8px; transition: transform .4s cubic-bezier(.3,1.8,.5,1); }
+.svc:hover .svc-icon { transform: rotate(-10deg) scale(1.12); }
+.svc-num { position: absolute; top: 14px; right: 20px; font-family: var(--hand); font-size: 44px; opacity: .28; }
+.svc-name { font-family: var(--hand); font-weight: 400; font-size: 30px; line-height: 1.1; margin-bottom: 8px; }
+.svc-desc { font-size: 19px; line-height: 1.4; margin-bottom: 16px; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.svc-tag { font-family: var(--note); font-weight: 700; font-size: 18px; padding: 0 12px; background: #fff; border: 2px solid var(--ink); border-radius: var(--w2); line-height: 1.4; }
+@media (min-width: 760px) { .services { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Contacto ── */
+.contact-grid { display: grid; gap: 48px; margin-top: 8px; }
+.contact-desc { font-size: 22px; color: var(--ink2); max-width: 460px; margin: 18px 0 28px; }
+.contact-links { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.contact-link {
+  display: inline-flex; align-items: center; gap: 12px; font-family: var(--hand); font-size: 23px; padding: 6px 20px 6px 8px;
+  background: #fff; border: 3px solid var(--ink); border-radius: 40px; box-shadow: 4px 4px 0 var(--ink); max-width: 100%;
+  transition: transform .18s cubic-bezier(.3,1.6,.5,1), box-shadow .18s;
+}
+.contact-link:hover { transform: translate(-2px,-3px) rotate(-1.5deg); box-shadow: 7px 8px 0 var(--ink); }
+.contact-link span.ico { width: 38px; height: 38px; border-radius: 50%; border: 2.5px solid var(--ink); display: grid; place-items: center; background: var(--c, var(--yellow)); flex-shrink: 0; }
+.contact-link:nth-child(1) .ico { --c: var(--mint); }
+.contact-link:nth-child(2) .ico { --c: var(--pink); }
+.contact-link:nth-child(3) .ico { --c: var(--sky); }
+.contact-link .t { overflow: hidden; text-overflow: ellipsis; }
+.form { background: #fff; border: 3px solid var(--ink); border-radius: var(--w1); box-shadow: 8px 8px 0 var(--ink); padding: 28px 22px; display: grid; gap: 18px; rotate: .8deg; position: relative; }
+.form .tape { top: -15px; }
+.form-row { display: grid; gap: 18px; }
+.field-label { display: block; font-family: var(--note); font-weight: 700; font-size: 22px; margin-bottom: 2px; }
+.field-input {
+  width: 100%; font: inherit; font-size: 19px; color: var(--ink); background: #fffdf5; padding: 10px 14px;
+  border: 3px solid var(--ink); border-radius: var(--w2); outline: none; resize: vertical;
+  transition: box-shadow .2s, transform .2s;
+}
+.field-input::placeholder { color: #8a93a6; }
+.field-input:focus { box-shadow: 4px 4px 0 var(--teal); transform: translate(-2px,-2px); }
+.form-note { font-family: var(--note); font-weight: 700; font-size: 19px; color: var(--ink2); }
+.form-status { min-height: 1.5em; font-family: var(--note); font-weight: 700; font-size: 21px; }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: .9fr 1.1fr; gap: 72px; } .form { padding: 34px 32px; } }
+
+/* ── Footer ── */
+.footer { border-top: 3px solid var(--ink); background: var(--paper2); padding: 36px 0; position: relative; }
+.footer::before { content: ''; position: absolute; left: 0; right: 0; top: 6px; border-top: 3px dashed rgba(20,40,77,0.3); }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.footer-brand { display: flex; align-items: center; gap: 16px; }
+.footer-logo img { width: 56px; height: 56px; border-radius: 12px; border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.footer-copy { font-family: var(--note); font-weight: 700; font-size: 21px; color: var(--ink2); }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.footer-nav a { font-family: var(--hand); font-size: 22px; text-decoration: underline wavy transparent 2px; text-underline-offset: 5px; transition: text-decoration-color .2s; }
+.footer-nav a:hover { text-decoration-color: var(--red); }
+
+/* ── Reveal ── */
+.js .reveal { opacity: 0; }
+.js .reveal.in { animation: revealIn .75s var(--d, 0s) both cubic-bezier(.3,1.4,.5,1); }
+@keyframes revealIn { from { opacity: 0; transform: translateY(38px) scale(.95); } to { opacity: 1; transform: none; } }
+
+/* ── Click spark ── */
+.spark { position: fixed; width: 14px; height: 4px; border-radius: 3px; pointer-events: none; z-index: 999; transform: translate(-50%,-50%) rotate(var(--rot)); animation: spark .6s ease-out forwards; }
+@keyframes spark { to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--rot)) scaleX(.3); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .w, .js .reveal { opacity: 1; }
+  .mark { background-size: 100% 100%; }
+  .draw { stroke-dashoffset: 0; }
+  .sw-lines b { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Filtro para trazo "a mano" en los garabatos -->
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/></filter>
+</svg>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="top">
+  <nav class="nav">
+    <a href="#inicio" class="nav-logo" aria-label="Gonzalo — GWD"><img src="logo.svg" alt="GWD" width="48" height="48"></a>
+
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#proyectos">Portafolio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="https://www.instagram.com/gwevdeb?igsh=MWpsZ2NldG12NnBsMg==" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="#contacto" class="btn btn-sm nav-cta">Hablemos &rarr;</a>
+      <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="drawer" id="drawer">
+    <a href="#inicio" class="dlink">Inicio</a>
+    <a href="#proyectos" class="dlink">Portafolio</a>
+    <a href="#servicios" class="dlink">Servicios</a>
+    <a href="#contacto" class="dlink">Contacto</a>
+  </nav>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="inicio" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">✎ Desarrollador web — Córdoba, Argentina</div>
+        <h1 class="hero-title" id="heroTitle">Sitios web que <span class="mark">trabajan por vos</span></h1>
+        <p class="hero-desc">Creo landing pages, sitios y aplicaciones web que convierten visitantes en clientes. Código limpio, diseño sin ruido, resultados reales.</p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn">Ver mi portafolio &darr;</a>
+          <a href="#contacto" class="btn btn-white">Hablemos</a>
+          <span class="hero-note" aria-hidden="true">
+            mirá mis trabajos
+            <svg viewBox="0 0 54 50" fill="none" stroke="#d94b3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path class="draw" pathLength="1" d="M4 6C28 -2 52 16 38 44"/><path class="draw" pathLength="1" d="M38 44L32 36M38 44L46 38"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="sketch-window">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">gonzalowebdev.netlify.app</span></div>
+          <div class="sw-body">
+            <img class="sw-logo" src="logo.svg" alt="">
+            <div class="sw-lines"><b></b><b></b><b></b></div>
+          </div>
+          <svg class="cursor" viewBox="0 0 24 24"><path d="M4 3l15 7-6.5 2.2L10 19z" fill="#fff" stroke="#14284d" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <svg class="doodle star d1" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8-6.3 3.8 1.7-7L2 9.2l7.1-.6z"/></svg>
+        <svg class="doodle star d2" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8-6.3 3.8 1.7-7L2 9.2l7.1-.6z"/></svg>
+        <svg class="doodle d3" viewBox="0 0 96 40"><path d="M3 20c8-18 14 18 22 0s14 18 22 0 14 18 22 0 14 18 22 0"/></svg>
+        <svg class="doodle d4" viewBox="0 0 40 40"><path d="M20 4v32M4 20h32M9 9l22 22M31 9L9 31"/></svg>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal" style="--c:var(--yellow);--r:-2deg;--d:.0s"><div class="stat-val"><span class="counter" data-target="1">0</span>+</div><div class="stat-label">Años de experiencia</div></div>
+      <div class="stat reveal" style="--c:var(--mint);--r:1.5deg;--d:.1s"><div class="stat-val"><span class="counter" data-target="10">0</span>+</div><div class="stat-label">Proyectos entregados</div></div>
+      <div class="stat reveal" style="--c:var(--pink);--r:-1.2deg;--d:.2s"><div class="stat-val"><span class="counter" data-target="100">0</span>%</div><div class="stat-label">Satisfacción del cliente</div></div>
+      <div class="stat reveal" style="--c:var(--sky);--r:2deg;--d:.3s"><div class="stat-val">24/7</div><div class="stat-label">Soporte dedicado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PORTAFOLIO ══════════ -->
+<section id="proyectos" class="section portfolio">
+  <div class="container">
+    <div class="portfolio-head">
+      <div class="reveal">
+        <div class="tag">★ portafolio</div>
+        <h2 class="sec-title">Trabajo <span class="scribble">reciente</span></h2>
+        <p class="sec-sub">Seis sitios reales hechos para clientes reales. Tocá cualquiera para visitarlo.</p>
+      </div>
+    </div>
+
+    <div class="projects">
+
+      <!-- P1 -->
+      <article class="card reveal" style="--d:0s">
+        <span class="tape"></span><span class="num">1</span>
+        <a class="browser" href="https://vamosporahi.com" target="_blank" rel="noopener" aria-label="Visitar Vamos Por Ahí">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">vamosporahi.com</span></div>
+          <div class="shot"><img src="img5.jpg" alt="Vamos Por Ahí" decoding="async"
+               onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}"></div>
+        </a>
+        <div class="card-body">
+          <span class="chip">Landing Page</span>
+          <h3 class="card-title">Vamos Por Ahí</h3>
+          <p class="card-desc">Landing de alta conversión para asesoría en redes sociales. CTA claro, diseño limpio y enfocado.</p>
+          <a href="https://vamosporahi.com" target="_blank" rel="noopener" class="go">Ver sitio <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg></a>
+        </div>
+      </article>
+
+      <!-- P2 -->
+      <article class="card reveal" style="--d:.1s">
+        <span class="tape"></span><span class="num">2</span>
+        <a class="browser" href="https://eduarda1950.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Eduarda Bar 1950">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">eduarda1950.netlify.app</span></div>
+          <div class="shot"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Feduarda1950.netlify.app%2F?w=900&amp;h=560" data-fb="https://image.thum.io/get/width/900/crop/560/https://eduarda1950.netlify.app/" alt="Eduarda Bar 1950" decoding="async"
+               onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}"></div>
+        </a>
+        <div class="card-body">
+          <span class="chip">Carta digital</span>
+          <h3 class="card-title">Eduarda Bar 1950</h3>
+          <p class="card-desc">Carta web para un bar de Unquillo: menú por categorías, ubicación con mapa y reservas o pedidos directo por WhatsApp.</p>
+          <a href="https://eduarda1950.netlify.app/" target="_blank" rel="noopener" class="go">Ver sitio <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg></a>
+        </div>
+      </article>
+
+      <!-- P3 -->
+      <article class="card reveal" style="--d:.2s">
+        <span class="tape"></span><span class="num">3</span>
+        <a class="browser" href="https://democlinica3.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Clinic — Gestión clínica">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">democlinica3.netlify.app</span></div>
+          <div class="shot"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdemoclinica3.netlify.app%2F?w=900&amp;h=560" data-fb="https://image.thum.io/get/width/900/crop/560/https://democlinica3.netlify.app/" alt="Clinic — Gestión clínica" decoding="async"
+               onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}"></div>
+        </a>
+        <div class="card-body">
+          <span class="chip">Aplicación web</span>
+          <h3 class="card-title">Clinic — Gestión clínica</h3>
+          <p class="card-desc">Sistema de gestión clínica: pacientes, historias clínicas, estudios y profesionales, con acceso seguro por roles.</p>
+          <a href="https://democlinica3.netlify.app/" target="_blank" rel="noopener" class="go">Ver sitio <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg></a>
+        </div>
+      </article>
+
+      <!-- P4 -->
+      <article class="card reveal" style="--d:0s">
+        <span class="tape"></span><span class="num">4</span>
+        <a class="browser" href="https://giseladesiree.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Od. Gisela Desiree">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">giseladesiree.netlify.app</span></div>
+          <div class="shot"><img src="https://giseladesiree.netlify.app/img2.jpg" data-fb="https://s0.wp.com/mshots/v1/https%3A%2F%2Fgiseladesiree.netlify.app%2F?w=900&amp;h=560" alt="Od. Gisela Desiree Ramella" decoding="async"
+               onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}"></div>
+        </a>
+        <div class="card-body">
+          <span class="chip">Sitio profesional</span>
+          <h3 class="card-title">Od. Gisela Desiree</h3>
+          <p class="card-desc">Sitio para consultorio odontológico con servicios, formación, preguntas frecuentes y reserva de turnos online.</p>
+          <a href="https://giseladesiree.netlify.app/" target="_blank" rel="noopener" class="go">Ver sitio <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg></a>
+        </div>
+      </article>
+
+      <!-- P5 -->
+      <article class="card reveal" style="--d:.1s">
+        <span class="tape"></span><span class="num">5</span>
+        <a class="browser" href="https://metgarzon.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Garzón — Estructuras Metálicas">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">metgarzon.netlify.app</span></div>
+          <div class="shot"><img src="https://metgarzon.netlify.app/images/galpon-interior.jpg" data-fb="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmetgarzon.netlify.app%2F?w=900&amp;h=560" alt="Garzón — Estructuras Metálicas" decoding="async"
+               onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}"></div>
+        </a>
+        <div class="card-body">
+          <span class="chip">Landing Page</span>
+          <h3 class="card-title">Garzón — Estructuras Metálicas</h3>
+          <p class="card-desc">Landing para metalúrgica de galpones y tinglados: servicios, proceso de obra, obras entregadas y pedido de cotización.</p>
+          <a href="https://metgarzon.netlify.app/" target="_blank" rel="noopener" class="go">Ver sitio <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg></a>
+        </div>
+      </article>
+
+      <!-- P6 -->
+      <article class="card reveal" style="--d:.2s">
+        <span class="tape"></span><span class="num">6</span>
+        <a class="browser" href="https://abrildavila.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar Abril Dávila">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">abrildavila.netlify.app</span></div>
+          <div class="shot"><img src="https://abrildavila.netlify.app/perfil.jpg" data-fb="https://s0.wp.com/mshots/v1/https%3A%2F%2Fabrildavila.netlify.app%2F?w=900&amp;h=560" alt="Abril Dávila — Psicóloga Clínica" decoding="async"
+               onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.dataset.fb=''}else{this.style.display='none'}"></div>
+        </a>
+        <div class="card-body">
+          <span class="chip">Sitio profesional</span>
+          <h3 class="card-title">Abril Dávila</h3>
+          <p class="card-desc">Sitio para psicóloga clínica con enfoque, servicios y contacto directo por WhatsApp. Diseño cálido y sereno.</p>
+          <a href="https://abrildavila.netlify.app/" target="_blank" rel="noopener" class="go">Ver sitio <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cards-cta reveal">
+      <p>¿Querés el tuyo?</p>
+      <a href="#contacto" class="btn">El tuyo es el próximo &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TICKER ══════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ══════════ SERVICIOS ══════════ -->
+<section id="servicios" class="section">
+  <div class="container">
+    <div class="services-head reveal">
+      <div class="tag">✎ servicios</div>
+      <h2 class="sec-title">Lo que construyo <span class="scribble">para vos</span></h2>
+    </div>
+
+    <div class="services">
+      <div class="svc reveal" style="--d:0s">
+        <span class="svc-num">01</span>
+        <svg class="svc-icon" viewBox="0 0 64 64"><rect x="6" y="10" width="52" height="42" rx="6"/><path d="M6 22H58M14 32h20M14 40h14"/><rect x="38" y="30" width="14" height="14" rx="3"/></svg>
+        <div class="svc-name">Landing Pages &amp; Sitios Web</div>
+        <div class="svc-desc">Páginas que convierten. Diseño claro, carga veloz, estructura pensada para que el visitante tome acción.</div>
+        <div class="svc-tags"><span class="svc-tag">HTML/CSS</span><span class="svc-tag">React</span><span class="svc-tag">Next.js</span><span class="svc-tag">Responsive</span></div>
+      </div>
+
+      <div class="svc reveal" style="--d:.1s">
+        <span class="svc-num">02</span>
+        <svg class="svc-icon" viewBox="0 0 64 64"><ellipse cx="32" cy="16" rx="18" ry="7"/><path d="M14 16v14c0 4 8 7 18 7s18-3 18-7V16M14 30v14c0 4 8 7 18 7s18-3 18-7V30"/></svg>
+        <div class="svc-name">Aplicaciones Full Stack</div>
+        <div class="svc-desc">Frontend y backend integrados. APIs, bases de datos y lógica de negocio. Desde el diseño hasta el servidor.</div>
+        <div class="svc-tags"><span class="svc-tag">Node.js</span><span class="svc-tag">Python</span><span class="svc-tag">MongoDB</span><span class="svc-tag">MySQL</span></div>
+      </div>
+
+      <div class="svc reveal" style="--d:0s">
+        <span class="svc-num">03</span>
+        <svg class="svc-icon" viewBox="0 0 64 64"><path d="M6 10h8l6 30h30l5-22H16"/><circle cx="24" cy="50" r="4"/><circle cx="46" cy="50" r="4"/></svg>
+        <div class="svc-name">E-commerce &amp; Tiendas Online</div>
+        <div class="svc-desc">Tiendas a medida o con plataformas existentes. Carrito, pagos integrados y experiencia de compra impecable.</div>
+        <div class="svc-tags"><span class="svc-tag">WooCommerce</span><span class="svc-tag">Custom</span><span class="svc-tag">Pagos</span></div>
+      </div>
+
+      <div class="svc reveal" style="--d:.1s">
+        <span class="svc-num">04</span>
+        <svg class="svc-icon" viewBox="0 0 64 64"><path d="M32 6c10 6 14 18 12 32H20C18 24 22 12 32 6z"/><circle cx="32" cy="24" r="5"/><path d="M20 38l-8 10 10-2M44 38l8 10-10-2M28 44l4 10 4-10"/></svg>
+        <div class="svc-name">Performance, SEO &amp; Despliegue</div>
+        <div class="svc-desc">Core Web Vitals, posicionamiento en Google, hosting en Vercel o AWS. Tu sitio rápido y visible.</div>
+        <div class="svc-tags"><span class="svc-tag">SEO</span><span class="svc-tag">Vercel</span><span class="svc-tag">AWS</span><span class="svc-tag">CI/CD</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-left reveal">
+        <div class="tag">☎ contacto</div>
+        <h2 class="sec-title">Hablemos de <span class="scribble">tu proyecto</span></h2>
+        <p class="contact-desc">Contame qué necesitás y te respondo en menos de 24 horas con una propuesta concreta. Sin vueltas.</p>
+        <div class="contact-links">
+          <a href="https://wa.me/5493515205739" target="_blank" rel="noopener" class="contact-link">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.952-1.418A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.66 0-3.21-.45-4.54-1.23l-.324-.194-3.36.962.963-3.266-.213-.34A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg></span>
+            <span class="t">WhatsApp</span>
+          </a>
+          <a href="https://www.instagram.com/gwevdeb" target="_blank" rel="noopener" class="contact-link">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></span>
+            <span class="t">@gwevdeb</span>
+          </a>
+          <a href="mailto:gonzalowebdev@gmail.com" class="contact-link">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span class="t">gonzalowebdev@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right reveal" style="--d:.1s">
+        <div class="form" id="contactForm">
+          <span class="tape"></span>
+          <div class="form-row">
+            <div>
+              <label class="field-label" for="nombre">Nombre *</label>
+              <input type="text" id="nombre" class="field-input" placeholder="Tu nombre" autocomplete="name">
+            </div>
+            <div>
+              <label class="field-label" for="email">Email *</label>
+              <input type="email" id="email" class="field-input" placeholder="tu@email.com" autocomplete="email">
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" class="field-input" placeholder="Opcional" autocomplete="tel">
+          </div>
+          <div>
+            <label class="field-label" for="mensaje">Proyecto *</label>
+            <textarea id="mensaje" class="field-input" rows="5" placeholder="¿Qué necesitás, para cuándo y cuál es tu presupuesto?"></textarea>
+          </div>
+          <p class="form-note">Al enviar se abrirá WhatsApp con tu mensaje. Respondo en menos de 24h.</p>
+          <button class="btn" onclick="handleSubmit()" style="width:100%;">Enviar por WhatsApp &rarr;</button>
+          <p class="form-status" id="formStatus"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="logo.svg" alt="GWD" width="56" height="56"></div>
+        <div class="footer-copy">© 2026 · Córdoba, Argentina</div>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Portafolio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ── Menú móvil
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  drawer.classList.toggle('open');
+});
+document.querySelectorAll('.dlink').forEach(l =>
+  l.addEventListener('click', () => {
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+  })
+);
+
+// ── Título: aparece palabra por palabra (respeta el <span class="mark">)
+(() => {
+  const title = document.getElementById('heroTitle');
+  if (!title || reduceMotion) return;
+  let i = 0;
+  const wrap = node => {
+    Array.from(node.childNodes).forEach(child => {
+      if (child.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach(tok => {
+          if (!tok) return;
+          if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(' ')); return; }
+          const w = document.createElement('span');
+          w.className = 'w';
+          w.style.setProperty('--i', i++);
+          w.textContent = tok;
+          frag.appendChild(w);
+        });
+        node.replaceChild(frag, child);
+      } else if (child.nodeType === 1) {
+        wrap(child);
+      }
+    });
+  };
+  wrap(title);
+})();
+
+// ── Reveal al hacer scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ── Contadores
+let countRan = false;
+const countIO = new IntersectionObserver(entries => {
+  if (!entries[0].isIntersecting || countRan) return;
+  countRan = true;
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = +el.dataset.target;
+    let cur = 0;
+    const inc = Math.ceil(target / 20);
+    const t = setInterval(() => {
+      cur = Math.min(cur + inc, target);
+      el.textContent = cur;
+      if (cur >= target) clearInterval(t);
+    }, 40);
+  });
+}, { threshold: 0.3 });
+const sw = document.querySelector('.stats');
+if (sw) countIO.observe(sw);
+
+// ── Ticker
+const techs = [
+  'React','Next.js','Node.js','JavaScript','TypeScript',
+  'Python','PHP','Laravel','MySQL','MongoDB',
+  'Tailwind CSS','Git','Vercel','AWS','Figma'
+];
+const track = document.getElementById('tickerTrack');
+if (track) {
+  [...techs, ...techs].forEach(t => {
+    const el = document.createElement('span');
+    el.className = 'ticker-item';
+    el.textContent = t;
+    track.appendChild(el);
+  });
+}
+
+// ── Click spark (chispas al tocar)
+if (!reduceMotion) {
+  const cols = ['#f5a623', '#d94b3d', '#2fb5a8', '#3b8fd4', '#14284d'];
+  document.addEventListener('pointerdown', e => {
+    const n = 8;
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement('span');
+      s.className = 'spark';
+      const a = (i / n) * Math.PI * 2 + Math.random() * 0.4;
+      const d = 26 + Math.random() * 22;
+      s.style.left = e.clientX + 'px';
+      s.style.top = e.clientY + 'px';
+      s.style.setProperty('--dx', Math.cos(a) * d + 'px');
+      s.style.setProperty('--dy', Math.sin(a) * d + 'px');
+      s.style.setProperty('--rot', a + 'rad');
+      s.style.background = cols[i % cols.length];
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 650);
+    }
+  });
+}
+
+// ── Formulario → WhatsApp
+const WA = '5493515205739';
+function handleSubmit() {
+  const nombre   = document.getElementById('nombre').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const mensaje  = document.getElementById('mensaje').value.trim();
+  const status   = document.getElementById('formStatus');
+
+  status.style.color = '#d94b3d';
+  if (!nombre) { status.textContent = 'Por favor ingresá tu nombre.'; return; }
+  if (!email || !email.includes('@')) { status.textContent = 'Por favor ingresá un email válido.'; return; }
+  if (!mensaje) { status.textContent = 'Por favor describí tu proyecto.'; return; }
+
+  let msg = `*Contacto desde gonzalowebdev.netlify.app*%0A%0A`;
+  msg += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
+  msg += `*Email:* ${encodeURIComponent(email)}%0A`;
+  if (telefono) msg += `*Tel:* ${encodeURIComponent(telefono)}%0A`;
+  msg += `%0A*Proyecto:*%0A${encodeURIComponent(mensaje)}`;
+
+  status.style.color = '#3a4d70';
+  status.textContent = 'Abriendo WhatsApp…';
+
+  setTimeout(() => {
+    window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+    status.style.color = '#2fb5a8';
+    status.textContent = '¡Listo! Completá el envío en WhatsApp.';
+    ['nombre','email','telefono','mensaje'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    setTimeout(() => status.textContent = '', 6000);
+  }, 500);
+}
+</script>
+</body>
+</html>
