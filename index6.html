@@ -106,7 +106,7 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-10deg); } 50% { transform: rotate(8deg); } }
 .hero h1 { font-size: clamp(38px, 8.6vw, 76px); line-height: 1.06; font-weight: 800; letter-spacing: -.04em; }
 .hl { background: linear-gradient(transparent 60%, var(--yellow) 60%, var(--yellow) 94%, transparent 94%) no-repeat; background-size: 0% 100%; padding: 0 .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; animation: hlIn .8s .5s var(--spring) forwards; }
-[data-theme="dark"] .hl { color: #fff; }
+[data-theme="dark"] .hl { background-image: linear-gradient(transparent 60%, rgba(255,210,63,.42) 60%, rgba(255,210,63,.42) 94%, transparent 94%); }
 @keyframes hlIn { to { background-size: 100% 100%; } }
 .rot { display: flex; align-items: center; gap: 10px; margin: 20px 0 8px; font-size: clamp(20px, 4vw, 28px); font-weight: 700; }
 .rot-box { display: inline-block; height: 1.5em; overflow: hidden; }
