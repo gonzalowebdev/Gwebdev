@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="GWD">
+  <title>GWD</title>
+  <defs>
+    <clipPath id="clip"><rect width="1024" height="1024" rx="236"/></clipPath>
+  </defs>
+
+  <style>
+    .pop, .ring { transform-box: fill-box; transform-origin: center; }
+    .pop { animation: pop 3s cubic-bezier(.34,1.56,.64,1) infinite; }
+    .ring { fill: none; stroke-width: 7; opacity: 0; animation: ring 3s ease-out infinite; }
+    .o2 { animation-delay: .45s; }
+    .o3 { animation-delay: .9s; }
+    @keyframes pop {
+      0%, 40%, 100% { transform: scale(1); }
+      8%  { transform: scale(1.32); }
+      18% { transform: scale(.94); }
+      28% { transform: scale(1.06); }
+    }
+    @keyframes ring {
+      0%   { transform: scale(.8); opacity: .9; }
+      45%  { transform: scale(2.1); opacity: 0; }
+      100% { transform: scale(2.1); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .pop, .ring { animation: none; } }
+  </style>
+
+  <g clip-path="url(#clip)">
+    <rect width="1024" height="1024" fill="#3d6df2"/>
+    <!-- Formas planas decorativas -->
+    <circle cx="920" cy="120" r="190" fill="#2fd0b8"/>
+    <circle cx="96" cy="944" r="150" fill="#ffd23f"/>
+    <circle cx="70" cy="90" r="60" fill="#5b87ff"/>
+    <g stroke="#ffffff" stroke-opacity="0.7" stroke-width="10" stroke-linecap="round">
+      <path d="M930 900v36M912 918h36"/><path d="M110 600v26M97 613h26"/>
+    </g>
+
+    <!-- Esquinas -->
+    <g fill="none" stroke="#ffb020" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M142 214V142H214"/><path d="M882 214V142H810"/><path d="M126 838V902H198"/><path d="M898 838V902H826"/>
+    </g>
+
+    <!-- Tarjeta con sombra plana -->
+    <rect x="212" y="222" width="644" height="624" rx="112" fill="#2547b8"/>
+    <rect x="190" y="200" width="644" height="624" rx="112" fill="#ffffff"/>
+
+    <!-- Luces superiores -->
+    <g>
+      <circle cx="330" cy="305" r="36" fill="#d93d30"/><circle cx="326" cy="301" r="29" fill="#ff5a4d"/>
+      <circle cx="512" cy="305" r="36" fill="#0f8f80"/><circle cx="508" cy="301" r="29" fill="#19b8a6"/>
+      <circle cx="694" cy="305" r="36" fill="#d93d30"/><circle cx="690" cy="301" r="29" fill="#ff5a4d"/>
+    </g>
+
+    <!-- Letras GWD -->
+    <g fill="none" stroke="#1b2a63" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M379 471A74 88 0 1 0 379 559L379 520L322 520"/>
+      <path d="M437 430L470 598L512 480L554 598L587 430"/>
+      <path d="M640 430V600H690C748 600 784 566 784 515C784 464 748 430 690 430Z"/>
+    </g>
+    <path d="M330 664H694" stroke="#ffb020" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- Luces inferiores: rebotan con onda expansiva, en secuencia -->
+    <circle class="ring" cx="330" cy="740" r="36" stroke="#3d6df2"/>
+    <circle class="ring o2" cx="512" cy="740" r="36" stroke="#2fa6d6"/>
+    <circle class="ring o3" cx="694" cy="740" r="36" stroke="#19b8a6"/>
+    <g class="pop"><circle cx="330" cy="740" r="36" fill="#2547b8"/><circle cx="326" cy="736" r="29" fill="#3d6df2"/><circle cx="317" cy="727" r="6" fill="#fff" fill-opacity=".8"/></g>
+    <g class="pop o2"><circle cx="512" cy="740" r="36" fill="#2fa6d6"/><circle cx="508" cy="736" r="29" fill="#6fd8ff"/><circle cx="499" cy="727" r="6" fill="#fff" fill-opacity=".9"/></g>
+    <g class="pop o3"><circle cx="694" cy="740" r="36" fill="#0f8f80"/><circle cx="690" cy="736" r="29" fill="#19b8a6"/><circle cx="681" cy="727" r="6" fill="#fff" fill-opacity=".8"/></g>
+  </g>
+</svg>
