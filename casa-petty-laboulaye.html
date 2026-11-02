@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Petty Laboulaye | Aberturas de aluminio, rejas y cortinas</title>
+<meta name="description" content="Ventanas, puertas, portones, rejas de hierro y cortinas enrollables de aluminio. Estándar y a medida, con fabricación propia en Laboulaye, Córdoba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--or:#F28A22;--ord:#C96A0B;--gr:#2B2625;--tp:#6B5C5C;--hz:#ADA3A3;--al:#E6E4E1;--pp:#F5F4F2;--f1:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--f2:'Hanken Grotesk','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font:400 1.0625rem/1.6 var(--f2);color:var(--gr);background:var(--al);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--f1);font-weight:700;letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(2rem,4.6vw,3.6rem);max-width:17ch}
+.logo{display:block;height:44px;width:auto;aspect-ratio:860/320}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:999px;font:600 1rem var(--f2);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn.p{background:var(--or);color:var(--gr)}.btn.p:hover{background:var(--gr);color:#fff}
+.btn.s{border-color:var(--gr)}.btn.s:hover{background:var(--gr);color:#fff}
+header{position:sticky;top:0;z-index:20;background:rgba(230,228,225,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(43,38,37,.1)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+nav{display:flex;gap:30px;font-weight:500;font-size:.97rem}
+nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}nav a:hover{border-color:var(--or)}
+header .btn{padding:.6rem 1.15rem;font-size:.93rem}
+/* hero */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(70px,9vw,130px)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,5vw,80px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.6vw,6rem);letter-spacing:-.045em;line-height:.93}
+.hero p.lead{margin:28px 0 36px;max-width:44ch;font-size:1.2rem;color:var(--tp)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.pin{display:flex;gap:10px;align-items:center;margin-top:44px;font-size:.95rem;color:var(--tp)}
+.pin svg{flex:none}
+.win{background:var(--pp);border-radius:28px;padding:22px 22px 26px;box-shadow:0 40px 80px -40px rgba(43,38,37,.45)}
+.win svg{display:block;width:100%;height:auto}
+.ctl{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;margin-top:16px;font-weight:500}
+.ctl output{min-width:3.2ch;text-align:right;font-family:var(--f1);font-weight:700;font-size:1.3rem}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent;cursor:grab}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--gr);border-radius:4px}
+input[type=range]::-moz-range-track{height:4px;background:var(--gr);border-radius:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-13px;border-radius:50%;background:var(--or);border:4px solid var(--gr)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--or);border:4px solid var(--gr)}
+/* band */
+.band{background:var(--or);color:var(--gr);margin:-34px 0;padding:92px 0;clip-path:polygon(0 38px,100% 0,100% calc(100% - 38px),0 100%);position:relative;z-index:2}
+.band .wrap{display:flex;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;font:700 clamp(1.1rem,2vw,1.5rem)/1.2 var(--f1);letter-spacing:-.01em}
+/* catalog */
+.cat{padding:150px 0 120px;background:var(--pp)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:56px}
+.head p{color:var(--tp);max-width:46ch;justify-self:end}
+details{border-top:1px solid #cdc8c4}details:last-child{border-bottom:1px solid #cdc8c4}
+summary{list-style:none;display:grid;grid-template-columns:1fr auto 44px;gap:24px;align-items:center;padding:26px 0;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+summary h3{font-size:clamp(1.5rem,3.2vw,2.6rem);transition:color .2s,transform .3s}
+summary:hover h3{color:var(--ord);transform:translateX(8px)}
+summary .tag{font-size:.95rem;color:var(--tp)}
+.pl{width:44px;height:44px;border-radius:50%;border:2px solid var(--gr);position:relative;transition:.3s}
+.pl::before,.pl::after{content:"";position:absolute;inset:0;margin:auto;width:16px;height:2px;background:var(--gr);transition:.3s}
+.pl::after{transform:rotate(90deg)}
+details[open] .pl{background:var(--or);border-color:var(--or);transform:rotate(180deg)}details[open] .pl::after{transform:rotate(0)}
+.bd{display:grid;grid-template-columns:150px 1fr 1fr;gap:32px;padding:6px 0 40px;align-items:start}
+.bd .ic{width:150px;height:150px;color:var(--gr);background:var(--al);border-radius:20px;padding:20px}
+.bd p{color:var(--tp);max-width:40ch}
+dl{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;font-size:.97rem}
+dt{color:var(--tp)}dd{font-weight:600}
+/* fab */
+.fab{background:var(--gr);color:#eeebe8;padding:clamp(80px,10vw,140px) 0;--lab:#cfc8c8}
+.fab .head p{color:var(--hz)}
+.fg{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,72px);align-items:center}
+.fab ul{list-style:none;padding:0}
+.fab li button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:34px 1fr;gap:6px 16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.14);cursor:pointer;align-items:center}
+.fab li:last-child button{border-bottom:1px solid rgba(255,255,255,.14)}
+.fab li button:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.nb{width:34px;height:34px;border-radius:50%;border:2px solid var(--hz);display:grid;place-items:center;font:700 .9rem var(--f1);transition:.2s}
+.fab strong{font:600 1.2rem var(--f1);letter-spacing:-.01em}
+.fab .ds{grid-column:2;display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s;color:var(--hz)}
+.fab .ds span{overflow:hidden}
+.fab li.on .ds{grid-template-rows:1fr}.fab li.on .nb{background:var(--or);border-color:var(--or);color:var(--gr)}
+.fab svg{width:100%;height:auto;display:block}
+.hs{cursor:pointer}.hs circle.d{fill:var(--gr);stroke:var(--or);stroke-width:2.5}
+.hs text{fill:#fff;font:700 15px var(--f1);text-anchor:middle}
+.hs.on circle.d{fill:var(--or)}.hs.on text{fill:var(--gr)}
+.hs .rg{fill:none;stroke:var(--or);stroke-width:2;opacity:0}
+.hs.on .rg{animation:pu 1.6s ease-out infinite}
+@keyframes pu{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(2.2)}}
+.hs .rg,.hs circle.d{transform-box:fill-box;transform-origin:center}
+/* cortinas */
+.cor{background:var(--or);padding:clamp(80px,10vw,130px) 0}
+.cg{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,6vw,90px);align-items:center}
+.cor h2{max-width:14ch}
+.cor ul{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:0}
+.cor li{padding:16px 0;border-top:2px solid rgba(43,38,37,.9);font-weight:500;font-size:1.1rem}
+.cor li:last-child{border-bottom:2px solid rgba(43,38,37,.9)}
+.cor .win{background:var(--gr);color:#fff}
+.cor .win output{color:var(--or)}
+.cor input[type=range]::-webkit-slider-runnable-track{background:#fff}.cor input[type=range]::-moz-range-track{background:#fff}
+.cor input[type=range]::-webkit-slider-thumb{border-color:#fff}.cor input[type=range]::-moz-range-thumb{border-color:#fff}
+.sh{transform-box:fill-box;transform-origin:top}
+/* contacto */
+.ct{padding:clamp(80px,10vw,130px) 0;background:var(--al)}
+.cc{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,6vw,90px);align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:var(--pp);padding:clamp(24px,3.5vw,44px);border-radius:28px}
+label{display:grid;gap:8px;font-weight:600;font-size:.93rem}
+label.w{grid-column:1/-1}
+input,select{font:400 1rem var(--f2);padding:.95rem 1rem;border-radius:12px;border:2px solid #cdc8c4;background:#fff;color:var(--gr);width:100%}
+input:focus,select:focus{outline:none;border-color:var(--or)}
+form .btn{grid-column:1/-1;justify-content:center}
+.info{display:grid;gap:26px;margin-top:8px}
+.info div{border-top:2px solid var(--gr);padding-top:14px}
+.info small{display:block;color:var(--tp);font-size:.9rem}
+.info b{font:700 1.5rem/1.2 var(--f1);letter-spacing:-.02em}
+footer{background:var(--gr);color:var(--hz);padding:44px 0;font-size:.93rem;--lab:#cfc8c8}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .logo{height:52px}
+@media(max-width:900px){
+ nav{display:none}
+ .hero .wrap,.head,.fg,.cg,.cc{grid-template-columns:1fr}
+ .head p{justify-self:start}
+ .bd{grid-template-columns:110px 1fr}.bd .ic{width:110px;height:110px;padding:14px}.bd dl{grid-column:1/-1}
+ summary{grid-template-columns:1fr 44px}summary .tag{display:none}
+ .band{padding:80px 0}
+}
+@media(max-width:520px){form{grid-template-columns:1fr}.logo{height:38px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="iso" viewBox="0 0 316 320">
+ <path d="M158 4 4 154l154 70z" fill="#6B5C5C"/>
+ <path d="M158 4l154 150-154 70z" fill="#ADA3A3"/>
+ <g fill="#6B5C5C" transform="translate(40 192) matrix(1 .3 0 1 0 0)"><rect width="50" height="38"/><rect x="58" width="50" height="38"/><rect y="46" width="50" height="38"/><rect x="58" y="46" width="50" height="38"/></g>
+ <g transform="translate(168 232) matrix(1 -.3 0 1 0 0)"><rect width="50" height="38" fill="#ADA3A3"/><rect x="58" width="50" height="38" fill="#F28A22"/><rect y="46" width="50" height="38" fill="#ADA3A3"/><rect x="58" y="46" width="50" height="38" fill="#ADA3A3"/></g>
+</symbol>
+<symbol id="logo" viewBox="0 0 860 320">
+ <use href="#iso" width="316" height="320"/>
+ <text x="340" y="170" textLength="500" lengthAdjust="spacingAndGlyphs" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="92" fill="#F28A22">Casa Petty</text>
+ <text x="340" y="268" textLength="500" lengthAdjust="spacingAndGlyphs" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-weight="700" font-size="92" fill="var(--lab,#6B5C5C)">Laboulaye</text>
+</symbol>
+</defs>
+</svg>
+
+<header>
+ <div class="wrap">
+  <a href="#inicio" aria-label="Casa Petty Laboulaye, inicio"><svg class="logo" viewBox="0 0 860 320" role="img" aria-label="Casa Petty Laboulaye"><use href="#logo"/></svg></a>
+  <nav aria-label="Principal"><a href="#catalogo">Catálogo</a><a href="#fabricacion">Fabricación propia</a><a href="#cortinas">Cortinas</a><a href="#contacto">Contacto</a></nav>
+  <a class="btn p" href="https://wa.me/5493385467051" target="_blank" rel="noopener">WhatsApp</a>
+ </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Aberturas de aluminio hechas en Laboulaye.</h1>
+   <p class="lead">Ventanas, puertas, portones, rejas y cortinas, en medidas estándar o a medida. Las fabricamos nosotros y te las dejamos colocadas.</p>
+   <div class="cta"><a class="btn p" href="#contacto">Pedir presupuesto</a><a class="btn s" href="#catalogo">Ver catálogo</a></div>
+   <p class="pin"><svg width="18" height="24" viewBox="0 0 18 24" fill="none"><path d="M9 1a8 8 0 0 0-8 8c0 6 8 14 8 14s8-8 8-14a8 8 0 0 0-8-8z" fill="#6B5C5C"/><circle cx="9" cy="9" r="3" fill="#F28A22"/></svg>Independencia 56, Laboulaye. Única dirección.</p>
+  </div>
+  <div class="win">
+   <svg viewBox="0 0 560 450" role="img" aria-label="Ventana corrediza de aluminio que se abre al mover el control">
+    <defs>
+     <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBE3C6"/><stop offset="1" stop-color="#F2B77A"/></linearGradient>
+     <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F8FA" stop-opacity=".92"/><stop offset="1" stop-color="#B7C8D0" stop-opacity=".72"/></linearGradient>
+    </defs>
+    <g stroke="#F28A22" stroke-width="2" fill="none"><path d="M60 30v-12M500 30v-12M60 24h440M24 70h12M24 410h12M30 70v340"/></g>
+    <text x="280" y="16" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="16" fill="#C96A0B" stroke="#F5F4F2" stroke-width="8" paint-order="stroke">150 cm</text>
+    <text transform="translate(18 240) rotate(-90)" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="16" fill="#C96A0B" stroke="#F5F4F2" stroke-width="8" paint-order="stroke">100 cm</text>
+    <rect x="60" y="50" width="440" height="370" rx="8" fill="#fff" stroke="#cdc8c4" stroke-width="2"/>
+    <rect x="74" y="64" width="412" height="342" fill="url(#sky)"/>
+    <circle cx="410" cy="150" r="34" fill="#F28A22"/>
+    <g id="sa"><rect x="76" y="70" width="212" height="330" rx="3" fill="#F5F4F2" stroke="#b9b3ae" stroke-width="2"/><rect x="90" y="84" width="184" height="302" fill="url(#gl)" stroke="#b9b3ae"/><rect x="270" y="200" width="8" height="54" rx="3" fill="#2B2625"/></g>
+    <g id="sash"><rect x="272" y="70" width="212" height="330" rx="3" fill="#fff" stroke="#b9b3ae" stroke-width="2"/><rect x="286" y="84" width="184" height="302" fill="url(#gl)" stroke="#b9b3ae"/><path d="M286 84h184M286 130h184M286 176h184M286 222h184M286 268h184M286 314h184M286 360h184" stroke="#fff" stroke-opacity=".55" stroke-width="2"/><rect x="278" y="200" width="8" height="54" rx="3" fill="#2B2625"/></g>
+    <text x="80" y="442" font-family="Hanken Grotesk,sans-serif" font-size="14" fill="#6B5C5C">Línea Herrero, aluminio 6063, vidrio de 3 mm</text>
+   </svg>
+   <div class="ctl"><label for="ap" style="display:block">Abrí la ventana</label><input id="ap" type="range" min="0" max="100" value="0"><output id="apo" for="ap">0%</output></div>
+  </div>
+ </div>
+</section>
+
+<div class="band" aria-label="Datos de Casa Petty"><div class="wrap"><span>Independencia 56, única dirección</span><span>Estándar y a medida</span><span>Fabricación propia</span></div></div>
+
+<section class="cat" id="catalogo">
+ <div class="wrap">
+  <div class="head"><h2>Ocho productos para cerrar bien cada abertura.</h2><p>Abrí cada producto para ver medidas y materiales. Si necesitás otra medida, la fabricamos.</p></div>
+  <div id="prods"></div>
+ </div>
+</section>
+
+<section class="fab" id="fabricacion">
+ <div class="wrap">
+  <div class="head"><h2>Fabricación propia, detalle por detalle.</h2><p>Estas son las piezas que hacen que una ventana corrediza cierre sin ruido, no deje pasar aire y dure. Tocá los números.</p></div>
+  <div class="fg">
+   <ul id="fl"></ul>
+   <svg id="fs" viewBox="0 0 600 440" role="img" aria-label="Ventana corrediza con ocho detalles de fabricación señalados">
+    <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d9aa1" stop-opacity=".55"/><stop offset="1" stop-color="#4b5559" stop-opacity=".7"/></linearGradient></defs>
+    <rect x="30" y="40" width="540" height="360" rx="8" fill="#ECE9E6"/>
+    <rect x="44" y="54" width="512" height="332" fill="#3a3433"/>
+    <rect x="50" y="60" width="256" height="320" rx="3" fill="#F5F4F2" stroke="#b9b3ae" stroke-width="2"/><rect x="66" y="76" width="224" height="288" fill="url(#g2)"/>
+    <rect x="294" y="60" width="256" height="320" rx="3" fill="#fff" stroke="#b9b3ae" stroke-width="2"/><rect x="310" y="76" width="224" height="288" fill="url(#g2)"/>
+    <path d="M310 76h224M310 124h224M310 172h224M310 220h224M310 268h224M310 316h224" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+    <g id="hsg"></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="cor" id="cortinas">
+ <div class="wrap cg">
+  <div>
+   <h2>Cortinas enrollables de aluminio, a medida.</h2>
+   <ul>
+    <li>Se instalan sobre aberturas existentes de aluminio, madera o chapa.</li>
+    <li>Instalación simple, sin obras de albañilería.</li>
+    <li>Oscurecen el ambiente al 100% y dan privacidad.</li>
+    <li>Aíslan del ruido y, sobre todo, del calor y el frío: ahorrás energía.</li>
+   </ul>
+  </div>
+  <div class="win">
+   <svg viewBox="0 0 360 380" role="img" aria-label="Ventana con cortina enrollable que baja al mover el control">
+    <defs><pattern id="sl" width="10" height="16" patternUnits="userSpaceOnUse"><rect width="10" height="16" fill="#F3F1EE"/><rect y="13" width="10" height="3" fill="#b3aca6"/></pattern>
+    <linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBE3C6"/><stop offset="1" stop-color="#F28A22"/></linearGradient></defs>
+    <rect x="20" y="20" width="320" height="350" fill="#443d3b"/>
+    <rect x="52" y="86" width="256" height="260" fill="url(#s3)"/>
+    <circle cx="240" cy="150" r="30" fill="#fff" fill-opacity=".75"/>
+    <rect id="sh" class="sh" x="52" y="86" width="256" height="260" fill="url(#sl)" style="transform:scaleY(.35)"/>
+    <rect x="40" y="34" width="280" height="56" rx="6" fill="#F3F1EE"/><rect x="40" y="76" width="280" height="14" rx="3" fill="#b3aca6"/>
+    <circle cx="300" cy="62" r="7" fill="#F28A22"/>
+   </svg>
+   <div class="ctl"><label for="cz" style="display:block">Bajá la cortina</label><input id="cz" type="range" min="0" max="100" value="35"><output id="czo" for="cz">65%</output></div>
+   <p style="margin-top:6px;font-size:.9rem;color:var(--hz)">Luz que entra en la habitación</p>
+  </div>
+ </div>
+</section>
+
+<section class="ct" id="contacto">
+ <div class="wrap cc">
+  <div>
+   <h2 style="margin-bottom:40px">Contanos qué necesitás y te pasamos el presupuesto.</h2>
+   <form id="fm">
+    <label class="w">Abertura<select id="tp"><option>Ventana corrediza</option><option>Ventana con celosía</option><option>Aireador</option><option>Puerta tabular</option><option>Portón de aluminio</option><option>Reja de hierro</option><option>Cortina enrollable</option><option>Puerta plegadiza</option></select></label>
+    <label>Ancho (cm)<input id="an" inputmode="numeric" placeholder="120"></label>
+    <label>Alto (cm)<input id="al" inputmode="numeric" placeholder="100"></label>
+    <label class="w">Tu nombre<input id="nm" autocomplete="name" required placeholder="Nombre y apellido"></label>
+    <button class="btn p" type="submit">Enviar por WhatsApp</button>
+   </form>
+  </div>
+  <div class="info">
+   <div><small>Dirección</small><b>Independencia 56, Laboulaye, Córdoba</b><small>Única dirección</small></div>
+   <div><small>WhatsApp</small><b><a href="https://wa.me/5493385467051" target="_blank" rel="noopener">3385 467051</a></b></div>
+   <div><small>Teléfono</small><b><a href="tel:+543385426506">03385 426506</a></b></div>
+   <div><small>Instagram</small><b><a href="https://www.instagram.com/casapetty" target="_blank" rel="noopener">@casapetty</a></b></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap"><svg class="logo" viewBox="0 0 860 320" role="img" aria-label="Casa Petty Laboulaye"><use href="#logo"/></svg><span>Independencia 56, Laboulaye, Córdoba 6120</span></div></footer>
+
+<script>
+const $=(s,e=document)=>e.querySelector(s);
+const ic={
+ v:'<rect x="10" y="20" width="100" height="80"/><path d="M60 20v80M52 54v14M68 54v14"/>',
+ c:'<rect x="10" y="20" width="100" height="80"/><path d="M60 20v80M16 36h38M16 48h38M16 60h38M16 72h38M16 84h38"/>',
+ a:'<rect x="22" y="26" width="76" height="68"/><path d="M30 44h60M30 58h60M30 72h60"/>',
+ p:'<rect x="34" y="8" width="52" height="104"/><circle cx="76" cy="62" r="3"/>',
+ g:'<rect x="8" y="24" width="104" height="82"/><path d="M43 24v82M78 24v82M8 66h104"/>',
+ r:'<rect x="28" y="8" width="64" height="104"/><path d="M40 8v104M52 8v104M64 8v104M76 8v104M28 60h64"/>',
+ k:'<rect x="14" y="12" width="92" height="22"/><path d="M20 44h80M20 54h80M20 64h80M20 74h80"/><rect x="20" y="84" width="80" height="26"/>',
+ z:'<path d="M26 10l16 100 16-100 16 100 16-100"/>'};
+const P=[
+ ['Ventana corrediza estándar','Línea Herrero','La ventana económica más completa del mercado: la mejor relación entre precio y calidad.',[['Línea','Herrero'],['Aleación','6063'],['Apertura','Corrediza'],['Medidas','Estándar y a medida']],'v'],
+ ['Ventana de vidrio entero con celosía','Corrediza','Vidrio entero con celosía incorporada. Un solo producto para ventilar, dar luz y cuidar la privacidad.',[['Ancho','100, 120 o 150 cm'],['Alto','1 m'],['Profundidad','13 cm'],['Material','Aluminio virgen, 1 mm'],['Vidrio','Flotante transparente, 3 mm'],['Embalaje','Esquineros de cartón']],'c'],
+ ['Aireador con reja y mosquitero','Aluminio','Para baños y cocinas: ventilación permanente, con reja y mosquitero.',[['Ancho','40 a 60 cm'],['Alto','26 o 36 cm'],['Profundidad','9,2 cm'],['Material','Aluminio virgen, 1 mm'],['Vidrio','Flotante transparente, 3 mm']],'a'],
+ ['Puertas tabulares','Ciega 36 mm y 1/2 vidrio','Puertas de aluminio listas para colocar, con apertura derecha o izquierda.',[['Medidas','200 × 80 × 7,5 cm'],['Material','Aluminio virgen, 1 mm'],['Aleación','6063'],['Cerradura','Cerratex 2101'],['Apertura','Derecha e izquierda']],'p'],
+ ['Portones de aluminio','Estándar y a medida','Diseños a elección: paños de vidrio, celosía y sectores ciegos combinados como los necesites.',[['Medidas','Estándar y a medida'],['Diseño','A elección'],['Material','Aluminio']],'g'],
+ ['Rejas de hierro','Hierro macizo','Puertas reja y rejas para ventanas, en hierro macizo.',[['Puertas reja','80 × 200 cm, hierro del 12'],['Rejas','40 a 150 × 60 a 150 cm'],['Hierro','Del 10 y del 12'],['Apertura','Derecha e izquierda']],'r'],
+ ['Cortinas enrollables','Aluminio, a medida','Las fabricamos a medida y se colocan sobre aberturas que ya tenés, sin obra.',[['Se instalan sobre','Aluminio, madera o chapa'],['Oscurecimiento','100%'],['Aislación','Acústica y térmica']],'k'],
+ ['Puertas plegadizas','Blanca y símil madera','Ahorran espacio entre ambientes: se pliegan en lugar de abrirse hacia un lado.',[['Colores','Blanco y símil madera'],['Medidas','Consultanos']],'z']];
+$('#prods').innerHTML=P.map((p,i)=>`<details name="pr"${i?'':' open'}><summary><h3>${p[0]}</h3><span class="tag">${p[1]}</span><span class="pl"></span></summary><div class="bd"><svg class="ic" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true">${ic[p[4]]}</svg><p>${p[2]}</p><dl>${p[3].map(s=>`<dt>${s[0]}</dt><dd>${s[1]}</dd>`).join('')}</dl></div></details>`).join('');
+
+/* ventana hero */
+const ap=$('#ap'),sash=$('#sash'),apo=$('#apo');let raf;
+const setA=v=>{sash.style.transform=`translateX(${-196*v/100}px)`;apo.textContent=Math.round(v)+'%'};
+ap.addEventListener('input',()=>{cancelAnimationFrame(raf);setA(ap.value)});
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){setTimeout(()=>{const t0=performance.now(),to=48,d=2200;
+ const f=t=>{const k=Math.min((t-t0)/d,1),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2,v=to*e;ap.value=v;setA(v);if(k<1)raf=requestAnimationFrame(f)};raf=requestAnimationFrame(f)},700)}
+
+/* fabricación */
+const F=[
+ ['Tirador plástico','Para agarrar la hoja y deslizarla con una mano.',326,222],
+ ['Cierre central de aluminio','Traba las dos hojas en el centro.',300,296],
+ ['Antirruidos estéticos','Evitan golpes y ruidos al cerrar la ventana.',300,84],
+ ['Ruedas con rulemán','La hoja corre suave sobre el riel, sin esfuerzo.',170,372],
+ ['Felpas perimetrales','Frenan el polvo y el aire en todo el perímetro.',540,220],
+ ['Goma central','Sella el encuentro entre las dos hojas.',300,160],
+ ['Sellado en escuadras','Las uniones de los ángulos quedan selladas.',66,74],
+ ['Tapa de desagüe','Deja salir el agua del riel y protege el orificio.',440,386]];
+const fl=$('#fl'),hg=$('#hsg');
+F.forEach((f,i)=>{
+ fl.insertAdjacentHTML('beforeend',`<li><button type="button" aria-expanded="false"><span class="nb">${i+1}</span><strong>${f[0]}</strong><span class="ds"><span>${f[1]}</span></span></button></li>`);
+ hg.insertAdjacentHTML('beforeend',`<g class="hs" tabindex="0" role="button" aria-label="${f[0]}"><circle class="rg" cx="${f[2]}" cy="${f[3]}" r="16"/><circle class="d" cx="${f[2]}" cy="${f[3]}" r="16"/><text x="${f[2]}" y="${f[3]+5}">${i+1}</text></g>`)});
+const lis=[...fl.children],hs=[...hg.children];
+function on(i){lis.forEach((l,j)=>{l.classList.toggle('on',i===j);$('button',l).setAttribute('aria-expanded',i===j)});hs.forEach((h,j)=>h.classList.toggle('on',i===j))}
+lis.forEach((l,i)=>{$('button',l).addEventListener('click',()=>on(i));$('button',l).addEventListener('mouseenter',()=>on(i))});
+hs.forEach((h,i)=>{h.addEventListener('click',()=>on(i));h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();on(i)}})});
+on(0);
+
+/* cortina */
+const cz=$('#cz'),sh=$('#sh'),czo=$('#czo');
+const setC=v=>{sh.style.transform=`scaleY(${v/100})`;czo.textContent=(100-v)+'%'};
+cz.addEventListener('input',()=>setC(+cz.value));setC(35);
+
+/* formulario */
+$('#fm').addEventListener('submit',e=>{e.preventDefault();
+ const a=$('#an').value.trim(),h=$('#al').value.trim(),m=a&&h?` de ${a} x ${h} cm`:'';
+ const t=`Hola Casa Petty, soy ${$('#nm').value.trim()}. Quiero pedir presupuesto: ${$('#tp').value.toLowerCase()}${m}.`;
+ window.open('https://wa.me/5493385467051?text='+encodeURIComponent(t),'_blank','noopener')});
+</script>
+</body>
+</html>
