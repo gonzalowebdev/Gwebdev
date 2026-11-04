@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madrid + Gutiérrez Arquitectos | Proyecto y ejecución integral en Córdoba</title>
+<meta name="description" content="Hacemos evolucionar la casa que amas para acompañar a tu familia. Proyecto + ejecución integral. Zona Noroeste, Córdoba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E6E3DD;--sheet:#F2F0EB;--ink:#242220;--wal:#5B4332;--brass:#B08A4E;--brass2:#CDAA6C;--stone:#8F897F;--f1:'Big Shoulders Display','Oswald','Arial Narrow',sans-serif;--f2:'Instrument Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--f2);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:74rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--f1);font-weight:800;text-transform:uppercase;line-height:.95}
+header{position:sticky;top:0;z-index:20;background:rgba(230,227,221,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(36,34,32,.12)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.logo{width:7.2rem;height:auto;display:block;color:var(--ink)}
+nav{display:none}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;margin-left:2rem}
+nav a:hover{color:var(--wal)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--ink);color:var(--sheet);padding:.8rem 1.35rem;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;border:0;cursor:pointer;font-family:var(--f2);transition:background .25s}
+.btn:hover{background:var(--wal)}
+.btn i{width:.55rem;height:.55rem;border-radius:50%;background:var(--brass2)}
+.hero{padding:2.5rem 0 4rem}
+.hero .wrap{display:grid;gap:2.5rem}
+h1{font-size:3.6rem;letter-spacing:-.005em;animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lead{font-size:1.2rem;margin-top:1.3rem;max-width:26rem;animation:up .9s .12s both}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;margin-top:1.8rem;animation:up .9s .22s both}
+.cta a.ln{font-weight:500;text-underline-offset:.35rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--ink);font-size:.9rem;animation:up .9s .3s both}
+.facts b{display:block;font-weight:600}
+@keyframes up{from{opacity:0;transform:translateY(1.2rem)}to{opacity:1;transform:none}}
+.plan{background:var(--sheet);border:1px solid rgba(36,34,32,.35);animation:up 1s .35s both}
+.tb{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem;padding:.9rem 1rem;border-bottom:1px solid rgba(36,34,32,.35)}
+.tb strong{display:block;font:700 1.35rem/1 var(--f1);text-transform:uppercase}
+.tb span{font-size:.85rem;color:#5a554e}
+.tg{display:flex;background:var(--paper);border-radius:99px;padding:.2rem}
+.tg button{font:500 .88rem var(--f2);border:0;background:none;padding:.5rem 1rem;border-radius:99px;cursor:pointer;color:var(--ink);transition:background .3s,color .3s}
+.tg button[aria-pressed=true]{background:var(--ink);color:var(--sheet)}
+.plan svg{width:100%;height:auto;display:block;padding:.8rem}
+.wall{fill:none;stroke:var(--ink);stroke-width:5}
+.th{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+.cut{fill:var(--sheet)}
+.a,.d,.s,.mk,.isl{transition:opacity .6s,transform .9s cubic-bezier(.6,0,.2,1)}
+[data-s=a] .d,[data-s=d] .a,[data-s=a] .s{opacity:0}
+.isl{transform-box:fill-box;transform-origin:left center;stroke-width:1.6}
+[data-s=a] .isl{transform:scaleX(.35)}
+.s:nth-of-type(1){transition-delay:.35s}.s:nth-of-type(2){transition-delay:.5s}.s:nth-of-type(3){transition-delay:.65s}.s:nth-of-type(4){transition-delay:.8s}
+.mk{transform-box:fill-box;transform-origin:center;transition-delay:.9s}
+[data-s=a] .mk{opacity:0;transform:scale(.3)}
+.mk text{font:700 11px var(--f2);fill:var(--ink)}
+.lg{list-style:none;display:grid;gap:.1rem;padding:0 1rem 1rem;font-size:.92rem;transition:opacity .6s}
+[data-s=a] .lg{opacity:.3}
+.lg li{display:flex;gap:.7rem;align-items:center;padding:.35rem 0;border-top:1px solid rgba(36,34,32,.15)}
+.lg b{flex:none;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--brass);display:grid;place-items:center;font-size:.72rem}
+section{padding:4.5rem 0}
+.sheet{background:var(--sheet)}
+h2{font-size:2.9rem;margin-bottom:1rem}
+.intro{max-width:30rem;color:#4b463f;margin-bottom:2.5rem}
+.case{border-top:1px solid rgba(36,34,32,.3)}
+.case:last-child{border-bottom:1px solid rgba(36,34,32,.3)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:1.5rem 0}
+summary::-webkit-details-marker{display:none}
+summary h3{font-size:2.1rem;font-weight:700}
+summary small{display:block;font-size:.88rem;color:#5a554e;margin-top:.5rem}
+summary::after{content:"+";font:500 2.6rem/1 var(--f1);color:var(--brass);transition:transform .35s}
+details[open] summary::after{transform:rotate(135deg)}
+.cb{display:grid;gap:1.6rem;padding:0 0 2.2rem}
+.cb p{max-width:34rem}
+.cb q{display:block;font:700 1.5rem/1.1 var(--f1);text-transform:uppercase;quotes:none;margin-bottom:.8rem}
+.sw{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.sw span{display:block;height:4.2rem;border:1px solid rgba(36,34,32,.2);margin-bottom:.4rem}
+.sw li{font-size:.85rem;line-height:1.3}
+.ice{background:linear-gradient(115deg,#f6f6f4 35%,#e3e5e5 36%,#f6f6f4 37%,#f0f1f0 70%,#dfe1e1 71%,#f6f6f4 72%)}
+.cal{background:linear-gradient(118deg,transparent 40%,rgba(176,138,78,.55) 41%,transparent 43%),linear-gradient(60deg,transparent 60%,rgba(150,120,80,.3) 61%,transparent 62%),#f6f3ec}
+.wd{background:repeating-linear-gradient(90deg,#6b4a35 0 3px,#5a3e2d 3px 8px,#765540 8px 10px)}
+.bc{background:radial-gradient(#c9c0b1 1px,transparent 1.3px) 0 0/4px 4px,#e9e4da}
+.br{background:linear-gradient(135deg,#7f6335,#d8b87f 50%,#7f6335)}
+.mel{background:linear-gradient(90deg,#b7aea1,#c3bbae)}
+.ln2{background:#d9d0c1}
+.pe{display:grid;gap:1.5rem;align-items:start}
+.pe h3{font-size:3.4rem;margin-bottom:1rem}
+.pe ul{list-style:none}
+.pe li{padding:.8rem 0;border-top:1px solid rgba(36,34,32,.3)}
+.pe li small{display:block;color:#5a554e;font-size:.9rem}
+.pl{font:500 6rem/.8 var(--f1);color:var(--brass);text-align:center}
+.dk{background:var(--ink);color:var(--paper)}
+.big{font:800 3.2rem/.95 var(--f1);text-transform:uppercase}
+.big span{display:block;opacity:.2;transition:opacity .9s}
+.big span.on{opacity:1}
+.sub{font:500 1.5rem/1.1 var(--f1);color:var(--brass2);margin-top:1.4rem;text-transform:uppercase}
+.ct{border-top:1px solid rgba(230,227,221,.2)}
+.ct .wrap{display:grid;gap:2.5rem}
+.ct p{color:#c9c4bb;max-width:26rem}
+.who{margin-top:2rem;font-size:.95rem}
+.who b{color:var(--paper);display:block}
+form{display:grid;gap:1.3rem}
+fieldset{border:0;display:flex;flex-wrap:wrap;gap:.6rem}
+legend,label.f{font-size:.9rem;color:#c9c4bb;margin-bottom:.6rem}
+.ch{position:relative}
+.ch input{position:absolute;opacity:0}
+.ch span{display:block;padding:.6rem 1.1rem;border:1px solid rgba(230,227,221,.4);border-radius:99px;cursor:pointer;transition:background .25s,color .25s}
+.ch input:checked+span{background:var(--brass2);color:var(--ink);border-color:var(--brass2)}
+.ch input:focus-visible+span{outline:2px solid var(--brass2);outline-offset:3px}
+input.t,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(230,227,221,.45);color:var(--paper);font:400 1.05rem var(--f2);padding:.6rem 0;resize:vertical;border-radius:0}
+form .btn{background:var(--brass2);color:var(--ink);justify-self:start}
+form .btn:hover{background:var(--paper)}
+form .btn i{background:var(--ink)}
+footer{background:var(--ink);color:var(--paper);padding:3rem 0 2.5rem;border-top:1px solid rgba(230,227,221,.2)}
+footer .wrap{display:grid;gap:2rem}
+.badge{width:7rem;height:7rem}
+footer ul{list-style:none;font-size:.95rem}
+footer li{padding:.25rem 0}
+footer small{color:#9d978d;display:block;margin-top:1.2rem}
+@media(min-width:48rem){
+.wrap{padding:0 2.5rem}
+nav{display:block}
+.logo{width:8.6rem}
+h1{font-size:5.6rem}
+h2{font-size:4.4rem}
+.hero{padding:4rem 0 6rem}
+.cb{grid-template-columns:1fr 1fr}
+.sw{grid-template-columns:repeat(4,1fr);grid-column:1/-1}
+.pe{grid-template-columns:1fr auto 1fr;gap:2.5rem}
+.pl{font-size:11rem;padding-top:.5rem}
+.big{font-size:6.2rem}
+.sub{font-size:2.2rem}
+summary h3{font-size:3rem}
+.ct .wrap{grid-template-columns:1fr 1fr;gap:5rem}
+footer .wrap{grid-template-columns:auto 1fr auto;align-items:end}
+}
+@media(min-width:72rem){
+.hero .wrap{grid-template-columns:1.05fr 1fr;gap:4rem;align-items:center}
+h1{font-size:7.2rem}
+.big{font-size:8.4rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 240 112"><g fill="currentColor" font-family="'Big Shoulders Display','Oswald','Arial Narrow',sans-serif"><text x="0" y="42" font-size="50" font-weight="800" textLength="232" lengthAdjust="spacingAndGlyphs">MADRID +</text><text x="0" y="88" font-size="50" font-weight="800" textLength="240" lengthAdjust="spacingAndGlyphs">GUTIERREZ</text><text x="2" y="110" font-size="22" font-weight="500" textLength="236" lengthAdjust="spacing">ARQUITECTOS</text></g></symbol></svg>
+
+<header><div class="wrap bar">
+<a href="#top" aria-label="Madrid + Gutiérrez Arquitectos"><svg class="logo" viewBox="0 0 240 112" role="img"><use href="#lg"/></svg></a>
+<nav><a href="#obras">Obras</a><a href="#metodo">Método</a><a href="#contacto">Contacto</a></nav>
+<a class="btn wa" href="#contacto"><i></i>Escribinos</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<h1>Hacemos evolucionar la casa que amas</h1>
+<p class="lead">para acompañar a tu familia.</p>
+<div class="cta"><a class="btn wa" href="#contacto"><i></i>Contanos tu idea</a><a class="ln" href="#obras">Ver obras terminadas</a></div>
+<div class="facts"><div><b>Proyecto + Ejecución integral</b>Un solo equipo, de la idea a la entrega</div><div><b>Zona Noroeste</b>Córdoba, Argentina</div></div>
+</div>
+<figure class="plan" id="plan" data-s="a">
+<div class="tb"><div><strong>Cocina con isla</strong><span>Planta de la reforma</span></div>
+<div class="tg" role="group" aria-label="Estado del plano"><button type="button" data-v="a" aria-pressed="true">Antes</button><button type="button" data-v="d" aria-pressed="false">Después</button></div></div>
+<svg viewBox="0 0 360 280" role="img" aria-label="Plano de una cocina antes y después de la reforma">
+<defs><pattern id="h" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line y2="5" stroke="#B08A4E" stroke-width="1.5"/></pattern></defs>
+<rect class="wall" x="16" y="16" width="328" height="248"/>
+<g class="a"><rect class="cut" x="250" y="12" width="40" height="8"/><line class="th" x1="250" y1="16" x2="290" y2="16"/></g>
+<g class="d"><rect class="cut" x="100" y="12" width="200" height="8"/><line class="th" x1="100" y1="14" x2="300" y2="14"/><line class="th" x1="100" y1="18" x2="300" y2="18"/></g>
+<rect class="th" x="60" y="26" width="190" height="24"/><rect class="th" x="168" y="31" width="32" height="14"/>
+<circle class="th" cx="95" cy="38" r="5"/><circle class="th" cx="115" cy="38" r="5"/><circle class="th" cx="135" cy="38" r="5"/>
+<rect class="th a" x="22" y="70" width="12" height="110"/>
+<rect class="th d" x="22" y="26" width="26" height="236" fill="url(#h)"/>
+<rect class="th" x="270" y="190" width="68" height="68"/>
+<g stroke="#242220" stroke-width="1"><line x1="270" y1="202" x2="338" y2="202"/><line x1="270" y1="214" x2="338" y2="214"/><line x1="270" y1="226" x2="338" y2="226"/><line x1="270" y1="238" x2="338" y2="238"/><line x1="270" y1="250" x2="338" y2="250"/></g>
+<rect class="th d" x="270" y="226" width="68" height="32" fill="url(#h)"/>
+<rect class="th isl" x="70" y="120" width="200" height="34"/>
+<circle class="th" cx="85" cy="172" r="9"/><circle class="th" cx="118" cy="172" r="9"/>
+<circle class="th s" cx="151" cy="172" r="9"/><circle class="th s" cx="184" cy="172" r="9"/><circle class="th s" cx="217" cy="172" r="9"/><circle class="th s" cx="250" cy="172" r="9"/>
+<g class="mk"><circle cx="200" cy="74" r="9" fill="#B08A4E"/><text x="200" y="78" text-anchor="middle">1</text></g>
+<g class="mk"><circle cx="35" cy="145" r="9" fill="#B08A4E"/><text x="35" y="149" text-anchor="middle">2</text></g>
+<g class="mk"><circle cx="304" cy="242" r="9" fill="#B08A4E"/><text x="304" y="246" text-anchor="middle">3</text></g>
+<g class="mk"><circle cx="170" cy="137" r="9" fill="#B08A4E"/><text x="170" y="141" text-anchor="middle">4</text></g>
+</svg>
+<ol class="lg"><li><b>1</b>Ventana grande: más luz natural</li><li><b>2</b>Guardado hasta el techo</li><li><b>3</b>Aprovechamos el espacio bajo la escalera</li><li><b>4</b>Isla ampliada para seis lugares cómodos</li></ol>
+</figure>
+</div></section>
+
+<section class="sheet" id="obras"><div class="wrap">
+<h2>Obras terminadas</h2>
+<p class="intro">Cada proyecto se explica por sus decisiones y sus materiales. Abrí uno para ver cómo se resolvió.</p>
+<details class="case" open><summary><div><h3>Una suite para descansar</h3><small>Suite con salida a la terraza</small></div></summary>
+<div class="cb"><div><q>Luz natural, texturas suaves y madera en equilibrio.</q><p>Esta suite necesitaba más luz. Abrimos un gran ventanal hacia la terraza y esa nueva conexión con el exterior transformó el dormitorio. Sumamos guardado, alfombra, textiles, obras de arte y lámparas de mesa para una atmósfera más íntima.</p></div>
+<ul class="sw"><li><span class="wd"></span>Madera</li><li><span class="ice"></span>Infinity Crystal Ice</li><li><span class="br"></span>Herrajes Orion</li><li><span class="ln2"></span>Alfombra y textiles</li></ul></div></details>
+<details class="case"><summary><div><h3>Un dormitorio para crecer juntas</h3><small>Dormitorio en La Calera</small></div></summary>
+<div class="cb"><div><q>Cabeceras curvas y detalles que se descubren de cerca.</q><p>Pensado para dos hermanas, combina cabeceras curvas, texturas suaves y un rincón de dressoir. Hoy el proyecto está terminado.</p></div>
+<ul class="sw"><li><span class="bc"></span>Cabeceras y textiles</li><li><span class="mel"></span>Revestimientos de melamina</li><li><span class="ice"></span>Mesada del dressoir</li><li><span class="br"></span>Herrajes</li></ul></div></details>
+<details class="case"><summary><div><h3>Una cocina pensada para el uso cotidiano</h3><small>Reforma de cocina con isla</small></div></summary>
+<div class="cb"><div><q>No siempre necesita más metros. Necesita mejores decisiones.</q><p>Sumamos luz natural, llevamos el guardado hasta el techo, aprovechamos el espacio bajo la escalera, alineamos los equipos y ampliamos la isla para seis lugares cómodos. Con tomas accesibles y campana extraíble integrada.</p></div>
+<ul class="sw"><li><span class="cal"></span>Infinity, Calacatta Oro</li><li><span class="wd"></span>Madera en el guardado</li><li><span class="ln2"></span>Banquetas Malka</li><li><span class="mel"></span>Isla y mesada</li></ul></div></details>
+</div></section>
+
+<section id="metodo"><div class="wrap">
+<h2>Proyecto + Ejecución</h2>
+<p class="intro">Quien diseña también construye. Por eso lo proyectado es lo que se entrega.</p>
+<div class="pe">
+<div><h3>Proyecto</h3><ul><li>Relevamiento de tu casa y tu familia<small>Cómo vivís hoy y qué necesitás mañana</small></li><li>Planos y distribución<small>Luz, circulaciones y guardado</small></li><li>Materiales y equipamiento<small>Elegidos para acompañar cada uso</small></li></ul></div>
+<div class="pl" aria-hidden="true">+</div>
+<div><h3>Ejecución</h3><ul><li>Obra y remodelación<small>Dirección y seguimiento en cada etapa</small></li><li>Mobiliario a medida<small>Carpintería, herrajes y revestimientos</small></li><li>Entrega terminada<small>Con textiles, arte e iluminación</small></li></ul></div>
+</div></div></section>
+
+<section class="dk"><div class="wrap">
+<p class="big" id="big"><span>Más luz.</span><span>Más guardado.</span><span>Mejor uso del espacio.</span></p>
+<p class="sub">Sin sumar un solo metro.</p>
+</div></section>
+
+<section class="dk ct" id="contacto"><div class="wrap">
+<div><h2>Contanos tu idea</h2><p>Escribinos por WhatsApp y te respondemos con los primeros pasos para transformar tu casa.</p>
+<div class="who"><b>Andrés Madrid y Luciana Gutiérrez</b>Arquitectos. Zona Noroeste, Córdoba.</div></div>
+<form id="f">
+<fieldset><legend>¿Qué querés transformar?</legend>
+<label class="ch"><input type="radio" name="t" value="una cocina" checked><span>Cocina</span></label>
+<label class="ch"><input type="radio" name="t" value="un dormitorio"><span>Dormitorio</span></label>
+<label class="ch"><input type="radio" name="t" value="una remodelación integral"><span>Remodelación integral</span></label>
+<label class="ch"><input type="radio" name="t" value="otro proyecto"><span>Otro</span></label></fieldset>
+<div><label class="f" for="n">Tu nombre</label><input class="t" id="n" autocomplete="name"></div>
+<div><label class="f" for="m">Tu idea</label><textarea id="m" rows="3" placeholder="Contanos qué te gustaría cambiar"></textarea></div>
+<button class="btn" type="submit"><i></i>Enviar por WhatsApp</button>
+</form></div></section>
+</main>
+
+<footer><div class="wrap">
+<svg class="badge" viewBox="0 0 300 300" role="img" aria-label="Madrid + Gutiérrez Arquitectos"><circle cx="150" cy="150" r="150" fill="#D1D0CE"/><g style="color:#242220"><use href="#lg" x="38" y="98" width="224" height="104"/></g></svg>
+<ul><li><a href="https://www.instagram.com/madridgutierrezarq" target="_blank" rel="noopener">Instagram @madridgutierrezarq</a></li><li><a class="wa" href="#contacto">WhatsApp</a></li><li>Zona Noroeste, Córdoba</li></ul>
+<small>© 2026 Madrid + Gutiérrez Arquitectos</small>
+</div></footer>
+
+<script>
+const WA="5493510000000"; // Reemplazar por el número real de WhatsApp (código de país + área + número)
+const link=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+document.querySelectorAll('a.wa').forEach(a=>{a.addEventListener('click',()=>{})});
+const plan=document.getElementById('plan'),btns=plan.querySelectorAll('.tg button');
+const setS=s=>{plan.dataset.s=s;btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===s))};
+let touched=false;
+btns.forEach(b=>b.addEventListener('click',()=>{touched=true;setS(b.dataset.v)}));
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+setTimeout(()=>{if(!touched)setS('d')},rm?0:1800);
+const spans=document.querySelectorAll('#big span');
+new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){spans.forEach((s,i)=>setTimeout(()=>s.classList.add('on'),rm?0:i*500));o.disconnect()}},{threshold:.5}).observe(document.getElementById('big'));
+document.getElementById('f').addEventListener('submit',e=>{
+e.preventDefault();
+const n=document.getElementById('n').value.trim(),m=document.getElementById('m').value.trim(),t=document.querySelector('input[name=t]:checked').value;
+const txt=`Hola, soy ${n||'una persona interesada'}. Quiero consultar por ${t}.${m?' '+m:''}`;
+window.open(link(txt),'_blank','noopener');
+});
+</script>
+</body>
+</html>
