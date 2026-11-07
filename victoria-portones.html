@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Victoria Portones | Portones automáticos y cortinas metálicas en Córdoba</title>
+<meta name="description" content="Portones automáticos, cortinas metálicas, automatizaciones y servicio técnico propio en Córdoba. Visita y presupuesto sin cargo.">
+<meta name="theme-color" content="#15181c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 412 295'%3E%3Cpolygon fill='%23e5421b' points='5,8 130,8 248,285 122,285'/%3E%3Cpolygon fill='%23524d47' points='243,36 187,117 248,285 308,148'/%3E%3Cpolygon fill='%23e5421b' points='243,8 370,8 407,78 280,78'/%3E%3Cpolygon fill='%23b93a18' points='280,78 407,78 370,147 242,147'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--acero:#15181c;--liston:#1f2328;--hierro:#2c3137;--humo:#e3e1de;--naranja:#e5421b;--brasa:#b93a18;--piedra:#524d47;--linea:rgba(227,225,222,.14);--tit:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--txt:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--acero);color:var(--humo);font-family:var(--txt);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:.15rem solid var(--naranja);outline-offset:.2rem}
+.wrap{width:100%;max-width:72rem;margin:0 auto;padding:0 1.25rem}
+svg.ico{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(21,24,28,.82);backdrop-filter:blur(.9rem);-webkit-backdrop-filter:blur(.9rem);border-bottom:1px solid var(--linea);padding-top:env(safe-area-inset-top,0)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.brand{display:flex;align-items:center;gap:.75rem;font-family:var(--tit);font-weight:800;font-size:1.25rem;letter-spacing:.04em;line-height:1}
+.brand svg{width:2.4rem;height:auto}
+.brand small{display:block;font-family:var(--txt);font-weight:500;font-size:.75rem;letter-spacing:.02em;color:#a9a6a1;margin-top:.2rem}
+nav ul{list-style:none;display:none;gap:2rem;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--naranja)}
+.burger{background:none;border:1px solid var(--linea);color:var(--humo);width:2.75rem;height:2.75rem;border-radius:.4rem;display:grid;place-items:center;cursor:pointer}
+.menu{display:none;border-top:1px solid var(--linea);background:var(--acero);padding:.5rem 1.25rem 1.25rem}
+.menu a{display:block;padding:.9rem 0;border-bottom:1px solid var(--linea);font-family:var(--tit);font-weight:700;font-size:1.25rem}
+.menu.on{display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--naranja);color:#fff;font-weight:600;font-size:1rem;padding:.9rem 1.5rem;border:0;border-radius:.4rem;cursor:pointer;font-family:var(--txt);transition:background .2s,transform .2s}
+.btn:hover{background:var(--brasa)}
+.btn:active{transform:translateY(1px)}
+.btn.line{background:transparent;border:1px solid rgba(227,225,222,.35)}
+.btn.line:hover{background:var(--humo);color:var(--acero)}
+.hbtn{display:none}
+
+/* hero */
+.hero{padding:7.5rem 0 4rem;background:radial-gradient(ellipse at 85% 10%,rgba(229,66,27,.16),transparent 55%),var(--acero)}
+.hero .wrap{display:grid;gap:2.5rem}
+h1{font-family:var(--tit);font-weight:800;font-size:3rem;line-height:1.02;letter-spacing:-.02em}
+.lead{margin-top:1.5rem;font-size:1.125rem;color:#b9b6b1;max-width:30rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.proof{display:flex;gap:2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--linea)}
+.proof b{display:block;font-family:var(--tit);font-size:1.75rem;line-height:1.1}
+.proof span{font-size:.875rem;color:#a9a6a1}
+.stage{position:relative;aspect-ratio:4/3;border:.7rem solid var(--hierro);border-bottom-width:1rem;border-radius:.4rem .4rem 0 0;overflow:hidden;background:radial-gradient(ellipse at 50% 105%,#ff8a45 0,#9a3512 34%,#1a1210 78%);box-shadow:0 2.5rem 5rem rgba(0,0,0,.5)}
+.stage .mark{position:absolute;left:50%;top:46%;width:42%;transform:translate(-50%,-50%);filter:drop-shadow(0 0 1.5rem rgba(0,0,0,.45))}
+.leaf{position:absolute;inset:0;background:repeating-linear-gradient(90deg,#252a30 0 .85rem,#191c20 .85rem 1rem);border-right:.4rem solid var(--hierro);transition:transform 1.8s cubic-bezier(.65,0,.25,1);will-change:transform}
+.leaf::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,.09),transparent 35%,rgba(0,0,0,.4))}
+.stage.open .leaf{transform:translateX(-97%)}
+.motor{position:absolute;right:.75rem;top:.75rem;width:3rem;height:1.5rem;background:var(--hierro);border-radius:.2rem;display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem;z-index:2}
+.motor i{width:.5rem;height:.5rem;border-radius:50%;background:#3d4249;transition:background .2s,box-shadow .2s}
+.stage.moving .motor i{background:var(--naranja);box-shadow:0 0 .6rem var(--naranja)}
+.remote{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.25rem}
+.remote p{font-size:.9rem;color:#a9a6a1}
+
+/* secciones */
+section{padding:4.5rem 0}
+h2{font-family:var(--tit);font-weight:800;font-size:2.25rem;line-height:1.08;letter-spacing:-.015em;max-width:38rem}
+.sub{margin-top:1rem;color:#b9b6b1;max-width:34rem}
+.light{background:var(--humo);color:var(--acero)}
+.light .sub{color:#4a4741}
+.rows{margin-top:2.5rem;border-top:1px solid var(--linea)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.4rem 0;border-bottom:1px solid var(--linea);transition:padding .25s,color .2s}
+.row h3{font-family:var(--tit);font-weight:700;font-size:1.5rem;line-height:1.2}
+.row p{font-size:.95rem;color:#a9a6a1;margin-top:.2rem}
+.row .ico{width:1.5rem;height:1.5rem;color:var(--naranja);transition:transform .25s}
+.row:hover{padding-left:.75rem}
+.row:hover .ico{transform:translateX(.35rem)}
+.cols{display:grid;gap:2.5rem;margin-top:3rem}
+.col{border-top:.2rem solid var(--naranja);padding-top:1.25rem}
+.col h3{font-family:var(--tit);font-weight:800;font-size:1.5rem;margin-bottom:.6rem}
+.col p{color:#4a4741}
+.steps{list-style:none;margin-top:3rem;display:grid;gap:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--linea)}
+.steps li::before{content:counter(s);font-family:var(--tit);font-weight:800;font-size:2.5rem;line-height:1;color:var(--naranja)}
+.steps h3{font-family:var(--tit);font-size:1.25rem;font-weight:700}
+.steps p{color:#a9a6a1;font-size:.95rem}
+.team{display:grid;gap:2rem}
+.team blockquote{font-family:var(--tit);font-weight:700;font-size:1.5rem;line-height:1.3;border-left:.25rem solid var(--naranja);padding-left:1.25rem}
+.ig{display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start;background:linear-gradient(120deg,var(--liston),var(--hierro));border:1px solid var(--linea);border-radius:.6rem;padding:2rem}
+.ig h2{font-size:1.875rem}
+.contact{display:grid;gap:2.5rem}
+.data{list-style:none;display:grid;gap:1.25rem;margin-top:2rem}
+.data li{display:flex;gap:1rem;align-items:flex-start}
+.data .ico{color:var(--naranja);margin-top:.2rem}
+.data b{display:block;font-family:var(--tit);font-size:1.1rem}
+.data a:hover{color:var(--naranja)}
+form{display:grid;gap:1rem;background:var(--liston);border:1px solid var(--linea);border-radius:.6rem;padding:1.5rem}
+label{display:grid;gap:.4rem;font-size:.9rem;font-weight:500}
+input,textarea{font:inherit;color:var(--humo);background:var(--acero);border:1px solid var(--linea);border-radius:.4rem;padding:.8rem .9rem;width:100%}
+input:focus,textarea:focus{outline:.15rem solid var(--naranja);outline-offset:0;border-color:transparent}
+textarea{min-height:7rem;resize:vertical}
+.map{margin-top:3rem;border-radius:.6rem;overflow:hidden;border:1px solid var(--linea)}
+.map iframe{display:block;width:100%;height:20rem;border:0;filter:grayscale(1) invert(.9) contrast(.9)}
+footer{border-top:1px solid var(--linea);padding:2rem 0 calc(2rem + env(safe-area-inset-bottom,0));font-size:.875rem;color:#a9a6a1}
+footer .wrap{display:flex;flex-direction:column;gap:.75rem}
+.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0));z-index:40;width:3.5rem;height:3.5rem;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 .6rem 1.5rem rgba(0,0,0,.45)}
+.wa svg{width:1.75rem;height:1.75rem}
+
+@media(min-width:56rem){
+ nav ul{display:flex}.burger,.menu{display:none!important}.hbtn{display:inline-flex}
+ .hero{padding:9rem 0 6rem}.hero .wrap{grid-template-columns:1fr 1.1fr;align-items:center;gap:4rem}
+ h1{font-size:4.5rem}h2{font-size:3rem}.ig h2{font-size:2.25rem}
+ section{padding:7rem 0}
+ .cols{grid-template-columns:repeat(3,1fr);gap:3rem}
+ .steps{grid-template-columns:repeat(4,1fr);gap:2rem}
+ .steps li{grid-template-columns:1fr;border-top:1px solid var(--linea)}
+ .team{grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+ .ig{flex-direction:row;align-items:center;justify-content:space-between;padding:3rem}
+ .contact{grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+ footer .wrap{flex-direction:row;justify-content:space-between}
+ .row h3{font-size:2rem}
+}
+@media(prefers-reduced-motion:reduce){.leaf,.row,.row .ico,.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="v" viewBox="0 0 412 295">
+  <polygon fill="#e5421b" points="5,8 130,8 248,285 122,285"/>
+  <polygon fill="#524d47" points="243,36 187,117 248,285 308,148"/>
+  <polygon fill="#e5421b" points="243,8 370,8 407,78 280,78"/>
+  <polygon fill="#b93a18" points="280,78 407,78 370,147 242,147"/>
+ </symbol>
+</svg>
+
+<header>
+ <div class="wrap bar">
+  <a class="brand" href="#inicio" aria-label="Victoria Portones, inicio">
+   <svg viewBox="0 0 412 295" role="img" aria-hidden="true"><use href="#v"/></svg>
+   <span>VICTORIA<small>Portones automáticos</small></span>
+  </a>
+  <nav aria-label="Principal">
+   <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#tecnologia">Tecnología</a></li>
+    <li><a href="#proceso">Cómo trabajamos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+   </ul>
+  </nav>
+  <a class="btn hbtn" href="https://wa.me/5493512235220?text=Hola%21%20Quiero%20pedir%20un%20presupuesto" target="_blank" rel="noopener">Pedí tu presupuesto</a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+   <svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+ </div>
+ <div class="menu" id="menu">
+  <a href="#servicios">Servicios</a><a href="#tecnologia">Tecnología</a><a href="#proceso">Cómo trabajamos</a><a href="#contacto">Contacto</a>
+ </div>
+</header>
+
+<main id="inicio">
+ <div class="hero">
+  <div class="wrap">
+   <div>
+    <h1>Portones que abren cuando llegás.</h1>
+    <p class="lead">Fabricamos, automatizamos y mantenemos portones y cortinas metálicas en Córdoba, con servicio técnico propio y garantía.</p>
+    <div class="cta">
+     <a class="btn" href="https://wa.me/5493512235220?text=Hola%21%20Quiero%20pedir%20un%20presupuesto" target="_blank" rel="noopener">Pedí tu presupuesto sin cargo</a>
+     <a class="btn line" href="#servicios">Ver servicios</a>
+    </div>
+    <div class="proof">
+     <div><b>+8 años</b><span>en el rubro</span></div>
+     <div><b>Sin cargo</b><span>visita a domicilio</span></div>
+     <div><b>Propio</b><span>servicio técnico</span></div>
+    </div>
+   </div>
+   <div>
+    <div class="stage" id="stage" aria-hidden="true">
+     <svg class="mark" viewBox="0 0 412 295"><use href="#v"/></svg>
+     <div class="motor"><i></i></div>
+     <div class="leaf"></div>
+    </div>
+    <div class="remote">
+     <p>Probá el control remoto</p>
+     <button class="btn line" id="remote" type="button" aria-pressed="false">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0"/><circle cx="12" cy="12" r="1"/><path d="M7 17h10v3H7z"/></svg>
+      <span id="rlabel">Abrir portón</span>
+     </button>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <section id="servicios">
+  <div class="wrap">
+   <h2>Todo lo que necesita tu entrada, en un solo lugar</h2>
+   <p class="sub">Tocá un servicio y nos escribís directo por WhatsApp.</p>
+   <div class="rows" id="rows"></div>
+  </div>
+ </section>
+
+ <section id="tecnologia" class="light">
+  <div class="wrap">
+   <h2>Materiales y tecnología que aguantan el uso diario</h2>
+   <p class="sub">Elegimos componentes pensando en que funcionen bien durante años, no solo el día de la instalación.</p>
+   <div class="cols">
+    <div class="col"><h3>Equipos 100%</h3><p>Transmisión de acero y bronce, cremalleras de acero y controles remotos metálicos.</p></div>
+    <div class="col"><h3>Sin romper</h3><p>Cerramientos modernos y portones de todos los materiales: los volvemos levadizos sin rehacer lo que ya tenés.</p></div>
+    <div class="col"><h3>Garantía</h3><p>Colocación a cargo de nuestro equipo y una posventa que responde cuando la necesitás.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="proceso">
+  <div class="wrap">
+   <h2>De la primera visita al portón funcionando</h2>
+   <ol class="steps">
+    <li><div><h3>Asesoramiento</h3><p>Te ayudamos a elegir la mejor opción para tu entrada.</p></div></li>
+    <li><div><h3>Visita sin cargo</h3><p>Vamos a tu domicilio, medimos y vemos cada detalle.</p></div></li>
+    <li><div><h3>Presupuesto</h3><p>Una propuesta personalizada, clara y sin sorpresas.</p></div></li>
+    <li><div><h3>Colocación y posventa</h3><p>Instalamos nosotros y quedamos a un mensaje de distancia.</p></div></li>
+   </ol>
+  </div>
+ </section>
+
+ <section class="light">
+  <div class="wrap team">
+   <blockquote>Nos unimos para hacer las cosas mejor, como nos gustan.</blockquote>
+   <div>
+    <h2>Un equipo con experiencia</h2>
+    <p class="sub">Tras más de ocho años en el rubro formamos Victoria Portones con una idea simple: que cada producto esté bien hecho. Ofrecemos seguridad, comodidad, calidad y confianza, con personal calificado y servicio técnico propio.</p>
+   </div>
+  </div>
+ </section>
+
+ <section>
+  <div class="wrap">
+   <div class="ig">
+    <div><h2>Mirá nuestras obras terminadas</h2><p class="sub">Portones, cortinas y automatizaciones instaladas, todos los días en Instagram.</p></div>
+    <a class="btn" href="https://www.instagram.com/victoria.portones/" target="_blank" rel="noopener">Ir a @victoria.portones</a>
+   </div>
+  </div>
+ </section>
+
+ <section id="contacto" style="padding-top:0">
+  <div class="wrap">
+   <div class="contact">
+    <div>
+     <h2>Pedí tu presupuesto sin cargo</h2>
+     <ul class="data">
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><b>Teléfono</b><a href="tel:+543512235220">351-2235220</a></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>Mail</b><a href="mailto:victoriaportones@gmail.com">victoriaportones@gmail.com</a></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Dirección</b>Av. Arturo Capdevila 6500, Villa Esquiú, Córdoba</div></li>
+     </ul>
+    </div>
+    <form id="form">
+     <label>Nombre<input name="n" required autocomplete="name"></label>
+     <label>Teléfono<input name="t" type="tel" required autocomplete="tel"></label>
+     <label>¿Qué necesitás?<textarea name="m" placeholder="Ej: portón corredizo automático para cochera"></textarea></label>
+     <button class="btn" type="submit">Enviar por WhatsApp</button>
+    </form>
+   </div>
+   <div class="map"><iframe title="Mapa de Victoria Portones" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.3829005447615!2d-64.12464907133277!3d-31.37600405298876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297c510d343b5%3A0xddf59ecd9fcf428a!2sAv.%20Dr.%20Arturo%20Capdevila%206500%2C%20X5001%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1594419996959!5m2!1ses-419!2sar"></iframe></div>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>© <span id="y"></span> Victoria Portones. Córdoba, Argentina.</span>
+  <span><a href="https://www.instagram.com/victoria.portones/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/Victoria-Portones-102061674865451/" target="_blank" rel="noopener">Facebook</a></span>
+ </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5493512235220?text=Hola%21%20Quiero%20pedir%20un%20presupuesto" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+ <svg viewBox="0 0 24 24" style="fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M3 21l1.6-4.8A9 9 0 1 1 8 19.6z"/><path d="M9 8.5c0 3.5 3 6.5 6.500 6.500l1-1.500-2-1-1 .8a4.500 4.500 0 0 1-2-2l.8-1-1-2z"/></svg>
+</a>
+
+<script>
+(function(){
+ var S=[
+  ["Portones automáticos","Corredizos, batientes y levadizos con motor"],
+  ["Cortinas metálicas","Para locales, cocheras y depósitos"],
+  ["Automatizaciones","Sumá motor y control remoto a lo que ya tenés"],
+  ["Barreras viales","Control de acceso para estacionamientos y barrios"],
+  ["Rejas y herrería","Diseños a medida en hierro"],
+  ["Montacargas","Instalación y mantenimiento"],
+  ["Repuestos y accesorios","Controles, cremalleras, motores y más"],
+  ["Servicio técnico","Reparación y mantenimiento con equipo propio"]
+ ];
+ var arrow='<svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+ document.getElementById('rows').innerHTML=S.map(function(s){
+  var t=encodeURIComponent('Hola! Quiero cotizar: '+s[0]);
+  return '<a class="row" href="https://wa.me/5493512235220?text='+t+'" target="_blank" rel="noopener"><div><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>'+arrow+'</a>';
+ }).join('');
+
+ var st=document.getElementById('stage'),rb=document.getElementById('remote'),rl=document.getElementById('rlabel'),busy=null;
+ var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function set(open){
+  st.classList.toggle('open',open);
+  rb.setAttribute('aria-pressed',open);
+  rl.textContent=open?'Cerrar portón':'Abrir portón';
+  if(!calm){st.classList.add('moving');clearTimeout(busy);busy=setTimeout(function(){st.classList.remove('moving')},1800)}
+ }
+ rb.addEventListener('click',function(){set(!st.classList.contains('open'))});
+ if(calm){st.classList.add('open');rb.setAttribute('aria-pressed',true);rl.textContent='Cerrar portón'}
+ else setTimeout(function(){set(true)},700);
+
+ var b=document.getElementById('burger'),m=document.getElementById('menu');
+ b.addEventListener('click',function(){var o=m.classList.toggle('on');b.setAttribute('aria-expanded',o)});
+ m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('on');b.setAttribute('aria-expanded',false)}});
+
+ document.getElementById('form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target,txt='Hola! Soy '+f.n.value+' ('+f.t.value+'). '+(f.m.value||'Quiero pedir un presupuesto.');
+  window.open('https://wa.me/5493512235220?text='+encodeURIComponent(txt),'_blank','noopener');
+ });
+ document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
