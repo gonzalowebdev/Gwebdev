@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obrantex | Construcción, mantenimiento, reformas y seguridad en Córdoba</title>
+<meta name="description" content="Servicios integrales en construcción, mantenimiento y reformas en Córdoba Capital. Más cámaras de seguridad con Segurix. Presupuesto sin cargo y garantía en todos los trabajos.">
+<meta name="theme-color" content="#15130F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<style>
+:root{--c:#15130F;--h:#D8D3C8;--a:#FF9F1A;--l:#E0613F;--lb:#26130F;--s:#0D1C21;--t:#62E0CF;--w:#F6F3EC;--r:#C9D5D8;
+--d:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;--b:'Hanken Grotesk',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 1.05rem/1.6 var(--b);background:var(--h);color:var(--c);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--d);font-weight:900;line-height:.92;letter-spacing:-.01em}
+h2{font-size:clamp(2.6rem,6vw,5rem)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--a);color:var(--c);font:700 1rem var(--b);padding:.95rem 1.5rem;border-radius:2px;text-decoration:none;border:0;cursor:pointer;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);transition:background .2s,transform .2s}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+.btn.out{background:transparent;color:var(--w);box-shadow:inset 0 0 0 2px var(--w);clip-path:none}
+.btn.out:hover{background:var(--w);color:var(--c)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(21,19,15,.92);backdrop-filter:blur(10px);color:var(--w)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font:900 1.7rem var(--d)}
+.brand b{color:var(--a)}
+.brand svg{width:46px;height:auto}
+nav{display:flex;gap:1.8rem}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;opacity:.8}
+nav a:hover{opacity:1;color:var(--a)}
+header .btn{padding:.6rem 1.1rem;font-size:.9rem}
+
+/* hero */
+.hero{background:var(--c);color:var(--w);position:relative;overflow:hidden;
+background-image:linear-gradient(rgba(255,159,26,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,159,26,.07) 1px,transparent 1px);background-size:44px 44px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;min-height:calc(100svh - 68px - 70px);padding-block:4rem}
+.hero h1{font-size:clamp(3.6rem,9.5vw,8.2rem)}
+.hero h1 span{display:block}
+.hero p{max-width:34ch;margin:1.8rem 0 2.2rem;font-size:1.2rem;color:#d9d4c8}
+.hero .cta{display:flex;gap:1rem;flex-wrap:wrap}
+.lg{width:100%;max-width:520px;justify-self:center;filter:drop-shadow(0 30px 60px rgba(255,159,26,.18))}
+.lg .arc,.lg .roof{fill:none;stroke:var(--a);stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.5s .2s cubic-bezier(.6,0,.2,1) forwards}
+.lg .roof{animation-delay:.55s;animation-duration:1.2s}
+@keyframes dr{to{stroke-dashoffset:0}}
+.lg .win rect{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .4s cubic-bezier(.3,1.6,.5,1) forwards}
+.lg .win rect:nth-child(1){animation-delay:1.5s}.lg .win rect:nth-child(2){animation-delay:1.58s}.lg .win rect:nth-child(3){animation-delay:1.66s}.lg .win rect:nth-child(4){animation-delay:1.74s}
+@keyframes pop{to{transform:scale(1)}}
+.lg .ham{animation:sw .7s 1.2s cubic-bezier(.3,1.4,.5,1) both}
+@keyframes sw{from{transform:rotate(-35deg);opacity:0}to{transform:none;opacity:1}}
+.lg .tx{opacity:0;animation:fi .8s 1.8s forwards}
+@keyframes fi{to{opacity:1}}
+.tape{height:14px;background:repeating-linear-gradient(-45deg,var(--a) 0 22px,var(--c) 22px 44px)}
+.band{background:var(--a);color:var(--c);font:800 1.45rem var(--d);overflow:hidden}
+.band ul{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;gap:.2rem 0;padding:.9rem 1rem}
+.band li+li::before{content:"/";margin:0 1.1rem;opacity:.45}
+
+/* servicios */
+.serv{padding:7rem 0}
+.serv .wrap{display:grid;grid-template-columns:.8fr 1.4fr;gap:4rem}
+.serv .intro{position:sticky;top:110px;align-self:start}
+.serv .intro p{margin-top:1.5rem;max-width:30ch;color:#4a463d}
+.row{display:grid;grid-template-columns:1fr auto;gap:.3rem 1.5rem;padding:1.6rem 1rem;border-top:2px solid var(--c);transition:background .25s,padding .25s}
+.row:last-child{border-bottom:2px solid var(--c)}
+.row:hover{background:var(--a);padding-left:1.6rem}
+.row h3{font-size:clamp(1.9rem,3.4vw,2.7rem);grid-column:1}
+.row small{grid-row:1;grid-column:2;align-self:center;font:700 .85rem var(--b);border:2px solid currentColor;border-radius:99px;padding:.15rem .8rem}
+.row p{grid-column:1/-1;max-width:52ch;color:#4a463d}
+.row:hover p{color:var(--c)}
+
+/* obra real */
+.obra{background:var(--lb);color:var(--w);padding:7rem 0}
+.obra .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.obra .big{font-size:clamp(2.4rem,5.2vw,4.6rem)}
+.obra .big em{font-style:normal;color:var(--l)}
+.obra .lead{margin-top:1.5rem;max-width:36ch;color:#e3cfc7}
+.steps{list-style:none;position:relative;padding-left:3rem;counter-reset:s}
+.steps::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:3px;background:#4a2a22}
+.steps li{position:relative;padding:0 0 2.4rem;opacity:.35;transition:opacity .5s}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:-3rem;top:0;width:34px;height:34px;border-radius:50%;background:var(--lb);border:3px solid #4a2a22;display:grid;place-items:center;font:800 1rem var(--d);transition:.4s}
+.steps li.on{opacity:1}
+.steps li.on::before{background:var(--l);border-color:var(--l);color:var(--c)}
+.steps h3{font-size:2rem;margin-bottom:.3rem}
+.steps p{color:#e3cfc7;max-width:40ch}
+.res{margin-top:1rem;background:var(--l);color:var(--c);padding:1rem 1.3rem;font-weight:700;border-radius:2px}
+
+/* lluvias */
+.rain{background:var(--r);padding:7rem 0;background-image:repeating-linear-gradient(105deg,rgba(21,19,15,.06) 0 2px,transparent 2px 38px)}
+.rain h2{max-width:14ch}
+.rain .lead{margin:1.4rem 0 3rem;max-width:52ch}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:3px solid var(--c)}
+.vs>div{padding:2rem}
+.vs h3{font-size:2.3rem;margin-bottom:1rem}
+.vs ul{list-style:none;display:grid;gap:.6rem}
+.vs li{display:flex;gap:.7rem;font-weight:500}
+.vs .no{background:var(--c);color:var(--w)}
+.vs .no li::before{content:"✕";color:var(--l);font-weight:900}
+.vs .ok{background:var(--w)}
+.vs .ok li::before{content:"✓";color:#1a8a4a;font-weight:900}
+.rain .btn{margin-top:2.5rem}
+
+/* seguridad */
+.seg{background:var(--s);color:var(--w);padding:7rem 0}
+.seg .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.seg h2 span{color:var(--t)}
+.seg .lead{margin:1.4rem 0 2rem;max-width:40ch;color:#b6cdd1}
+.seg ul{list-style:none;display:grid;gap:1rem}
+.seg li{padding-left:1.8rem;position:relative;border-left:3px solid var(--t);padding-block:.2rem}
+.cam{position:relative;aspect-ratio:4/3;background:radial-gradient(ellipse at 50% 60%,#16343b,#07131a);border:2px solid #24454d;overflow:hidden}
+.cam::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(98,224,207,.05) 0 1px,transparent 1px 4px)}
+.cam svg{position:absolute;inset:12% 10% 8%;width:80%}
+.cam i{position:absolute;width:34px;height:34px;border:3px solid var(--t)}
+.cam i:nth-of-type(1){top:14px;left:14px;border-right:0;border-bottom:0}
+.cam i:nth-of-type(2){top:14px;right:14px;border-left:0;border-bottom:0}
+.cam i:nth-of-type(3){bottom:14px;left:14px;border-right:0;border-top:0}
+.cam i:nth-of-type(4){bottom:14px;right:14px;border-left:0;border-top:0}
+.cam .rec{position:absolute;top:24px;left:60px;font:700 .9rem var(--b);color:var(--t);display:flex;align-items:center;gap:.5rem}
+.cam .rec::before{content:"";width:10px;height:10px;border-radius:50%;background:#ff4d4d;animation:bl 1.2s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.cam time{position:absolute;bottom:24px;left:60px;font:500 .9rem ui-monospace,monospace;color:var(--t)}
+.cam b{position:absolute;bottom:24px;right:60px;font:500 .9rem ui-monospace,monospace;color:var(--t)}
+
+/* garantia */
+.gar{padding:5rem 0}
+.gar .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.gar h3{font-size:2.6rem;border-bottom:4px solid var(--a);padding-bottom:.6rem;margin-bottom:.8rem}
+.gar p{color:#4a463d}
+
+/* contacto */
+.cont{background:var(--c);color:var(--w);padding:7rem 0;background-image:linear-gradient(rgba(255,159,26,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,159,26,.07) 1px,transparent 1px);background-size:44px 44px}
+.cont .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.cont h2{font-size:clamp(3rem,7vw,6rem)}
+.cont .tel{display:block;margin-top:2rem;font:900 clamp(2.2rem,4.5vw,3.6rem) var(--d);color:var(--a);text-decoration:none}
+.cont .ig{margin-top:.5rem;color:#bbb5a8}
+form{display:grid;gap:1.1rem;align-content:start}
+label{display:grid;gap:.35rem;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;color:var(--w);background:#211e18;border:2px solid #3b362b;border-radius:2px;padding:.85rem 1rem;width:100%}
+select option{color:#000}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--a)}
+textarea{min-height:110px;resize:vertical}
+footer{background:#0c0b08;color:#8f897b;padding:1.6rem 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+@media(max-width:900px){
+nav{display:none}
+.hero .wrap,.serv .wrap,.obra .wrap,.seg .wrap,.cont .wrap{grid-template-columns:1fr;gap:3rem}
+.hero .wrap{padding-block:3rem}
+.lg{max-width:380px}
+.serv .intro{position:static}
+.vs,.gar .wrap{grid-template-columns:1fr}
+.serv,.obra,.rain,.seg,.cont{padding-block:4.5rem}
+header .btn{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.lg .arc,.lg .roof{stroke-dashoffset:0}.lg .win rect{transform:none}.lg .tx{opacity:1}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="#inicio" aria-label="Obrantex, inicio">
+<svg viewBox="80 90 340 160" aria-hidden="true"><path d="M97 226L250 112L397 226" fill="none" stroke="#FF9F1A" stroke-width="22"/><rect x="312" y="118" width="26" height="40" fill="#FF9F1A"/><g fill="#fff"><rect x="223" y="168" width="24" height="24"/><rect x="253" y="168" width="24" height="24"/><rect x="223" y="198" width="24" height="24"/><rect x="253" y="198" width="24" height="24"/></g></svg>
+Obran<b>tex</b></a>
+<nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#obra">Obra real</a><a href="#impermeabilizacion">Techos</a><a href="#seguridad">Seguridad</a><a href="#contacto">Contacto</a></nav>
+<a class="btn" href="https://wa.me/5493513822571" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="wrap">
+<div>
+<h1><span>Construimos.</span><span>Reformamos.</span><span>Protegemos.</span></h1>
+<p>Servicios integrales en construcción, mantenimiento y reformas para hogares y comercios de Córdoba Capital.</p>
+<div class="cta"><a class="btn" href="#contacto">Pedir presupuesto sin cargo</a><a class="btn out" href="#servicios">Ver servicios</a></div>
+</div>
+
+<svg class="lg" viewBox="0 0 500 500" role="img" aria-label="Logo de Obrantex: casa con martillo, servicios integrales en construcción, mantenimiento y reformas">
+<circle cx="250" cy="250" r="250" fill="#000"/>
+<path class="arc" pathLength="1" d="M97 127A196 196 0 0 1 403 127" stroke-width="5" stroke-linecap="round"/>
+<path class="arc" pathLength="1" d="M105 372A196 196 0 0 0 395 372" stroke-width="5" stroke-linecap="round"/>
+<g transform="translate(168 118)"><g class="ham"><g transform="rotate(40)"><rect x="0" y="-5" width="72" height="10" rx="3" fill="#E4E4E4"/><path d="M-10 -30h18q6 0 6 6v48q0 6-6 6h-18q-4 0-4-6v-48q0-6 4-6z" fill="#fff"/></g></g></g>
+<rect x="312" y="118" width="26" height="46" fill="#FF9F1A"/>
+<path class="roof" pathLength="1" d="M97 226L250 112L397 226" stroke-width="22" stroke-linejoin="miter"/>
+<path d="M112 244L250 134" stroke="#fff" stroke-opacity=".55" stroke-width="3" fill="none"/>
+<g class="win" fill="#fff"><rect x="223" y="168" width="24" height="24"/><rect x="253" y="168" width="24" height="24"/><rect x="223" y="198" width="24" height="24"/><rect x="253" y="198" width="24" height="24"/></g>
+<g class="tx" font-family="Montserrat,'Arial Black',sans-serif" font-weight="800" font-size="76">
+<text x="27" y="304" fill="#fff" textLength="281" lengthAdjust="spacingAndGlyphs">OBRAN</text>
+<text x="311" y="304" fill="#FF9F1A" textLength="158" lengthAdjust="spacingAndGlyphs">TEX</text>
+</g>
+<g class="tx" font-family="Hanken Grotesk,Arial,sans-serif" font-weight="700" fill="#fff" font-size="17">
+<text x="57" y="334" textLength="390" lengthAdjust="spacing">servicios integrales en construcción,</text>
+<text x="113" y="361" textLength="278" lengthAdjust="spacing">mantenimiento y reformas</text>
+<path d="M48 355h52M400 355h52" stroke="#FF9F1A" stroke-width="2"/>
+</g>
+</svg>
+</div>
+</section>
+<div class="tape" aria-hidden="true"></div>
+<div class="band"><ul><li>Albañilería</li><li>Electricidad</li><li>Plomería</li><li>Pintura</li><li>Cerámicos</li><li>Ampliaciones</li><li>Impermeabilización</li><li>Cámaras IP</li></ul></div>
+
+<section class="serv" id="servicios">
+<div class="wrap">
+<div class="intro">
+<h2>Una sola cuadrilla para toda la casa</h2>
+<p>Desde romper el piso hasta dejar la última terminación. Un equipo, una sola persona a quien llamar.</p>
+</div>
+<div>
+<div class="row"><h3>Albañilería en general</h3><small>Obra</small><p>Mampostería, contrapisos, revoques y trabajos exteriores hechos con cumplimiento en tiempo.</p></div>
+<div class="row"><h3>Electricidad y plomería</h3><small>Instalaciones</small><p>Instalaciones nuevas, reparaciones y renovación de cañerías, incluido el sistema cloacal.</p></div>
+<div class="row"><h3>Pintura, cerámicos y terminaciones</h3><small>Detalles</small><p>La parte que se ve todos los días, resuelta con prolijidad y materiales bien elegidos.</p></div>
+<div class="row"><h3>Remodelaciones y ampliaciones</h3><small>Reformas</small><p>Ganá un ambiente, renová la cocina o reorganizá el comercio sin mudarte de lugar.</p></div>
+<div class="row"><h3>Impermeabilización de techos y terrazas</h3><small>Techos</small><p>Sellado de grietas, membrana líquida y reparación de filtraciones.</p></div>
+</div>
+</div>
+</section>
+
+<section class="obra" id="obra">
+<div class="wrap">
+<div>
+<h2 class="big">Caño tapado.<br><em>Cañería nueva.</em></h2>
+<p class="lead">Así trabajamos una renovación de sistema cloacal: abrimos, cambiamos todo el tramo dañado, probamos y dejamos el piso como estaba.</p>
+<p class="res">Resultado: cañería nueva, despejada y funcionando.</p>
+</div>
+<ol class="steps">
+<li><h3>Demolición del piso</h3><p>Abrimos solo la franja necesaria para llegar a la cañería.</p></li>
+<li><h3>Excavación y descubrimiento</h3><p>Dejamos a la vista el caño para ver dónde está la obstrucción.</p></li>
+<li><h3>Reemplazo completo del caño</h3><p>Se cambia el tramo dañado entero, no se parcha.</p></li>
+<li><h3>Prueba de funcionamiento</h3><p>Verificamos el desagüe antes de tapar nada.</p></li>
+<li><h3>Relleno y recuperación del piso</h3><p>Cerramos y reparamos la superficie.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="rain" id="impermeabilizacion">
+<div class="wrap">
+<h2>¿Tu techo está listo para el temporal?</h2>
+<p class="lead">Las lluvias fuertes dejan al descubierto problemas que pasan desapercibidos. Prevenir hoy sale más barato que reparar mañana.</p>
+<div class="vs">
+<div class="no"><h3>Sin impermeabilizar</h3><ul><li>Filtraciones</li><li>Goteras</li><li>Humedad en paredes y cielorrasos</li><li>Daños en tu hogar</li></ul></div>
+<div class="ok"><h3>Con impermeabilización</h3><ul><li>Tu hogar protegido</li><li>Mayor durabilidad</li><li>Sin filtraciones</li><li>Tranquilidad todo el año</li></ul></div>
+</div>
+<a class="btn" href="#contacto">Coordinar evaluación sin cargo</a>
+</div>
+</section>
+
+<section class="seg" id="seguridad">
+<div class="wrap">
+<div>
+<h2>Obrantex + <span>Segurix</span>: la casa se arregla y se cuida</h2>
+<p class="lead">Además de construir, instalamos cámaras IP para que veas tu hogar o comercio desde el celular.</p>
+<ul><li>Cámaras IP de última generación</li><li>Instalación profesional y rápida</li><li>Monitoreo 24/7 desde tu celular</li><li>Imágenes en alta definición y grabación segura</li></ul>
+</div>
+<div class="cam" role="img" aria-label="Ilustración de una cámara de seguridad en vivo">
+<i></i><i></i><i></i><i></i>
+<span class="rec">REC</span>
+<svg viewBox="0 0 300 200" fill="none" stroke="#62E0CF" stroke-width="3" opacity=".75"><path d="M20 190V100L150 20L280 100V190M20 190H280M110 190V130H190V190M150 130V190"/><rect x="95" y="75" width="40" height="30" stroke-width="2"/><rect x="165" y="75" width="40" height="30" stroke-width="2"/></svg>
+<time id="clk">--:--:--</time><b>CAM 01</b>
+</div>
+</div>
+</section>
+
+<section class="gar">
+<div class="wrap">
+<div><h3>Sin cargo</h3><p>El presupuesto no tiene costo ni compromiso.</p></div>
+<div><h3>Con garantía</h3><p>Todos los trabajos están garantizados y con asesoramiento personalizado.</p></div>
+<div><h3>En tu zona</h3><p>Atendemos en Córdoba Capital y alrededores.</p></div>
+</div>
+</section>
+
+<section class="cont" id="contacto">
+<div class="wrap">
+<div>
+<h2>Contanos qué necesitás</h2>
+<a class="tel" href="https://wa.me/5493513822571" target="_blank" rel="noopener">351 382 2571</a>
+<p class="ig">Instagram @obrantex.32</p>
+</div>
+<form id="f">
+<label>Nombre<input name="n" required autocomplete="name"></label>
+<label>¿Qué necesitás?
+<select name="s"><option>Albañilería</option><option>Electricidad y plomería</option><option>Pintura y terminaciones</option><option>Remodelación o ampliación</option><option>Impermeabilización</option><option>Cámaras de seguridad</option></select></label>
+<label>Detalles<textarea name="m" placeholder="Barrio, tipo de trabajo, urgencia…"></textarea></label>
+<button class="btn" type="submit">Enviar por WhatsApp</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Obrantex. Servicios integrales en construcción, mantenimiento y reformas.</span><span>Córdoba, Argentina</span></div></footer>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.6});
+document.querySelectorAll('.steps li').forEach(function(l){io.observe(l)});
+var c=document.getElementById('clk');
+function t(){c.textContent=new Date().toLocaleTimeString('es-AR',{hour12:false})}
+t();setInterval(t,1000);
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();var d=new FormData(e.target);
+var m='Hola Obrantex, soy '+d.get('n')+'. Necesito: '+d.get('s')+'.'+(d.get('m')?' '+d.get('m'):'');
+window.open('https://wa.me/5493513822571?text='+encodeURIComponent(m),'_blank','noopener');
+});
+})();
+</script>
+</body>
+</html>
